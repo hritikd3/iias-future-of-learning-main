@@ -1,51 +1,54 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { usePathname } from "next/navigation"
-import { motion, AnimatePresence } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
+import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Home" },
+  { href: "/admission-2026", label: "Admission 2026" },
   { href: "/courses", label: "Courses" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
-]
+];
 
 export function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const pathname = usePathname()
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <>
-      <motion.nav 
+      <motion.nav
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
         className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 glass m-4 rounded-2xl"
       >
         <Link href="/" className="flex items-center gap-3">
-          <Image 
-            src="https://i.ibb.co/JjjQzzzB/Screenshot-2025-12-17-at-10-45-26-PM.png" 
-            alt="IIAS Logo" 
-            width={40} 
-            height={40} 
+          <Image
+            src="https://i.ibb.co/JjjQzzzB/Screenshot-2025-12-17-at-10-45-26-PM.png"
+            alt="IIAS Logo"
+            width={40}
+            height={40}
             className="rounded-lg object-contain bg-white p-1"
           />
-          <span className="font-heading font-bold text-xl tracking-tighter hidden sm:block">IIAS</span>
+          <span className="font-heading font-bold text-xl tracking-tighter hidden sm:block">
+            IIAS
+          </span>
         </Link>
-        
+
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <Link 
+            <Link
               key={link.href}
-              href={link.href} 
+              href={link.href}
               className={`text-sm font-medium transition-colors ${
-                pathname === link.href 
-                  ? "text-cyan-400" 
+                pathname === link.href
+                  ? "text-cyan-400"
                   : "text-white/70 hover:text-white"
               }`}
             >
@@ -56,7 +59,10 @@ export function Navbar() {
 
         <div className="flex items-center gap-4">
           <Link href="/contact" className="hidden sm:block">
-            <Button variant="outline" className="rounded-full border-violet-500/30 hover:bg-violet-500/10">
+            <Button
+              variant="outline"
+              className="rounded-full border-violet-500/30 hover:bg-violet-500/10"
+            >
               Book Demo
             </Button>
           </Link>
@@ -102,5 +108,5 @@ export function Navbar() {
         )}
       </AnimatePresence>
     </>
-  )
+  );
 }
