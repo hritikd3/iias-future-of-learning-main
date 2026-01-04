@@ -30,7 +30,9 @@ export const courses = [
       { module: "Agentic AI", topics: ["LangChain", "LangGraph", "Multi-agent Systems", "Tool Use"] },
       { module: "Production & Deployment", topics: ["MLOps", "Vector Databases", "RAG Systems", "Cloud Deployment"] },
     ],
-    instructor: { name: "Priya Sharma", role: "Head of AI Programs", image: "https://i.pravatar.cc/300?u=priya2" },
+    instructor: { name: "Priya Sharma", role: "Head of AI Programs",
+       image: "https://i.pravatar.cc/300?u=priya2" 
+      },
   },
   {
     slug: "full-stack-development",
@@ -61,7 +63,11 @@ export const courses = [
       { module: "Databases", topics: ["MongoDB", "PostgreSQL", "Prisma ORM", "Redis"] },
       { module: "DevOps & Deployment", topics: ["Git", "Docker", "CI/CD", "AWS/Vercel"] },
     ],
-    instructor: { name: "Vikram Singh", role: "Lead Instructor - Full Stack", image: "https://i.pravatar.cc/300?u=vikram" },
+    instructor: {
+       name: "Vikram Singh",
+        role: "Lead Instructor - Full Stack"
+        //  image: "https://i.pravatar.cc/300?u=vikram"
+         },
   },
   {
     slug: "cyber-security",

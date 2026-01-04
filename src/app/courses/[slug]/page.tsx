@@ -1,4 +1,5 @@
 "use client"
+import { getInitials } from "@/lib/getInitials";
 
 import { notFound } from "next/navigation"
 import { motion } from "framer-motion"
@@ -24,13 +25,13 @@ export default function CourseDetailPage({ params }: { params: Promise<{ slug: s
       <div className="gradient-blur-1" />
       <div className="gradient-blur-2" />
       <div className="gradient-blur-3" />
-      
+
       <Navbar />
-      
+
       <section className="pt-32 pb-20 px-6 relative z-10">
         <div className="max-w-7xl mx-auto">
-          <Link 
-            href="/courses" 
+          <Link
+            href="/courses"
             className="inline-flex items-center gap-2 text-muted-foreground hover:text-white transition-colors mb-8"
           >
             <ArrowLeft size={16} />
@@ -44,14 +45,23 @@ export default function CourseDetailPage({ params }: { params: Promise<{ slug: s
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${course.color} flex items-center justify-center mb-6 border border-white/10 text-white`}>
+                <div
+                  className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${course.color} flex items-center justify-center mb-6 border border-white/10 text-white`}
+                >
                   {iconMap[course.icon]}
                 </div>
-                <h1 className="text-4xl md:text-5xl font-bold font-heading mb-4">{course.title}</h1>
-                <p className="text-xl text-muted-foreground mb-6">{course.longDescription}</p>
+                <h1 className="text-4xl md:text-5xl font-bold font-heading mb-4">
+                  {course.title}
+                </h1>
+                <p className="text-xl text-muted-foreground mb-6">
+                  {course.longDescription}
+                </p>
                 <div className="flex flex-wrap gap-3">
                   {course.tags.map((tag, index) => (
-                    <span key={index} className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium">
+                    <span
+                      key={index}
+                      className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium"
+                    >
                       {tag}
                     </span>
                   ))}
@@ -64,7 +74,9 @@ export default function CourseDetailPage({ params }: { params: Promise<{ slug: s
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="glass-card rounded-3xl p-8"
               >
-                <h2 className="text-2xl font-bold font-heading mb-6">Program Highlights</h2>
+                <h2 className="text-2xl font-bold font-heading mb-6">
+                  Program Highlights
+                </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {course.highlights.map((highlight, index) => (
                     <div key={index} className="flex items-start gap-3">
@@ -81,17 +93,27 @@ export default function CourseDetailPage({ params }: { params: Promise<{ slug: s
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="glass-card rounded-3xl p-8"
               >
-                <h2 className="text-2xl font-bold font-heading mb-6">Curriculum</h2>
+                <h2 className="text-2xl font-bold font-heading mb-6">
+                  Curriculum
+                </h2>
                 <div className="space-y-6">
                   {course.curriculum.map((module, index) => (
-                    <div key={index} className="border-l-2 border-violet-500/30 pl-6">
+                    <div
+                      key={index}
+                      className="border-l-2 border-violet-500/30 pl-6"
+                    >
                       <h3 className="font-bold text-lg mb-3">
-                        <span className="text-cyan-400 mr-2">Module {index + 1}:</span>
+                        <span className="text-cyan-400 mr-2">
+                          Module {index + 1}:
+                        </span>
                         {module.module}
                       </h3>
                       <div className="flex flex-wrap gap-2">
                         {module.topics.map((topic, tIndex) => (
-                          <span key={tIndex} className="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-muted-foreground">
+                          <span
+                            key={tIndex}
+                            className="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-muted-foreground"
+                          >
                             {topic}
                           </span>
                         ))}
@@ -101,7 +123,7 @@ export default function CourseDetailPage({ params }: { params: Promise<{ slug: s
                 </div>
               </motion.div>
 
-              <motion.div
+              {/* <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
@@ -122,6 +144,30 @@ export default function CourseDetailPage({ params }: { params: Promise<{ slug: s
                     <p className="text-muted-foreground">{course.instructor.role}</p>
                   </div>
                 </div>
+              </motion.div> */}
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="glass-card rounded-3xl p-8"
+              >
+                <h2 className="text-2xl font-bold font-heading mb-6">
+                  Meet Your Instructor
+                </h2>
+                <div className="flex items-center gap-6">
+                  <div className="flex w-20 h-20 items-center justify-center rounded-full border-2 border-violet-500/30 bg-gradient-to-br from-indigo-500 to-purple-600 text-white font-bold text-xl">
+                    {getInitials(course.instructor.name)}
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-xl">
+                      {course.instructor.name}
+                    </h3>
+                    <p className="text-muted-foreground">
+                      {course.instructor.role}
+                    </p>
+                  </div>
+                </div>
               </motion.div>
             </div>
 
@@ -132,13 +178,13 @@ export default function CourseDetailPage({ params }: { params: Promise<{ slug: s
                 transition={{ duration: 0.6 }}
                 className="glass-card rounded-3xl p-8 sticky top-32"
               >
-
-
                 <div className="space-y-4 mb-8">
                   <div className="flex items-center gap-4 p-4 rounded-xl bg-white/5">
                     <Clock className="w-5 h-5 text-cyan-400" />
                     <div>
-                      <div className="text-sm text-muted-foreground">Duration</div>
+                      <div className="text-sm text-muted-foreground">
+                        Duration
+                      </div>
                       <div className="font-semibold">{course.duration}</div>
                     </div>
                   </div>
@@ -159,18 +205,27 @@ export default function CourseDetailPage({ params }: { params: Promise<{ slug: s
                   <div className="flex items-center gap-4 p-4 rounded-xl bg-white/5">
                     <GraduationCap className="w-5 h-5 text-cyan-400" />
                     <div>
-                      <div className="text-sm text-muted-foreground">Certificate</div>
+                      <div className="text-sm text-muted-foreground">
+                        Certificate
+                      </div>
                       <div className="font-semibold">Industry Recognized</div>
                     </div>
                   </div>
                 </div>
 
                 <div className="space-y-3">
-                  <Button size="lg" className="w-full h-14 rounded-xl btn-gradient text-white text-lg">
+                  <Button
+                    size="lg"
+                    className="w-full h-14 rounded-xl btn-gradient text-white text-lg"
+                  >
                     Enroll Now
                   </Button>
                   <Link href="/contact" className="block">
-                    <Button size="lg" variant="outline" className="w-full h-14 rounded-xl border-violet-500/30 hover:bg-violet-500/10">
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="w-full h-14 rounded-xl border-violet-500/30 hover:bg-violet-500/10"
+                    >
                       Request Callback
                     </Button>
                   </Link>
@@ -187,5 +242,5 @@ export default function CourseDetailPage({ params }: { params: Promise<{ slug: s
 
       <Footer />
     </main>
-  )
+  );
 }
