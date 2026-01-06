@@ -1,16 +1,22 @@
-"use client"
+"use client";
 
-import dynamic from "next/dynamic"
-import { Navbar } from "@/components/Navbar"
-import { Hero } from "@/components/Hero"
-import { Courses } from "@/components/Courses"
+import dynamic from "next/dynamic";
+import { Navbar } from "@/components/Navbar";
+import { Hero } from "@/components/Hero";
+import { Courses } from "@/components/Courses";
 import { Certifications } from "@/components/Certifications";
-import { Partners } from "@/components/Partners" ;
-import { Testimonials } from "@/components/Testimonials"
-import { Contact } from "@/components/Contact"
-import { Footer } from "@/components/Footer"
+import { PlacementNetwork } from "@/components/PlacementNetwork";
+import { Testimonials } from "@/components/Testimonials";
+import { Contact } from "@/components/Contact";
+import { Footer } from "@/components/Footer";
 
-const ThreeBackground = dynamic(() => import("@/components/ThreeBackground").then(mod => ({ default: mod.ThreeBackground })), { ssr: false })
+const ThreeBackground = dynamic(
+  () =>
+    import("@/components/ThreeBackground").then((mod) => ({
+      default: mod.ThreeBackground,
+    })),
+  { ssr: false }
+);
 
 export default function Home() {
   return (
@@ -23,8 +29,8 @@ export default function Home() {
       <Hero />
       <Courses />
       <Certifications />
+      <PlacementNetwork />
       <Testimonials />
-      <Partners />
       <Contact />
       <Footer />
     </main>
