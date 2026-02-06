@@ -7,7 +7,38 @@ import { Footer } from "@/components/Footer"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { courses, iconMap } from "@/lib/courses-data"
-import { Clock, Users, BarChart3, ArrowRight } from "lucide-react"
+import { Clock, Users, BarChart3, ArrowRight, Linkedin } from "lucide-react"
+
+const mentors = [
+  {
+    name: "Mahendra Singh Chouhan",
+    role: "Trainer",
+    image: "https://i.ibb.co/rKgfJGJY/Whats-App-Image-2026-02-02-at-13-04-33.jpg",
+    linkedin: "https://www.linkedin.com/in/mahendrachouhan/",
+    description: "Experienced Lead Data Scientist/Solution Architect with 15+ years in IT and 10+ years in data science and AI/ML domains. Proven expertise in designing scalable, reliable technical architectures."
+  },
+  {
+    name: "Raunak Patni",
+    role: "Data Analyst",
+    image: "https://i.ibb.co/rGmVH1cm/Whats-App-Image-2026-02-02-at-13-04-33-2.jpg",
+    linkedin: "https://www.linkedin.com/in/alankar-kharbadikar/",
+    description: "Skilled in data analysis, machine learning, and statistical modeling to drive insights from complex datasets. Leveraging data to develop analytical insights for business decision making."
+  },
+  {
+    name: "Alankar Kharbadikar",
+    role: "Mentor",
+    image: "https://i.ibb.co/hFQhKvXM/Whats-App-Image-2026-02-02-at-13-04-33-1.jpg",
+    linkedin: "https://www.linkedin.com/in/alankar-kharbadikar/",
+    description: ""
+  },
+  {
+    name: "Hrshit Gandhi",
+    role: "Senior Data Scientist",
+    image: "https://i.ibb.co/7xQdW52r/Whats-App-Image-2026-02-02-at-13-10-05-1.jpg",
+    linkedin: "https://www.linkedin.com/in/harsheetgandhi/",
+    description: ""
+  }
+]
 
 export default function CoursesPage() {
   return (
@@ -15,9 +46,9 @@ export default function CoursesPage() {
       <div className="gradient-blur-1" />
       <div className="gradient-blur-2" />
       <div className="gradient-blur-3" />
-      
+
       <Navbar />
-      
+
       <section className="pt-32 pb-20 px-6 relative z-10">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -54,7 +85,7 @@ export default function CoursesPage() {
                       </div>
                       <h3 className="text-2xl font-bold mb-3 font-heading">{course.title}</h3>
                       <p className="text-muted-foreground mb-6 flex-grow">{course.description}</p>
-                      
+
                       <div className="space-y-4">
                         <div className="flex flex-wrap gap-2">
                           {course.tags.slice(0, 3).map((tag, tIndex) => (
@@ -63,7 +94,7 @@ export default function CoursesPage() {
                             </span>
                           ))}
                         </div>
-                        
+
                         <div className="flex items-center justify-between text-sm text-muted-foreground pt-4 border-t border-white/5">
                           <div className="flex items-center gap-1">
                             <Clock size={14} />
@@ -87,6 +118,72 @@ export default function CoursesPage() {
               </motion.div>
             ))}
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mt-32 mb-20"
+          >
+            <div className="text-center mb-16">
+              <span className="inline-block px-4 py-2 rounded-full glass text-sm font-medium text-cyan-400 mb-6">
+                Expert Guidance
+              </span>
+              <h2 className="text-3xl md:text-5xl font-bold font-heading mb-6">
+                Meet Your <span className="text-gradient">Mentors</span>
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Learn from industry veterans who have shaped the future of technology.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {mentors.map((mentor, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <Card className="glass-card h-full border-white/5 hover:border-cyan-400/30 transition-all duration-300 group overflow-hidden">
+                    <CardContent className="p-0 flex flex-col h-full">
+                      <div className="relative w-full h-80 overflow-hidden">
+                        <img
+                          src={mentor.image}
+                          alt={mentor.name}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          referrerPolicy="no-referrer"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
+                          <a
+                            href={mentor.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-3 bg-cyan-500 text-white rounded-full hover:bg-cyan-400 transition-colors transform translate-y-4 group-hover:translate-y-0 duration-300"
+                          >
+                            <Linkedin size={20} />
+                          </a>
+                        </div>
+                      </div>
+
+                      <div className="p-6 flex flex-col flex-grow bg-white/5 backdrop-blur-sm">
+                        <h3 className="text-lg font-bold font-heading mb-1">{mentor.name}</h3>
+                        {mentor.role && (
+                          <p className="text-cyan-400 text-sm font-medium mb-3">{mentor.role}</p>
+                        )}
+                        {mentor.description && (
+                          <p className="text-muted-foreground text-sm line-clamp-4">
+                            {mentor.description}
+                          </p>
+                        )}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
