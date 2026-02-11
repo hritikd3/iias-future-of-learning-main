@@ -1,4 +1,4 @@
-import { Brain, Layers, Shield, Zap, Cpu, Globe, Database, Code2, Briefcase, Terminal, Laptop, Rocket } from "lucide-react"
+import { Brain, Layers, Shield, Zap, Cpu, Globe, Database, Code2, Briefcase, Terminal, Laptop, Rocket, BookOpen } from "lucide-react"
 
 export const courses = [
   {
@@ -292,6 +292,99 @@ export const courses = [
       { question: "What software will I need?", answer: "We mainly use Figma, which is free to start." }
     ]
   },
+  {
+    slug: "ip-cs-class-11-12",
+    title: "IP/CS for Class 11th & 12th",
+    shortTitle: "Class 11/12 IP/CS",
+    description: "Complete curriculum support for Informatics Practices and Computer Science (CBSE/ICSE).",
+    longDescription: "Master your school syllabus with a focus on Python, SQL, and Networking. Designed specifically for Class 11th and 12th students to score high in board exams and build a strong foundation.",
+    icon: "BookOpen",
+    color: "from-indigo-500/20 to-violet-500/20",
+    borderColor: "border-indigo-500/30",
+    tags: ["CBSE", "Python", "SQL", "Networking"],
+    duration: "Year Long",
+    mode: "Hybrid",
+    level: "School Level",
+    price: "₹35,000",
+    highlights: [
+      "Complete CBSE/ICSE Syllabus Coverage",
+      "Hands-on Python Programming",
+      "MySQL Database Mastery",
+      "Computer Networks & Security",
+      "Board Exam Pattern Tests",
+      "Project Work Guidance"
+    ],
+    curriculum: [
+      { module: "Programming Fundamentals", topics: ["Python Basics", "Control Flow", "Functions", "File Handling"] },
+      { module: "Data Structures", topics: ["Lists", "Tuples", "Dictionaries", "Stacks"] },
+      { module: "Database Management", topics: ["SQL Basics", "Joins", "Aggregation", "Interface with Python"] },
+      { module: "Computer Networks", topics: ["Network Types", "Topologies", "Protocols", "Cyber Safety"] },
+      { module: "Project Work", topics: ["Problem Definition", "Coding", "Testing", "Documentation"] },
+    ],
+    instructor: { name: "Anjali Verma", role: "CS Faculty", image: "https://i.pravatar.cc/300?u=anjali" },
+    tools: ["Python IDLE", "MySQL", "PyCharm", "Jupyter Notebook"],
+    projects: [
+      { title: "Student Management System", description: "A Python-SQL application to manage student records." },
+      { title: "Library Management System", description: "Automate book issuing and returning processes." },
+      { title: "Quiz Application", description: "Interactive quiz game using Python." }
+    ],
+    outcomes: [
+      "Score 95+ in Board Exams",
+      "Strong coding foundation",
+      "Mastery of SQL queries",
+      "Complete practical file for boards"
+    ],
+    faqs: [
+      { question: "Is this for CBSE or ICSE?", answer: "We cover both CBSE and ICSE curriculums tailored to the student's board." },
+      { question: "Do you help with practical files?", answer: "Yes, we provide complete guidance for creating school practical files and projects." }
+    ]
+  },
+  {
+    slug: "foundation-coding",
+    title: "Coding Foundation for Schools",
+    shortTitle: "Young Coders",
+    description: "Start early with logic building and basic programming for students comprising classes 8th to 10th.",
+    longDescription: "A fun and interactive course designed to introduce young minds to the world of coding. Learn logic, game development, and basic web design.",
+    icon: "Code2",
+    color: "from-lime-500/20 to-green-500/20",
+    borderColor: "border-lime-500/30",
+    tags: ["Logic", "Scratch", "HTML/CSS", "Python"],
+    duration: "3 Months",
+    mode: "Hybrid",
+    level: "Beginner",
+    price: "₹25,000",
+    highlights: [
+      "Block-based coding with Scratch",
+      "Introduction to Real-world Python",
+      "Build your own websites",
+      "Logic & Problem Solving",
+      "Game Development",
+      "Certificate of Excellence"
+    ],
+    curriculum: [
+      { module: "Logic Building", topics: ["Algorithms", "Flowcharts", "Puzzles", "Critical Thinking"] },
+      { module: "Visual Coding", topics: ["Scratch", "Events", "Loops", "Variables"] },
+      { module: "Web Basics", topics: ["HTML Structure", "CSS Styling", "Simple Layouts"] },
+      { module: "Python Intro", topics: ["Syntax", "Input/Output", "Simple Calculators", "Text Games"] },
+    ],
+    instructor: { name: "Ravi Kumar", role: "STEM Educator", image: "https://i.pravatar.cc/300?u=ravi" },
+    tools: ["Scratch", "VS Code", "Replit", "Browser DevTools"],
+    projects: [
+      { title: "Interactive Story", description: "Create an animated story using Scratch." },
+      { title: "Personal Portfolio", description: "Build a simple website introducing yourself." },
+      { title: "Guess the Number", description: "A classic text-based game in Python." }
+    ],
+    outcomes: [
+      "Develop computational thinking",
+      "Understand how software works",
+      "Create games and websites",
+      "Improved mathematical logic"
+    ],
+    faqs: [
+      { question: "What is the age group?", answer: "This course is ideal for students from Class 8th to 10th." },
+      { question: "Is a laptop required?", answer: "Yes, a basic laptop or desktop is required for practice." }
+    ]
+  },
 ]
 
 export const iconMap: Record<string, React.ReactNode> = {
@@ -303,4 +396,5 @@ export const iconMap: Record<string, React.ReactNode> = {
   Globe: <Globe className="w-8 h-8" />,
   Database: <Database className="w-8 h-8" />,
   Code2: <Code2 className="w-8 h-8" />,
+  BookOpen: <BookOpen className="w-8 h-8" />,
 }
