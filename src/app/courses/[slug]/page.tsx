@@ -10,7 +10,13 @@ import { Navbar } from "@/components/Navbar"
 import { Footer } from "@/components/Footer"
 import { Button } from "@/components/ui/button"
 import { courses, iconMap } from "@/lib/courses-data"
-import { Clock, Users, BarChart3, ArrowLeft, CheckCircle2, Calendar, MapPin, GraduationCap } from "lucide-react"
+import { Clock, Users, BarChart3, ArrowLeft, CheckCircle2, Calendar, MapPin, GraduationCap, BookOpen, Briefcase, Trophy, Laptop, CheckCircle, ChevronDown, Download, Rocket } from "lucide-react"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 export default function CourseDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params)
@@ -28,7 +34,7 @@ export default function CourseDetailPage({ params }: { params: Promise<{ slug: s
 
       <Navbar />
 
-      <section className="pt-32 pb-20 px-6 relative z-10">
+      <section className="pt-24 pb-20 px-6 relative z-10">
         <div className="max-w-7xl mx-auto">
           <Link
             href="/courses"
@@ -38,203 +44,282 @@ export default function CourseDetailPage({ params }: { params: Promise<{ slug: s
             Back to Courses
           </Link>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            <div className="lg:col-span-2 space-y-8">
+          {/* Hero Section */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
+            <div className="lg:col-span-2 space-y-6">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <div
-                  className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${course.color} flex items-center justify-center mb-6 border border-white/10 text-white`}
-                >
-                  {iconMap[course.icon]}
+                <div className="flex items-center gap-4 mb-6">
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${course.color} flex items-center justify-center border border-white/10 text-white shadow-lg shadow-cyan-500/10`}>
+                    {iconMap[course.icon]}
+                  </div>
+                  <span className="px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 font-medium text-sm">
+                    Most Popular
+                  </span>
                 </div>
-                <h1 className="text-4xl md:text-5xl font-bold font-heading mb-4">
+
+                <h1 className="text-4xl md:text-6xl font-bold font-heading mb-6 leading-tight">
                   {course.title}
                 </h1>
-                <p className="text-xl text-muted-foreground mb-6">
+                <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
                   {course.longDescription}
                 </p>
-                <div className="flex flex-wrap gap-3">
-                  {course.tags.map((tag, index) => (
-                    <span
-                      key={index}
-                      className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+
+                <div className="flex flex-wrap gap-4">
+                  <Button size="lg" className="h-14 px-8 rounded-full btn-gradient text-white text-lg">
+                    Download Brochure <Download className="ml-2 w-5 h-5" />
+                  </Button>
+                  <Button size="lg" variant="outline" className="h-14 px-8 rounded-full border-white/10 hover:bg-white/5 text-lg">
+                    View Syllabus
+                  </Button>
                 </div>
               </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="glass-card rounded-3xl p-8"
-              >
-                <h2 className="text-2xl font-bold font-heading mb-6">
-                  Program Highlights
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {course.highlights.map((highlight, index) => (
-                    <div key={index} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
-                      <span className="text-muted-foreground">{highlight}</span>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="glass-card rounded-3xl p-8"
-              >
-                <h2 className="text-2xl font-bold font-heading mb-6">
-                  Curriculum
-                </h2>
-                <div className="space-y-6">
-                  {course.curriculum.map((module, index) => (
-                    <div
-                      key={index}
-                      className="border-l-2 border-violet-500/30 pl-6"
-                    >
-                      <h3 className="font-bold text-lg mb-3">
-                        <span className="text-cyan-400 mr-2">
-                          Module {index + 1}:
-                        </span>
-                        {module.module}
-                      </h3>
-                      <div className="flex flex-wrap gap-2">
-                        {module.topics.map((topic, tIndex) => (
-                          <span
-                            key={tIndex}
-                            className="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-muted-foreground"
-                          >
-                            {topic}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-
-              {/* <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="glass-card rounded-3xl p-8"
-              >
-                <h2 className="text-2xl font-bold font-heading mb-6">Meet Your Instructor</h2>
-                <div className="flex items-center gap-6">
-                  <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-violet-500/30">
-                    <Image
-                      src={course.instructor.image}
-                      alt={course.instructor.name}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-xl">{course.instructor.name}</h3>
-                    <p className="text-muted-foreground">{course.instructor.role}</p>
-                  </div>
-                </div>
-              </motion.div> */}
-
-              {/* <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="glass-card rounded-3xl p-8"
-              >
-                <h2 className="text-2xl font-bold font-heading mb-6">
-                  Meet Your Instructor
-                </h2>
-                <div className="flex items-center gap-6">
-                  <div className="flex w-20 h-20 items-center justify-center rounded-full border-2 border-violet-500/30 bg-gradient-to-br from-indigo-500 to-purple-600 text-white font-bold text-xl">
-                    {getInitials(course.instructor.name)}
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-xl">
-                      {course.instructor.name}
-                    </h3>
-                    <p className="text-muted-foreground">
-                      {course.instructor.role}
-                    </p>
-                  </div>
-                </div>
-              </motion.div> */}
             </div>
 
-            <div className="lg:col-span-1">
+            {/* Sticky Sidebar - Desktop */}
+            <div className="lg:col-span-1 row-start-1 lg:row-start-auto">
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
-                className="glass-card rounded-3xl p-8 sticky top-32"
+                className="glass-card rounded-3xl p-6 sticky top-24 border-white/10 shadow-2xl shadow-black/50"
               >
-                <div className="space-y-4 mb-8">
-                  <div className="flex items-center gap-4 p-4 rounded-xl bg-white/5">
-                    <Clock className="w-5 h-5 text-cyan-400" />
-                    <div>
-                      <div className="text-sm text-muted-foreground">
-                        Duration
-                      </div>
-                      <div className="font-semibold">{course.duration}</div>
+                <div className="space-y-6">
+                  <div className="p-4 rounded-2xl bg-white/5 border border-white/5">
+                    <p className="text-sm text-muted-foreground mb-1">Program Fee</p>
+                    <div className="flex items-end gap-2">
+                      <span className="text-3xl font-bold text-white">{course.price}</span>
+                      <span className="text-sm text-cyan-400 mb-1">+ GST</span>
                     </div>
                   </div>
-                  <div className="flex items-center gap-4 p-4 rounded-xl bg-white/5">
-                    <MapPin className="w-5 h-5 text-cyan-400" />
-                    <div>
-                      <div className="text-sm text-muted-foreground">Mode</div>
-                      <div className="font-semibold">{course.mode}</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-4 p-4 rounded-xl bg-white/5">
-                    <BarChart3 className="w-5 h-5 text-cyan-400" />
-                    <div>
-                      <div className="text-sm text-muted-foreground">Level</div>
-                      <div className="font-semibold">{course.level}</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-4 p-4 rounded-xl bg-white/5">
-                    <GraduationCap className="w-5 h-5 text-cyan-400" />
-                    <div>
-                      <div className="text-sm text-muted-foreground">
-                        Certificate
-                      </div>
-                      <div className="font-semibold">Industry Recognized</div>
-                    </div>
-                  </div>
-                </div>
 
-                <div className="space-y-3">
-                  <Button
-                    size="lg"
-                    className="w-full h-14 rounded-xl btn-gradient text-white text-lg"
-                  >
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between py-2 border-b border-white/5">
+                      <div className="flex items-center gap-3 text-muted-foreground">
+                        <Clock className="w-5 h-5 text-cyan-500" />
+                        <span>Duration</span>
+                      </div>
+                      <span className="font-semibold text-white">{course.duration}</span>
+                    </div>
+                    <div className="flex items-center justify-between py-2 border-b border-white/5">
+                      <div className="flex items-center gap-3 text-muted-foreground">
+                        <MapPin className="w-5 h-5 text-purple-500" />
+                        <span>Mode</span>
+                      </div>
+                      <span className="font-semibold text-white">{course.mode}</span>
+                    </div>
+                    <div className="flex items-center justify-between py-2 border-b border-white/5">
+                      <div className="flex items-center gap-3 text-muted-foreground">
+                        <BarChart3 className="w-5 h-5 text-yellow-500" />
+                        <span>Level</span>
+                      </div>
+                      <span className="font-semibold text-white">{course.level.split(' ')[0]}</span>
+                    </div>
+                  </div>
+
+                  <Button className="w-full h-12 rounded-xl bg-white text-black hover:bg-cyan-50 font-bold text-lg">
                     Enroll Now
                   </Button>
-                  <Link href="/contact" className="block">
-                    <Button
-                      size="lg"
-                      variant="outline"
-                      className="w-full h-14 rounded-xl border-violet-500/30 hover:bg-violet-500/10"
-                    >
-                      Request Callback
-                    </Button>
-                  </Link>
+                  <p className="text-xs text-center text-muted-foreground">
+                    Limited seats available for next batch
+                  </p>
                 </div>
-
-                <p className="text-xs text-center text-muted-foreground mt-6">
-                  Next batch starting soon. Limited seats available.
-                </p>
               </motion.div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <div className="lg:col-span-2 space-y-16">
+
+              {/* Program Highlights / Outcomes */}
+              <section>
+                <h2 className="text-3xl font-bold font-heading mb-8 flex items-center gap-3">
+                  <Trophy className="w-8 h-8 text-yellow-500" /> What You Will Learn
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {course.outcomes?.map((outcome, index) => (
+                    <div key={index} className="flex gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-cyan-500/30 transition-colors">
+                      <div className="mt-1">
+                        <CheckCircle2 className="w-5 h-5 text-cyan-400" />
+                      </div>
+                      <p className="text-neutral-300">{outcome}</p>
+                    </div>
+                  ))}
+                  {course.highlights.map((highlight, index) => (
+                    <div key={`high-${index}`} className="flex gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-cyan-500/30 transition-colors">
+                      <div className="mt-1">
+                        <CheckCircle2 className="w-5 h-5 text-cyan-400" />
+                      </div>
+                      <p className="text-neutral-300">{highlight}</p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {/* Tools & Technologies */}
+              <section>
+                <h2 className="text-3xl font-bold font-heading mb-8 flex items-center gap-3">
+                  <Laptop className="w-8 h-8 text-blue-500" /> Tools You Will Master
+                </h2>
+                <div className="flex flex-wrap gap-4">
+                  {course.tools?.map((tool, index) => (
+                    <div key={index} className="px-6 py-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-cyan-500/30 transition-all cursor-default">
+                      <span className="font-semibold text-neutral-200">{tool}</span>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {/* Curriculum Accordion */}
+              <section>
+                <h2 className="text-3xl font-bold font-heading mb-8 flex items-center gap-3">
+                  <BookOpen className="w-8 h-8 text-purple-500" /> Detailed Curriculum
+                </h2>
+                <div className="glass-card rounded-3xl p-1 overflow-hidden">
+                  <Accordion type="single" collapsible className="w-full">
+                    {course.curriculum.map((module, index) => (
+                      <AccordionItem key={index} value={`item-${index}`} className="border-b border-white/5 px-6 last:border-0">
+                        <AccordionTrigger className="hover:no-underline py-6">
+                          <div className="text-left">
+                            <span className="block text-xs font-bold text-cyan-400 uppercase tracking-wider mb-1">Module {index + 1}</span>
+                            <span className="text-lg font-bold text-white">{module.module}</span>
+                          </div>
+                        </AccordionTrigger>
+                        <AccordionContent className="text-muted-foreground pb-6">
+                          <div className="flex flex-wrap gap-2 mt-2">
+                            {module.topics.map((topic, tIndex) => (
+                              <span key={tIndex} className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 text-sm border border-white/5">
+                                <div className="w-1.5 h-1.5 rounded-full bg-cyan-500" />
+                                {topic}
+                              </span>
+                            ))}
+                          </div>
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                </div>
+              </section>
+
+              {/* Projects */}
+              <section>
+                <h2 className="text-3xl font-bold font-heading mb-8 flex items-center gap-3">
+                  <Rocket className="w-8 h-8 text-orange-500" /> Real-World Projects
+                </h2>
+                <div className="grid grid-cols-1 gap-6">
+                  {course.projects?.map((project, index) => (
+                    <div key={index} className="group p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-500/50 hover:bg-white/10 transition-all">
+                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">{project.title}</h3>
+                      <p className="text-muted-foreground">{project.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {/* Career Services */}
+              <section className="p-8 rounded-3xl bg-gradient-to-br from-blue-900/20 to-cyan-900/20 border border-white/10">
+                <h2 className="text-2xl font-bold font-heading mb-6 flex items-center gap-3">
+                  <Briefcase className="w-6 h-6 text-cyan-400" /> Career Services
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="text-center p-4">
+                    <div className="w-12 h-12 mx-auto bg-white/10 rounded-full flex items-center justify-center mb-3 text-2xl">📝</div>
+                    <h4 className="font-bold mb-2">Resume Building</h4>
+                    <p className="text-sm text-muted-foreground">Expert crafted resumes</p>
+                  </div>
+                  <div className="text-center p-4">
+                    <div className="w-12 h-12 mx-auto bg-white/10 rounded-full flex items-center justify-center mb-3 text-2xl">👔</div>
+                    <h4 className="font-bold mb-2">Mock Interviews</h4>
+                    <p className="text-sm text-muted-foreground">Practice with experts</p>
+                  </div>
+                  <div className="text-center p-4">
+                    <div className="w-12 h-12 mx-auto bg-white/10 rounded-full flex items-center justify-center mb-3 text-2xl">🚀</div>
+                    <h4 className="font-bold mb-2">Job Referrals</h4>
+                    <p className="text-sm text-muted-foreground">Direct connection to HRs</p>
+                  </div>
+                </div>
+              </section>
+
+              {/* FAQs */}
+              {course.faqs && (
+                <section>
+                  <h2 className="text-3xl font-bold font-heading mb-8 flex items-center gap-3">
+                    <CheckCircle className="w-8 h-8 text-green-500" /> Frequently Asked Questions
+                  </h2>
+                  <div className="space-y-4">
+                    <Accordion type="single" collapsible className="w-full space-y-4">
+                      {course.faqs.map((faq, index) => (
+                        <AccordionItem key={index} value={`faq-${index}`} className="glass-card border-white/5 px-6 rounded-xl data-[state=open]:border-cyan-500/30">
+                          <AccordionTrigger className="text-lg font-medium hover:text-cyan-400 text-left hover:no-underline">{faq.question}</AccordionTrigger>
+                          <AccordionContent className="text-muted-foreground text-base pb-4">
+                            {faq.answer}
+                          </AccordionContent>
+                        </AccordionItem>
+                      ))}
+                    </Accordion>
+                  </div>
+                </section>
+              )}
+
+              {/* Lead Form Section */}
+              <section className="glass-card p-8 rounded-3xl border border-white/10 bg-gradient-to-br from-neutral-900 to-black relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
+                <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                  <div>
+                    <h2 className="text-3xl font-bold font-heading mb-4">Still have doubts?</h2>
+                    <p className="text-muted-foreground mb-8 text-lg">
+                      Talk to our academic counselors to get a personalized roadmap for your career.
+                    </p>
+                    <div className="space-y-4">
+                      <div className="flex items-center gap-4">
+                        <div className="w-10 h-10 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400">
+                          <Users className="w-5 h-5" />
+                        </div>
+                        <div>
+                          <p className="font-bold text-white">1:1 Career Counseling</p>
+                          <p className="text-sm text-muted-foreground">Get expert guidance</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-4">
+                        <div className="w-10 h-10 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400">
+                          <Briefcase className="w-5 h-5" />
+                        </div>
+                        <div>
+                          <p className="font-bold text-white">Profile Evaluation</p>
+                          <p className="text-sm text-muted-foreground">Know where you stand</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
+                    <form className="space-y-4">
+                      <div>
+                        <label className="text-sm font-medium text-muted-foreground mb-1 block">Name</label>
+                        <input type="text" className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition-colors" placeholder="Enter your name" />
+                      </div>
+                      <div>
+                        <label className="text-sm font-medium text-muted-foreground mb-1 block">Email</label>
+                        <input type="email" className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition-colors" placeholder="Enter your email" />
+                      </div>
+                      <div>
+                        <label className="text-sm font-medium text-muted-foreground mb-1 block">Phone</label>
+                        <input type="tel" className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition-colors" placeholder="Enter your number" />
+                      </div>
+                      <Button className="w-full h-12 rounded-xl btn-gradient text-white font-bold text-lg mt-2">
+                        Request Callback
+                      </Button>
+                    </form>
+                    <p className="text-xs text-center text-muted-foreground mt-4">
+                      By submitting, you agree to our privacy policy.
+                    </p>
+                  </div>
+                </div>
+              </section>
+
             </div>
           </div>
         </div>

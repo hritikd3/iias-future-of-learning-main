@@ -1,4 +1,4 @@
-import { Brain, Layers, Shield, Zap, Cpu, Globe, Database, Code2 } from "lucide-react"
+import { Brain, Layers, Shield, Zap, Cpu, Globe, Database, Code2, Briefcase, Terminal, Laptop, Rocket } from "lucide-react"
 
 export const courses = [
   {
@@ -30,9 +30,27 @@ export const courses = [
       { module: "Agentic AI", topics: ["LangChain", "LangGraph", "Multi-agent Systems", "Tool Use"] },
       { module: "Production & Deployment", topics: ["MLOps", "Vector Databases", "RAG Systems", "Cloud Deployment"] },
     ],
-    instructor: { name: "Priya Sharma", role: "Head of AI Programs",
-       image: "https://i.pravatar.cc/300?u=priya2" 
-      },
+    instructor: {
+      name: "Priya Sharma", role: "Head of AI Programs",
+      image: "https://i.pravatar.cc/300?u=priya2"
+    },
+    tools: ["Python", "TensorFlow", "PyTorch", "LangChain", "OpenAI API", "HuggingFace", "Pinecone", "Docker"],
+    projects: [
+      { title: "Custom LLM Chatbot", description: "Build a domain-specific chatbot using RAG and fine-tuned models." },
+      { title: "Autonomous Research Agent", description: "Create an agent that can browse the web and summarize research papers." },
+      { title: "Generative Art Platform", description: "Develop a web app that generates images from text prompts using Stable Diffusion." }
+    ],
+    outcomes: [
+      "Mastery of Generative AI architectures",
+      "Ability to build and deploy AI agents",
+      "Proficiency in Prompt Engineering",
+      "Portfolio of production-ready AI apps"
+    ],
+    faqs: [
+      { question: "Do I need prior Python knowledge?", answer: "Yes, basic Python programming knowledge is recommended for this course." },
+      { question: "Is this course suitable for beginners in AI?", answer: "Absolutely! We start from the fundamentals and move to advanced topics." },
+      { question: "Will I get hands-on experience?", answer: "Yes, the course is 70% practical with 10+ industry projects." }
+    ]
   },
   {
     slug: "full-stack-development",
@@ -64,10 +82,27 @@ export const courses = [
       { module: "DevOps & Deployment", topics: ["Git", "Docker", "CI/CD", "AWS/Vercel"] },
     ],
     instructor: {
-       name: "Vikram Singh",
-        role: "Lead Instructor - Full Stack"
-        //  image: "https://i.pravatar.cc/300?u=vikram"
-         },
+      name: "Vikram Singh",
+      role: "Lead Instructor - Full Stack"
+      //  image: "https://i.pravatar.cc/300?u=vikram"
+    },
+    tools: ["React", "Next.js", "Node.js", "MongoDB", "PostgreSQL", "Docker", "AWS", "Git"],
+    projects: [
+      { title: "E-commerce Platform", description: "Full-featured shopping site with cart, payments, and admin dashboard." },
+      { title: "Social Media App", description: "Real-time feed, notifications, and chat functionality using WebSockets." },
+      { title: "Task Management SaaS", description: "Project management tool with drag-and-drop kanban boards." }
+    ],
+    outcomes: [
+      "Build scalable full-stack applications",
+      "Master modern React ecosystem",
+      "Design robust backend APIs",
+      "Deploy to cloud platforms"
+    ],
+    faqs: [
+      { question: "Which stack will be covered?", answer: "We primarily focus on the MERN stack (MongoDB, Express, React, Node.js) with Next.js." },
+      { question: "Do you provide placement support?", answer: "Yes, we have a dedicated placement cell to help you land your dream job." },
+      { question: "Can I do this course part-time?", answer: "detailed schedule options are available, including weekend batches." }
+    ]
   },
   {
     slug: "cyber-security",
@@ -99,6 +134,22 @@ export const courses = [
       { module: "SOC & Incident Response", topics: ["SIEM Tools", "Threat Hunting", "Forensics", "Compliance"] },
     ],
     instructor: { name: "Arjun Mehta", role: "Cyber Security Expert", image: "https://i.pravatar.cc/300?u=arjun" },
+    tools: ["Wireshark", "Metasploit", "Nmap", "Burp Suite", "Linux", "Python", "Splunk", "Kali"],
+    projects: [
+      { title: "Network Penetration Test", description: "Simulate a real-world attack on a corporate network and generate a report." },
+      { title: "Web App Vulnerability Scanner", description: "Build a custom scanner to detect SQLi and XSS vulnerabilities." },
+      { title: "Secure Chat Application", description: "Develop an E2E encrypted messaging app." }
+    ],
+    outcomes: [
+      "Conduct professional penetration tests",
+      "Secure network infrastructures",
+      "Analyze and respond to cyber incidents",
+      "Understand ethical hacking methodologies"
+    ],
+    faqs: [
+      { question: "Do I need to know coding?", answer: "Basic scripting knowledge (Python/Bash) is helpful but not mandatory." },
+      { question: "Is certification included?", answer: "Yes, you will receive an industry-recognized certificate upon completion." }
+    ]
   },
   {
     slug: "data-science",
@@ -130,6 +181,22 @@ export const courses = [
       { module: "Business Analytics", topics: ["KPIs", "Dashboards", "Reporting", "Decision Making"] },
     ],
     instructor: { name: "Neha Gupta", role: "Data Science Lead", image: "https://i.pravatar.cc/300?u=neha" },
+    tools: ["Python", "Pandas", "NumPy", "Scikit-learn", "Matplotlib", "Tableau", "SQL", "Jupyter"],
+    projects: [
+      { title: "Customer Churn Prediction", description: "Predict which customers are likely to leave using classification models." },
+      { title: "Stock Price Forecasting", description: "Time-series analysis to predict future stock trends." },
+      { title: "Recommendation Engine", description: "Build a movie recommendation system using collaborative filtering." }
+    ],
+    outcomes: [
+      "Analyze complex datasets",
+      "Build predictive machine learning models",
+      "Create compelling data visualizations",
+      "Derive actionable business insights"
+    ],
+    faqs: [
+      { question: "What acts as a prerequisite?", answer: "Basic mathematics and logical thinking are sufficient to start." },
+      { question: "What tools do we learn?", answer: "We cover Python, SQL, PowerBI, and various ML libraries." }
+    ]
   },
   {
     slug: "cloud-engineering",
@@ -161,6 +228,22 @@ export const courses = [
       { module: "Cloud Architecture", topics: ["High Availability", "Scalability", "Security", "Cost Management"] },
     ],
     instructor: { name: "Rohit Jain", role: "Cloud Architect", image: "https://i.pravatar.cc/300?u=rohit" },
+    tools: ["AWS", "Azure", "Docker", "Kubernetes", "Terraform", "Ansible", "Jenkins", "Linux"],
+    projects: [
+      { title: "Serverless Microservices", description: "Deploy a scalable microservices architecture on AWS Lambda." },
+      { title: "Kubernetes Cluster Setup", description: "Set up and manage a production-ready K8s cluster." },
+      { title: "CI/CD Pipeline", description: "Automate deployment workflows using Jenkins and GitHub Actions." }
+    ],
+    outcomes: [
+      "Design scalable cloud architectures",
+      "Manage containerized applications",
+      "Implement Infrastructure as Code",
+      "Automate deployment pipelines"
+    ],
+    faqs: [
+      { question: "Do I need to know Linux?", answer: "Yes, Linux proficiency is crucial for cloud engineering, and we cover it in the course." },
+      { question: "is AWS or Azure covered?", answer: "We focus on AWS but also cover multi-cloud concepts applicable to Azure/GCP." }
+    ]
   },
   {
     slug: "ui-ux-design",
@@ -192,6 +275,22 @@ export const courses = [
       { module: "Design Systems", topics: ["Component Libraries", "Style Guides", "Documentation", "Handoff"] },
     ],
     instructor: { name: "Sakshi Reddy", role: "Senior UX Designer", image: "https://i.pravatar.cc/300?u=sakshi" },
+    tools: ["Figma", "Adobe XD", "Sketch", "InVision", "Miro", "Zeplin", "Principle", "Photoshop"],
+    projects: [
+      { title: "Fintech App Redesign", description: "Complete visual overhaul of a banking application focused on UX." },
+      { title: "E-commerce Design System", description: "Create a scalable design system for a retail platform." },
+      { title: "Travel Booking Flow", description: "Optimize the user journey for flight and hotel bookings." }
+    ],
+    outcomes: [
+      "Create user-centered designs",
+      "Build interactive prototypes",
+      "Conduct user research and testing",
+      "Maintain consistent design systems"
+    ],
+    faqs: [
+      { question: "Do I need to be good at drawing?", answer: "No, UI/UX is about problem-solving and logic, not just artistic ability." },
+      { question: "What software will I need?", answer: "We mainly use Figma, which is free to start." }
+    ]
   },
 ]
 
