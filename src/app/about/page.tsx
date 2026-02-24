@@ -150,7 +150,7 @@ export default function AboutPage() {
                 </div>
                 <div className="glass-card p-6 rounded-2xl">
                   <h4 className="text-cyan-400 font-bold mb-2">Contact</h4>
-                  <p className="text-white/80">+91 90982 72955</p>
+                  <p className="text-white/80">+91 9174171579</p>
                   <p className="text-white/80">support@indoreinstitute.in</p>
                 </div>
               </div>

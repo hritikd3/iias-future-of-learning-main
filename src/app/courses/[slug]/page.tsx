@@ -90,9 +90,23 @@ export default function CourseDetailPage({ params }: { params: Promise<{ slug: s
                 <div className="space-y-6">
                   <div className="p-4 rounded-2xl bg-white/5 border border-white/5">
                     <p className="text-sm text-muted-foreground mb-1">Program Fee</p>
-                    <div className="flex items-end gap-2">
-                      <span className="text-3xl font-bold text-white">{course.price}</span>
-                      <span className="text-sm text-cyan-400 mb-1">+ GST</span>
+                    <div className="flex items-center gap-4">
+                      <div className="flex flex-col">
+                        {course.originalPrice && (
+                          <span className="text-sm text-muted-foreground line-through decoration-red-500/50 leading-none mb-1">
+                            {course.originalPrice}
+                          </span>
+                        )}
+                        <div className="flex items-end gap-2">
+                          <span className="text-3xl font-bold text-white leading-none">{course.price}</span>
+                          <span className="text-sm text-cyan-400 mb-0.5">+ GST</span>
+                        </div>
+                      </div>
+                      {course.originalPrice && (
+                        <div className="bg-cyan-500/10 border border-cyan-500/20 px-2 py-1 rounded text-[10px] font-bold text-cyan-400 uppercase tracking-wider">
+                          Limited Offer
+                        </div>
+                      )}
                     </div>
                   </div>
 

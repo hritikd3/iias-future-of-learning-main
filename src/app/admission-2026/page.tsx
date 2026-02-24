@@ -225,7 +225,7 @@ export default function AdmissionPage() {
             <div className="lg:w-1/2 order-2 lg:order-1">
               <div className="grid grid-cols-2 gap-4">
                 <Image
-                  src="https://images.unsplash.com/photo-1551218808-94e220e084d2?q=80&w=1974&auto=format&fit=crop"
+                  src="https://plus.unsplash.com/premium_photo-1693671725924-302f7a2c450b?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Z3Jvd3RofGVufDB8fDB8fHww"
                   alt="Design Class"
                   width={300}
                   height={400}

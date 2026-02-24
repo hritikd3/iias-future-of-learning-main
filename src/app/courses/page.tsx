@@ -196,7 +196,7 @@ export default function CoursesPage() {
               </div>
             </motion.div>
 
-          
+
           </motion.div>
 
           <div id="courses" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -235,14 +235,21 @@ export default function CoursesPage() {
                       </div>
 
                       <div className="mt-auto pt-6 border-t border-white/5">
-                        <div className="flex items-center justify-between text-sm mb-4">
+                        <div className="flex items-center justify-between text-sm mb-6">
                           <div className="flex items-center gap-1.5 text-muted-foreground">
                             <Clock size={16} className="text-cyan-500" />
                             <span>{course.duration}</span>
                           </div>
-                          <div className="flex items-center gap-1.5 text-muted-foreground">
-                            <Trophy size={16} className="text-cyan-500" />
-                            <span>Certification</span>
+                          <div className="text-right">
+                            {course.originalPrice && (
+                              <span className="text-xs text-muted-foreground line-through decoration-red-500/50 block mb-0.5">
+                                {course.originalPrice}
+                              </span>
+                            )}
+                            <div className="flex items-center gap-1 font-bold text-white">
+                              <span className="text-lg">{course.price}</span>
+                              <span className="text-[10px] text-cyan-400">+ GST</span>
+                            </div>
                           </div>
                         </div>
                         <Button className="w-full rounded-xl bg-white/5 hover:bg-cyan-500 hover:text-white border border-white/10 transition-all group-hover:border-cyan-500/50">
@@ -322,31 +329,31 @@ export default function CoursesPage() {
             </div>
           </motion.div>
 
-  <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="mb-20"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold font-heading mb-10 text-center">Frequently Asked Questions</h2>
-              <div className="max-w-3xl mx-auto">
-                <Accordion type="single" collapsible className="w-full space-y-4">
-                  {[
-                    { q: "Who can join these courses?", a: "Our courses are designed for everyone - from beginners with zero coding knowledge to experienced professionals looking to upskill." },
-                    { q: "Do you provide placement assistance?", a: "Yes, we provide 100% placement support including resume building, mock interviews, and direct referrals to our hiring partners." },
-                    { q: "Are the classes live or recorded?", a: "We follow a hybrid model with live instructor-led sessions for doubts and interactive learning, supported by high-quality recorded content." },
-                    { q: "What if I miss a class?", a: "All live sessions are recorded and available in your dashboard for lifetime access." }
-                  ].map((faq, i) => (
-                    <AccordionItem key={i} value={`item-${i}`} className="glass-card border-white/5 px-6 rounded-xl data-[state=open]:border-cyan-500/30">
-                      <AccordionTrigger className="text-lg font-medium hover:text-cyan-400 text-left">{faq.q}</AccordionTrigger>
-                      <AccordionContent className="text-muted-foreground text-base">
-                        {faq.a}
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
-              </div>
-            </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mb-20"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-10 text-center">Frequently Asked Questions</h2>
+            <div className="max-w-3xl mx-auto">
+              <Accordion type="single" collapsible className="w-full space-y-4">
+                {[
+                  { q: "Who can join these courses?", a: "Our courses are designed for everyone - from beginners with zero coding knowledge to experienced professionals looking to upskill." },
+                  { q: "Do you provide placement assistance?", a: "Yes, we provide 100% placement support including resume building, mock interviews, and direct referrals to our hiring partners." },
+                  { q: "Are the classes live or recorded?", a: "We follow a hybrid model with live instructor-led sessions for doubts and interactive learning, supported by high-quality recorded content." },
+                  { q: "What if I miss a class?", a: "All live sessions are recorded and available in your dashboard for lifetime access." }
+                ].map((faq, i) => (
+                  <AccordionItem key={i} value={`item-${i}`} className="glass-card border-white/5 px-6 rounded-xl data-[state=open]:border-cyan-500/30">
+                    <AccordionTrigger className="text-lg font-medium hover:text-cyan-400 text-left">{faq.q}</AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground text-base">
+                      {faq.a}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

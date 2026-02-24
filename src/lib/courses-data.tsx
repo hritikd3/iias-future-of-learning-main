@@ -16,6 +16,7 @@ export const courses = [
     mode: "Hybrid",
     level: "Advanced",
     price: "₹39,999",
+    originalPrice: "₹49,999",
     highlights: [
       "Mastery of Python & SQL for Data Science",
       "Deep Learning & Neural Networks foundation",
@@ -63,6 +64,7 @@ export const courses = [
     mode: "Hybrid",
     level: "Intermediate",
     price: "₹32,999",
+    originalPrice: "₹42,999",
     highlights: [
       "Complete MERN Stack mastery",
       "Real-time application development",
@@ -109,6 +111,7 @@ export const courses = [
     mode: "Hybrid",
     level: "Intermediate",
     price: "₹36,000",
+    originalPrice: "₹45,000",
     highlights: [
       "Hands-on with Kali Linux & Metasploit",
       "Vulnerability Assessment & Penetration Testing (VAPT)",
@@ -155,6 +158,7 @@ export const courses = [
     mode: "Hybrid",
     level: "Advanced",
     price: "₹38,000",
+    originalPrice: "₹48,000",
     highlights: [
       "AWS Solutions Architect curriculum",
       "Containerization with Docker & Kubernetes",
@@ -201,6 +205,7 @@ export const courses = [
     mode: "Hybrid",
     level: "Beginner",
     price: "₹32,000",
+    originalPrice: "₹40,000",
     highlights: [
       "Advanced Excel for Business Analytics",
       "SQL for Data Extraction & Manipulation",
@@ -247,6 +252,7 @@ export const courses = [
     mode: "Hybrid",
     level: "Beginner",
     price: "₹28,000",
+    originalPrice: "₹35,000",
     highlights: [
       "Manual Testing Concepts & Agile/Scrum",
       "Automation with Selenium WebDriver & Java",
@@ -293,6 +299,7 @@ export const courses = [
     mode: "Hybrid",
     level: "Beginner",
     price: "₹28,000",
+    originalPrice: "₹35,000",
     highlights: [
       "Mastery of Figma & Adobe XD",
       "Design Thinking & User Research",
@@ -339,6 +346,7 @@ export const courses = [
     mode: "Hybrid",
     level: "Beginner",
     price: "₹26,000",
+    originalPrice: "₹32,999",
     highlights: [
       "SEO & Content Marketing",
       "Google Ads (Search, Display, Youtube)",
@@ -385,6 +393,7 @@ export const courses = [
     mode: "Hybrid",
     level: "Advanced",
     price: "₹35,000",
+    originalPrice: "₹45,000",
     highlights: [
       "Advanced Prompt Engineering techniques",
       "Building Applications with LLM APIs",
@@ -432,6 +441,7 @@ export const courses = [
     mode: "Hybrid",
     level: "Beginner",
     price: "₹11,999",
+    originalPrice: "₹14,999",
     highlights: [
       "Complete Python Syntax & Logic",
       "Data Structures & Algorithms Basics",
@@ -478,6 +488,7 @@ export const courses = [
     mode: "Hybrid",
     level: "Beginner",
     price: "₹11,999",
+    originalPrice: "₹14,999",
     highlights: [
       "Advanced Formulas (XLOOKUP, IF)",
       "Pivot Tables & Slicers",
@@ -523,6 +534,7 @@ export const courses = [
     mode: "Hybrid",
     level: "Beginner",
     price: "₹17,999",
+    originalPrice: "₹22,999",
     highlights: [
       "SQL Querying from scratch",
       "Data Modeling in Power BI",
@@ -568,6 +580,7 @@ export const courses = [
     mode: "Offline/Hybrid",
     level: "Beginner",
     price: "₹17,999",
+    originalPrice: "₹22,999",
     highlights: [
       "Adobe Premiere Pro Mastery",
       "After Effects Basics",
@@ -613,6 +626,7 @@ export const courses = [
     mode: "Offline/Hybrid",
     level: "Beginner",
     price: "₹21,999",
+    originalPrice: "₹27,999",
     highlights: [
       "Market Structure & Basics",
       "Technical Analysis (RSI, MACD)",
@@ -658,6 +672,7 @@ export const courses = [
     mode: "Classroom/Hybrid",
     level: "Intermediate",
     price: "₹36,999",
+    originalPrice: "₹42,000",
     highlights: [
       "Integrated 1 Month Internship",
       "Google & Meta Ads Mastery",
@@ -693,8 +708,8 @@ export const courses = [
   },
   // --- School Level Programs (11th-12th) ---
   {
-    slug: "data-science-foundation-school",
-    title: "Data Science Foundation (School)",
+    slug: "data-science-foundation-high-school",
+    title: "Data Science Foundation For 11th - 12th Class",
     shortTitle: "DS Foundation",
     description: "For 11th-12th Students. Build a strong base in Python, Analytics, and AI.",
     longDescription: "Start your tech journey early. Learn Python, Data Analysis, and the basics of Machine Learning. Perfect for students targeting engineering or tech careers.",
@@ -705,7 +720,8 @@ export const courses = [
     duration: "4 Months",
     mode: "Offline/Hybrid",
     level: "School Level",
-    price: "₹22,000",
+    price: "₹19,999",
+    originalPrice: "₹28,000",
     highlights: [
       "Python Programming from Basic to Advanced",
       "Excel & Data Analysis Skills",
@@ -738,11 +754,11 @@ export const courses = [
     ]
   },
   {
-    slug: "ai-ml-starter-school",
-    title: "AI & Machine Learning Starter",
+    slug: "ai-ml-starter-high-school",
+    title: "AI & Machine Learning For 11th - 12th Class",
     shortTitle: "AI Starter",
     description: "Advanced Python & AI/ML project-based learning for 11th-12th graders.",
-    longDescription: "Go beyond the school syllabus. Learn Object Oriented Programming, deep dive into Python libraries, and build your first AI Chatbot and ML models.",
+    longDescription: "Go beyond the high school syllabus. Learn Object Oriented Programming, deep dive into Python libraries, and build your first AI Chatbot and ML models.",
     icon: "Brain",
     color: "from-purple-600/20 to-pink-600/20",
     borderColor: "border-purple-600/30",
@@ -750,7 +766,8 @@ export const courses = [
     duration: "4 Months",
     mode: "Offline/Hybrid",
     level: "School Level",
-    price: "₹25,000",
+    price: "₹19,999",
+    originalPrice: "₹32,000",
     highlights: [
       "Advanced Python (OOPs)",
       "Data Visualization with Seaborn",
@@ -774,7 +791,7 @@ export const courses = [
     ],
     outcomes: [
       "Build a portfolio of AI projects",
-      "Master Python beyond school level",
+      "Master Python beyond high school level",
       "Gain early entry into AI field",
       "Critical problem solving skills"
     ],

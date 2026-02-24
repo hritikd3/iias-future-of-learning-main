@@ -46,9 +46,9 @@ export function Footer() {
         <div>
           <h4 className="font-heading font-semibold mb-4 text-cyan-400">Contact</h4>
             <div className="space-y-4 text-sm text-muted-foreground">
-              <a href="tel:+919098272955" className="flex items-center gap-3 hover:text-cyan-400 transition-colors">
+              <a href="tel:+919174171579" className="flex items-center gap-3 hover:text-cyan-400 transition-colors">
                 <Phone size={16} className="text-violet-400" />
-                +91 90982 72955
+                +91 9174171579
               </a>
               <a href="https://www.instagram.com/iias_officials/" target="_blank" className="flex items-center gap-3 hover:text-cyan-400 transition-colors">
                 <Instagram size={16} className="text-violet-400" />
