@@ -10,16 +10,43 @@ import {
   Award,
   Users,
 } from "lucide-react";
+import { sendEnquiryAction } from "@/app/actions";
+import { toast } from "sonner";
 
 export const EnquiryForm = () => {
   const [status, setStatus] = useState<"idle" | "submitting" | "success">(
     "idle"
   );
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    course: "Digital Product Design",
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("submitting");
-    setTimeout(() => setStatus("success"), 1500);
+
+    try {
+      const result = await sendEnquiryAction(formData);
+      if (result.success) {
+        setStatus("success");
+        toast.success("Enquiry sent successfully!");
+      } else {
+        setStatus("idle");
+        toast.error(result.error || "Failed to send enquiry");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      setStatus("idle");
+      toast.error("An unexpected error occurred");
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   return (
@@ -37,6 +64,12 @@ export const EnquiryForm = () => {
           <p className="text-gray-400">
             Our admission counselor will contact you shortly.
           </p>
+          <button
+            onClick={() => setStatus("idle")}
+            className="mt-6 text-blue-400 hover:text-blue-300 text-sm font-medium"
+          >
+            Send another enquiry
+          </button>
         </motion.div>
       ) : (
         <>
@@ -50,7 +83,10 @@ export const EnquiryForm = () => {
               </label>
               <input
                 type="text"
+                name="fullName"
                 required
+                value={formData.fullName}
+                onChange={handleChange}
                 className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-blue-500 transition-colors"
                 placeholder="John Doe"
               />
@@ -61,7 +97,10 @@ export const EnquiryForm = () => {
               </label>
               <input
                 type="email"
+                name="email"
                 required
+                value={formData.email}
+                onChange={handleChange}
                 className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-blue-500 transition-colors"
                 placeholder="john@example.com"
               />
@@ -72,7 +111,10 @@ export const EnquiryForm = () => {
               </label>
               <input
                 type="tel"
+                name="phone"
                 required
+                value={formData.phone}
+                onChange={handleChange}
                 className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-blue-500 transition-colors"
                 placeholder="+91 98765 43210"
               />
@@ -81,20 +123,26 @@ export const EnquiryForm = () => {
               <label className="text-sm font-medium text-gray-400 mb-1 block">
                 Course of Interest
               </label>
-              <select className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-blue-500 transition-colors appearance-none">
-                <option className="bg-gray-900">Digital Product Design</option>
-                <option className="bg-gray-900">
+              <select
+                name="course"
+                value={formData.course}
+                onChange={handleChange}
+                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-blue-500 transition-colors appearance-none scrollbar-hide text-white"
+              >
+                <option className="bg-gray-900" value="Digital Product Design">Digital Product Design</option>
+                <option className="bg-gray-900" value="Fashion Design & Merchandising">
                   Fashion Design & Merchandising
                 </option>
-                <option className="bg-gray-900">
+                <option className="bg-gray-900" value="Full Stack Web Development">
                   Full Stack Web Development
                 </option>
-                <option className="bg-gray-900">AI & Machine Learning</option>
+                <option className="bg-gray-900" value="AI & Machine Learning">AI & Machine Learning</option>
               </select>
             </div>
             <button
+              type="submit"
               disabled={status === "submitting"}
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition-all transform hover:scale-[1.02] active:scale-[0.98]"
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition-all transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {status === "submitting" ? (
                 "Processing..."
