@@ -73,3 +73,71 @@ export async function sendEnquiryAction(formData: {
         return { success: false, error: 'Internal server error' };
     }
 }
+
+export async function sendContactAction(formData: {
+    fullName: string;
+    email: string;
+    course: string;
+    message: string;
+}) {
+    try {
+        const { fullName, email, course, message } = formData;
+        const recipientEmail = process.env.LEAD_RECIPIENT_EMAIL || 'iiasofficials77@gmail.com';
+
+        const { data, error } = await resend.emails.send({
+            from: 'IIAS Contact <onboarding@resend.dev>',
+            to: recipientEmail,
+            subject: `New Message: ${fullName} - ${course}`,
+            html: `
+        <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #eee; padding: 20px; border-radius: 10px;">
+          <h2 style="color: #8b5cf6; border-bottom: 2px solid #8b5cf6; padding-bottom: 10px;">New Contact Message</h2>
+          <p>You have received a new message from the IIAS Contact Form.</p>
+          
+          <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+            <thead>
+              <tr style="background-color: #f5f3ff;">
+                <th style="border: 1px solid #ddd6fe; padding: 12px; text-align: left; color: #6d28d9;">Field</th>
+                <th style="border: 1px solid #ddd6fe; padding: 12px; text-align: left; color: #1e1b4b;">Detail</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="border: 1px solid #ddd6fe; padding: 12px; font-weight: bold; color: #6d28d9;">Full Name</td>
+                <td style="border: 1px solid #ddd6fe; padding: 12px; color: #1e1b4b;">${fullName}</td>
+              </tr>
+              <tr style="background-color: #f5f3ff;">
+                <td style="border: 1px solid #ddd6fe; padding: 12px; font-weight: bold; color: #6d28d9;">Email Address</td>
+                <td style="border: 1px solid #ddd6fe; padding: 12px; color: #1e1b4b;">
+                  <a href="mailto:${email}" style="color: #8b5cf6; text-decoration: none;">${email}</a>
+                </td>
+              </tr>
+              <tr>
+                <td style="border: 1px solid #ddd6fe; padding: 12px; font-weight: bold; color: #6d28d9;">Course of Interest</td>
+                <td style="border: 1px solid #ddd6fe; padding: 12px; color: #1e1b4b;">${course}</td>
+              </tr>
+              <tr style="background-color: #f5f3ff;">
+                <td style="border: 1px solid #ddd6fe; padding: 12px; font-weight: bold; color: #6d28d9;">Message</td>
+                <td style="border: 1px solid #ddd6fe; padding: 12px; color: #1e1b4b; white-space: pre-wrap;">${message}</td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <div style="margin-top: 30px; font-size: 12px; color: #94a3b8; text-align: center;">
+            <p>This message was sent on ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })} (IST)</p>
+            <p>© 2026 Indore Institute of Advance Studies</p>
+          </div>
+        </div>
+      `,
+        });
+
+        if (error) {
+            console.error('Resend Error:', error);
+            return { success: false, error: error.message };
+        }
+
+        return { success: true, data };
+    } catch (err) {
+        console.error('Server Action Error:', err);
+        return { success: false, error: 'Internal server error' };
+    }
+}

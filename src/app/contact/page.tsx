@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { Navbar } from "@/components/Navbar"
 import { Footer } from "@/components/Footer"
-import { Phone, Mail, Instagram, MapPin, Send, Clock, MessageCircle } from "lucide-react"
+import { Phone, Mail, Instagram, MapPin, Send, Clock, MessageCircle, CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -58,15 +58,61 @@ const faqs = [
   },
 ]
 
+import { useState } from "react";
+import { sendContactAction } from "@/app/actions";
+import { toast } from "sonner";
+
 export default function ContactPage() {
+  const [status, setStatus] = useState<"idle" | "submitting" | "success">("idle");
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    course: "",
+    message: "",
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("submitting");
+
+    try {
+      const result = await sendContactAction({
+        fullName: formData.fullName,
+        email: formData.email,
+        course: formData.course,
+        message: `Phone: ${formData.phone}\n\n${formData.message}`,
+      });
+
+      if (result.success) {
+        setStatus("success");
+        toast.success("Message sent successfully!");
+        setFormData({ fullName: "", email: "", phone: "", course: "", message: "" });
+        setTimeout(() => setStatus("idle"), 3000);
+      } else {
+        setStatus("idle");
+        toast.error(result.error || "Failed to send message");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      setStatus("idle");
+      toast.error("An unexpected error occurred");
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
   return (
     <main className="min-h-screen text-white relative">
       <div className="gradient-blur-1" />
       <div className="gradient-blur-2" />
       <div className="gradient-blur-3" />
-      
+
       <Navbar />
-      
+
       <section className="pt-32 pb-20 px-6 relative z-10">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -82,7 +128,7 @@ export default function ContactPage() {
               Let's Start Your <span className="text-gradient">Tech Journey</span>
             </h1>
             <p className="text-lg text-muted-foreground">
-              Have questions about our courses or want to schedule a campus visit? 
+              Have questions about our courses or want to schedule a campus visit?
               We're here to help you take the first step towards your dream career.
             </p>
           </motion.div>
@@ -92,57 +138,111 @@ export default function ContactPage() {
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
-              className="glass-card rounded-3xl p-8 md:p-10"
+              className="glass-card rounded-3xl p-8 md:p-10 min-h-[500px] flex flex-col justify-center"
             >
-              <div className="flex items-center gap-3 mb-8">
-                <MessageCircle className="w-6 h-6 text-cyan-400" />
-                <h2 className="text-2xl font-bold font-heading">Send us a Message</h2>
-              </div>
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-muted-foreground">Full Name</label>
-                    <Input 
-                      placeholder="John Doe" 
-                      className="bg-white/5 border-white/10 h-12 rounded-xl focus:border-cyan-400/50" 
-                    />
+              {status === "success" ? (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="text-center py-8"
+                >
+                  <div className="w-20 h-20 bg-cyan-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <CheckCircle2 className="text-cyan-400 w-10 h-10" />
                   </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-muted-foreground">Email Address</label>
-                    <Input 
-                      placeholder="john@example.com" 
-                      className="bg-white/5 border-white/10 h-12 rounded-xl focus:border-cyan-400/50" 
-                    />
+                  <h3 className="text-2xl font-bold mb-2">Message Sent!</h3>
+                  <p className="text-muted-foreground mb-8">
+                    Thank you for reaching out. We have received your message and will get back to you shortly.
+                  </p>
+                  <button
+                    onClick={() => setStatus("idle")}
+                    className="text-cyan-400 hover:text-cyan-300 transition-colors font-medium"
+                  >
+                    Send another message
+                  </button>
+                </motion.div>
+              ) : (
+                <>
+                  <div className="flex items-center gap-3 mb-8">
+                    <MessageCircle className="w-6 h-6 text-cyan-400" />
+                    <h2 className="text-2xl font-bold font-heading">Send us a Message</h2>
                   </div>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-muted-foreground">Phone Number</label>
-                    <Input 
-                      placeholder="+91 98765 43210" 
-                      className="bg-white/5 border-white/10 h-12 rounded-xl focus:border-cyan-400/50" 
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-muted-foreground">Course of Interest</label>
-                    <Input 
-                      placeholder="e.g. AI & Gen AI" 
-                      className="bg-white/5 border-white/10 h-12 rounded-xl focus:border-cyan-400/50" 
-                    />
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-muted-foreground">Your Message</label>
-                  <Textarea 
-                    placeholder="Tell us about your learning goals..." 
-                    className="bg-white/5 border-white/10 min-h-[150px] rounded-xl focus:border-cyan-400/50" 
-                  />
-                </div>
-                <Button size="lg" className="w-full h-14 rounded-xl btn-gradient text-white text-lg group">
-                  Send Message
-                  <Send size={18} className="ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                </Button>
-              </form>
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label className="text-sm font-medium text-muted-foreground">Full Name</label>
+                        <Input
+                          name="fullName"
+                          required
+                          value={formData.fullName}
+                          onChange={handleChange}
+                          placeholder="John Doe"
+                          className="bg-white/5 border-white/10 h-12 rounded-xl focus:border-cyan-400/50"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-sm font-medium text-muted-foreground">Email Address</label>
+                        <Input
+                          type="email"
+                          name="email"
+                          required
+                          value={formData.email}
+                          onChange={handleChange}
+                          placeholder="john@example.com"
+                          className="bg-white/5 border-white/10 h-12 rounded-xl focus:border-cyan-400/50"
+                        />
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label className="text-sm font-medium text-muted-foreground">Phone Number</label>
+                        <Input
+                          name="phone"
+                          required
+                          value={formData.phone}
+                          onChange={handleChange}
+                          placeholder="+91 98765 43210"
+                          className="bg-white/5 border-white/10 h-12 rounded-xl focus:border-cyan-400/50"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-sm font-medium text-muted-foreground">Course of Interest</label>
+                        <Input
+                          name="course"
+                          required
+                          value={formData.course}
+                          onChange={handleChange}
+                          placeholder="e.g. AI & Gen AI"
+                          className="bg-white/5 border-white/10 h-12 rounded-xl focus:border-cyan-400/50"
+                        />
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium text-muted-foreground">Your Message</label>
+                      <Textarea
+                        name="message"
+                        required
+                        value={formData.message}
+                        onChange={handleChange}
+                        placeholder="Tell us about your learning goals..."
+                        className="bg-white/5 border-white/10 min-h-[150px] rounded-xl focus:border-cyan-400/50"
+                      />
+                    </div>
+                    <Button
+                      type="submit"
+                      disabled={status === "submitting"}
+                      size="lg"
+                      className="w-full h-14 rounded-xl btn-gradient text-white text-lg group disabled:opacity-50"
+                    >
+                      {status === "submitting" ? "Sending..." : (
+                        <>
+                          Send Message
+                          <Send size={18} className="ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                        </>
+                      )}
+                    </Button>
+                  </form>
+                </>
+              )}
             </motion.div>
 
             <motion.div
@@ -180,10 +280,10 @@ export default function ContactPage() {
               >
                 <h3 className="font-bold text-lg mb-4">Find Us</h3>
                 <div className="aspect-video rounded-xl overflow-hidden bg-white/5">
-                  <iframe 
+                  <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235013.70717921398!2d75.69905224999999!3d22.7242379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fcad1b410ddb%3A0x96ec4da356240f4!2sIndore%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1703123456789!5m2!1sen!2sin"
-                    width="100%" 
-                    height="100%" 
+                    width="100%"
+                    height="100%"
                     style={{ border: 0, filter: "invert(90%) hue-rotate(180deg)" }}
                     allowFullScreen
                     loading="lazy"
