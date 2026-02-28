@@ -18,7 +18,7 @@ import Image from "next/image";
 
 const stats = [
   { label: "Placement Rate", value: "98%" },
-  { label: "Industry Partners", value: "200+" },
+  { label: "Industry Partners", value: "100+" },
   { label: "Average Package", value: "8.5 LPA" },
   { label: "Student Satisfaction", value: "4.9/5" },
 ];

@@ -10,7 +10,7 @@ import gsap from "gsap"
 const stats = [
   { value: "2500+", label: "Students Trained" },
   { value: "95%", label: "Placement Rate" },
-  { value: "50+", label: "Industry Partners" },
+  { value: "100+", label: "Industry Partners" },
   { value: "7+", label: "Years Experience" },
 ]
 
