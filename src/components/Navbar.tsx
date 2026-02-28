@@ -46,11 +46,10 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium transition-colors ${
-                pathname === link.href
+              className={`text-sm font-medium transition-colors ${pathname === link.href
                   ? "text-cyan-400"
                   : "text-white/70 hover:text-white"
-              }`}
+                }`}
             >
               {link.label}
             </Link>
@@ -66,11 +65,12 @@ export function Navbar() {
               Book Demo
             </Button>
           </Link>
-          <Link href="/courses">
-            <Button className="rounded-full btn-gradient text-white">
-              Enroll Now
-            </Button>
-          </Link>
+          <Button
+            onClick={() => window.dispatchEvent(new CustomEvent("toggle-enquiry-popup"))}
+            className="rounded-full btn-gradient text-white"
+          >
+            Enroll Now
+          </Button>
           <button
             className="md:hidden p-2 hover:bg-white/10 rounded-lg transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -94,11 +94,10 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`text-lg font-medium py-2 transition-colors ${
-                    pathname === link.href
+                  className={`text-lg font-medium py-2 transition-colors ${pathname === link.href
                       ? "text-cyan-400"
                       : "text-white/70 hover:text-white"
-                  }`}
+                    }`}
                 >
                   {link.label}
                 </Link>

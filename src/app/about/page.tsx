@@ -42,9 +42,9 @@ export default function AboutPage() {
       <div className="gradient-blur-1" />
       <div className="gradient-blur-2" />
       <div className="gradient-blur-3" />
-      
+
       <Navbar />
-      
+
       <section className="pt-32 pb-20 px-6 relative z-10">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -60,7 +60,7 @@ export default function AboutPage() {
               Shaping the <span className="text-gradient">Future of Tech</span> Education
             </h1>
             <p className="text-lg text-muted-foreground">
-              Indore Institute of Advance Studies (IIAS) is a premier technology training institute dedicated to 
+              Indore Institute of Advance Studies (IIAS) is a premier technology training institute dedicated to
               bridging the gap between academic knowledge and industry requirements.
             </p>
           </motion.div>
@@ -116,7 +116,7 @@ export default function AboutPage() {
                 Born in the heart of Indore, IIAS started with a simple but powerful observation: while tech was evolving rapidly, education remained stagnant. We saw brilliant students struggling to find work because they lacked the practical, real-world skills that modern companies actually needed.
               </p>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                What began as a small classroom project has now grown into Indore's leading hub for advanced tech studies. We don't just teach code; we build careers, foster innovation, and create a community of creators who are ready to lead the global tech revolution from right here in Madhya Pradesh.
+                What began as a small classroom project has now grown into Indore's leading hub for advanced tech studies. We don't just teach code; we build careers, foster innovation, and create a community of creators who are ready to lead the tech revolution from right here in Madhya Pradesh.
               </p>
             </motion.div>
           </div>
@@ -142,7 +142,7 @@ export default function AboutPage() {
                   "With over 15 years of leadership experience in hospitality, business development, sales, marketing, and education management, Varsha Kingrani founded the institute with a vision to bridge the gap between education and employment in Madhya Pradesh."
                 </p>
               </div>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
                 <div className="glass-card p-6 rounded-2xl">
                   <h4 className="text-cyan-400 font-bold mb-2">Location</h4>
@@ -155,7 +155,7 @@ export default function AboutPage() {
                 </div>
               </div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -192,11 +192,11 @@ export default function AboutPage() {
                 Our <span className="text-gradient-purple">Mission</span>
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                To empower aspiring tech professionals with cutting-edge skills in AI, Full-Stack Development, 
+                To empower aspiring tech professionals with cutting-edge skills in AI, Full-Stack Development,
                 and Cyber Security through industry-aligned curriculum and hands-on training.
               </p>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                We believe that everyone deserves access to quality tech education. Our mission is to democratize 
+                We believe that everyone deserves access to quality tech education. Our mission is to democratize
                 learning and create opportunities for students from all backgrounds to excel in the tech industry.
               </p>
             </motion.div>

@@ -11,6 +11,7 @@ import {
   Users,
 } from "lucide-react";
 import { sendEnquiryAction } from "@/app/actions";
+import { courses } from "@/lib/courses-data";
 import { toast } from "sonner";
 
 export const EnquiryForm = () => {
@@ -21,7 +22,7 @@ export const EnquiryForm = () => {
     fullName: "",
     email: "",
     phone: "",
-    course: "Digital Product Design",
+    course: courses[0]?.title || "Digital Product Design",
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -129,14 +130,11 @@ export const EnquiryForm = () => {
                 onChange={handleChange}
                 className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-blue-500 transition-colors appearance-none scrollbar-hide text-white"
               >
-                <option className="bg-gray-900" value="Digital Product Design">Digital Product Design</option>
-                <option className="bg-gray-900" value="Fashion Design & Merchandising">
-                  Fashion Design & Merchandising
-                </option>
-                <option className="bg-gray-900" value="Full Stack Web Development">
-                  Full Stack Web Development
-                </option>
-                <option className="bg-gray-900" value="AI & Machine Learning">AI & Machine Learning</option>
+                {courses.map((course) => (
+                  <option key={course.slug} className="bg-gray-900" value={course.title}>
+                    {course.title}
+                  </option>
+                ))}
               </select>
             </div>
             <button

@@ -29,7 +29,7 @@ export const Partners = () => {
         >
           <h2 className="text-3xl font-bold mb-4">Our Partners</h2>
           <p className="text-gray-400">
-            Collaborating with global tech giants to bring you the best in
+            Collaborating with leading tech giants to bring you the best in
             education.
           </p>
         </motion.div>

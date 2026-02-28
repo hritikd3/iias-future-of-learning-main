@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { EnquiryForm } from "@/components/EnquiryForm" ;
+import { EnquiryForm } from "@/components/EnquiryForm";
 import {
   CheckCircle2,
   Award,
@@ -79,7 +79,7 @@ export default function AdmissionPage() {
                 </h1>
                 <p className="text-xl text-gray-400 mb-8 max-w-2xl leading-relaxed">
                   Unlock your creative potential with our industry-led
-                  certificate programs. Master the skills that global brands
+                  certificate programs. Master the skills that top brands
                   demand and launch your career in weeks, not years.
                 </p>
 
@@ -103,7 +103,7 @@ export default function AdmissionPage() {
                       <p className="text-sm text-gray-400 uppercase tracking-tighter">
                         Certified
                       </p>
-                      <p className="font-bold text-lg">Global Recognition</p>
+                      <p className="font-bold text-lg">Industry Recognized</p>
                     </div>
                   </div>
                 </div>
@@ -185,7 +185,7 @@ export default function AdmissionPage() {
                     <GraduationCap className="w-5 h-5" /> Project-based Learning
                   </li>
                   <li className="flex items-center gap-3">
-                    <Award className="w-5 h-5" /> Global Certifications
+                    <Award className="w-5 h-5" /> Professional Certifications
                   </li>
                 </ul>
                 <button className="mt-10 bg-white text-blue-600 px-6 py-3 rounded-xl font-bold hover:bg-gray-100 transition-colors">
@@ -225,15 +225,15 @@ export default function AdmissionPage() {
             <div className="lg:w-1/2 order-2 lg:order-1">
               <div className="grid grid-cols-2 gap-4">
                 <Image
-                  src="https://plus.unsplash.com/premium_photo-1693671725924-302f7a2c450b?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Z3Jvd3RofGVufDB8fDB8fHww"
-                  alt="Design Class"
+                  src="https://resourcifi-media-assets.s3.amazonaws.com/dev-images/ChatGPT-Image-Feb-6-2026-10_34_39-AM.png"
+                  alt="Modern Tech Learning"
                   width={300}
                   height={400}
                   className="rounded-2xl"
                 />
                 <Image
-                  src="https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1964&auto=format&fit=crop"
-                  alt="Work in Progress"
+                  src="https://edutech.global/wp-content/uploads/2025/08/BLOG-19_HERO-IMAGE.png"
+                  alt="Tech Collaboration"
                   width={300}
                   height={400}
                   className="rounded-2xl translate-y-8"
@@ -247,7 +247,7 @@ export default function AdmissionPage() {
               <div className="space-y-6">
                 {[
                   {
-                    title: "Global Exposure",
+                    title: "Industry Exposure",
                     desc: "Collaborations with international design houses and tech giants.",
                   },
                   {

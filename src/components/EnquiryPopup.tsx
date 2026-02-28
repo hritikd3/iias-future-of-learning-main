@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Send, CheckCircle2 } from "lucide-react";
 import { sendEnquiryAction } from "@/app/actions";
+import { courses } from "@/lib/courses-data";
 import { toast } from "sonner";
 
 export const EnquiryPopup = () => {
@@ -13,7 +14,7 @@ export const EnquiryPopup = () => {
         fullName: "",
         email: "",
         phone: "",
-        course: "Digital Product Design",
+        course: courses[0]?.title || "Digital Product Design",
     });
 
     useEffect(() => {
@@ -28,6 +29,12 @@ export const EnquiryPopup = () => {
 
             return () => clearTimeout(timer);
         }
+    }, []);
+
+    useEffect(() => {
+        const handleToggle = () => setIsOpen((prev) => !prev);
+        window.addEventListener("toggle-enquiry-popup", handleToggle);
+        return () => window.removeEventListener("toggle-enquiry-popup", handleToggle);
     }, []);
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -106,7 +113,7 @@ export const EnquiryPopup = () => {
                                         <span className="inline-block px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-4">
                                             Limited Seats Available
                                         </span>
-                                       <h3 className="text-3xl font-bold font-heading text-white">
+                                        <h3 className="text-3xl font-bold font-heading text-white">
                                             Register Your <span className="text-gradient">Interest</span>
                                         </h3>
                                         <p className="text-gray-400 mt-2">
@@ -153,14 +160,11 @@ export const EnquiryPopup = () => {
                                                 onChange={handleChange}
                                                 className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 outline-none focus:border-blue-500/50 transition-colors text-white appearance-none"
                                             >
-                                                <option className="bg-gray-900" value="Digital Product Design">Digital Product Design</option>
-                                                <option className="bg-gray-900" value="Fashion Design & Merchandising">
-                                                    Fashion Design & Merchandising
-                                                </option>
-                                                <option className="bg-gray-900" value="Full Stack Web Development">
-                                                    Full Stack Web Development
-                                                </option>
-                                                <option className="bg-gray-900" value="AI & Machine Learning">AI & Machine Learning</option>
+                                                {courses.map((course) => (
+                                                    <option key={course.slug} className="bg-gray-900" value={course.title}>
+                                                        {course.title}
+                                                    </option>
+                                                ))}
                                             </select>
                                         </div>
                                         <button

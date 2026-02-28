@@ -8,10 +8,10 @@ import { ArrowRight, Phone } from "lucide-react"
 import gsap from "gsap"
 
 const stats = [
-  { value: "5000+", label: "Students Trained" },
+  { value: "2500+", label: "Students Trained" },
   { value: "95%", label: "Placement Rate" },
   { value: "50+", label: "Industry Partners" },
-  { value: "15+", label: "Years Experience" },
+  { value: "7+", label: "Years Experience" },
 ]
 
 export function Hero() {

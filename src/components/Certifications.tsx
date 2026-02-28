@@ -1,14 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Award, Briefcase, Globe, Rocket } from "lucide-react";
+import { Award, Briefcase, ShieldCheck, Rocket } from "lucide-react";
 
 const points = [
   {
-    title: "Global Recognition",
+    title: "Industry Excellence",
     description:
-      "Get certified by world-renowned institutions and gain an edge in the global job market.",
-    icon: Globe,
+      "Join a curriculum developed by experts with years of experience in leading tech organizations.",
+    icon: ShieldCheck,
     color: "from-blue-500/20 to-cyan-500/20",
   },
   {
@@ -48,7 +48,7 @@ export const Certifications = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-white/80 to-white/60">
             Unlock exclusive Career Opportunities{" "}
             <br className="hidden md:block" />
-            with global certifications
+            with industry certifications
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             Our certification programs are designed to transform your career and

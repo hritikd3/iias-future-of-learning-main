@@ -6,59 +6,40 @@ import { CheckCircle2 } from "lucide-react";
 import Image from "next/image";
 
 const designPartners = [
-  "Tata Elxsi",
-  "IDEO India",
-  "Accenture Song",
-  "Landor & Fitch",
-  "Ogilvy India",
-  "Wunderman Thompson",
-  "Leo Burnett",
-  "Dentsu Creative",
-  "Design Factory India",
-  "Raymond Design Studio",
-  "Aditya Birla Fashion & Retail Ltd.",
-  "Myntra Design Team",
-  "Ajio Design & Styling",
-  "Pepperfry Design Studio",
-  "Urban Ladder Design Team",
-  "Nykaa Creative Studio",
-  "Titan Design Studio",
-  "Reliance Retail Design",
-  "Shoppers Stop Visual Merchandising",
-  "Studio Lotus",
-  "Elephant Design",
-  "Lollypop Design Studio",
-  "FoxyMoron",
-  "Future Group Creative",
-  "Red Chillies Creative Services",
+  { name: "Tata Elxsi", logo: "https://companieslogo.com/img/orig/TATAELXSI.NS-a2e870d8.png?t=1720244494" },
+  { name: "IDEO", logo: "https://upload.wikimedia.org/wikipedia/commons/d/d1/IDEO_logo_2.png" },
+  { name: "Accenture", logo: "https://upload.wikimedia.org/wikipedia/commons/c/cd/Accenture.svg" },
+  { name: "Ogilvy", logo: "https://chorasbelcanto.lt/wp-content/uploads/2019/07/OGILVY-logo-BLACK.png" },
+  { name: "Landor & Fitch", logo: "https://ifdalivestorage.blob.core.windows.net/user-uploads/profile/156990/55e007fd-246c-43fd-906d-53c0d13fa8c5/landorandfitch_logo_stacked_rgb-03.png" },
+  { name: "Leo Burnett", logo: "https://www.clipartmax.com/png/middle/326-3267969_leo-burnett-leo-burnett-agency-logo-png.png" },
+  { name: "Dentsu", logo: "https://cdn.freebiesupply.com/logos/large/2x/dentsu-logo-black-and-white.png" },
+  { name: "Nykaa", logo: "https://companieslogo.com/img/orig/NYKAA.NS_BIG.D-e000fe47.png?t=1752557278" },
+  { name: "Myntra", logo: "https://www.trueblueadvisory.com/wp-content/uploads/2022/03/myntra-logo-big.png" },
+  { name: "Titan", logo: "https://1000logos.net/wp-content/uploads/2023/10/Titan-Logo.png" },
 ];
 
 const techPartners = [
-  "Tata Consultancy Services (TCS)",
-  "Infosys",
-  "Wipro",
-  "Accenture",
-  "IBM India",
-  "Capgemini",
-  "Cognizant",
-  "Tech Mahindra",
-  "HCL Technologies",
-  "Deloitte Digital",
-  "PwC Technology Services",
-  "Amazon Web Services",
-  "Google Partner Network",
-  "Microsoft Partner Network",
-  "Flipkart Tech",
-  "Paytm",
-  "PhonePe",
-  "Zomato Tech",
-  "Swiggy Instamart Tech",
-  "Razorpay",
-  "Freshworks",
-  "Zoho Corporation",
-  "Byju’s Technology Team",
-  "Practo",
-  "Infosys BPM Digital",
+  { name: "TCS", logo: "https://i.logos-download.com/113971/29583-s1280-794fe2ef6d1227957d3a7ac75642f397.png/Tata_Consultancy_Services_Logo_2020-s1280.png" },
+  { name: "Infosys", logo: "https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg" },
+  { name: "Wipro", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Wipro_Primary_Logo_Color_RGB.svg" },
+  { name: "Accenture", logo: "https://upload.wikimedia.org/wikipedia/commons/c/cd/Accenture.svg" },
+  { name: "IBM", logo: "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" },
+  { name: "Capgemini", logo: "https://companieslogo.com/img/orig/CAP.PA_BIG.D-679c041e.png?t=1720244491" },
+  { name: "Cognizant", logo: "https://upload.wikimedia.org/wikipedia/commons/4/43/Cognizant_logo_2022.svg" },
+  { name: "Deloitte", logo: "https://res.cloudinary.com/dew98my68/image/upload/v1772194232/deloitte_wii5hp.avif" },
+  { name: "AWS", logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" },
+  { name: "Google", logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" },
+  { name: "Microsoft", logo: "https://static1.squarespace.com/static/5bde0f00c3c16aa95581e2e2/62b4cb1add9d257dd43bb03d/62b6550832964d7946698af3/1656116508390/microsoft+logo+white.png?format=1500w" },
+  { name: "Siemens", logo: "https://res.cloudinary.com/dew98my68/image/upload/v1772194240/siemens_gupgqw.avif" },
+  { name: "Paytm", logo: "https://upload.wikimedia.org/wikipedia/commons/2/24/Paytm_Logo_%28standalone%29.svg" },
+  { name: "Honeywell", logo: "https://res.cloudinary.com/dew98my68/image/upload/v1772194234/honeywell_dhag7x.avif" },
+  { name: "Sequoia", logo: "https://res.cloudinary.com/dew98my68/image/upload/v1772194240/sequoia_irekqw.avif" },
+  { name: "Practo", logo: "https://res.cloudinary.com/dew98my68/image/upload/v1772194240/practo_gz0dz6.avif" },
+  { name: "Qualcomm", logo: "https://res.cloudinary.com/dew98my68/image/upload/v1772194240/qualcomm_wbjlj6.avif" },
+  { name: "Freshworks", logo: "https://res.cloudinary.com/dew98my68/image/upload/v1772194233/freshworks_fjlmf9.avif" },
+  { name: "Zoho", logo: "https://www.zoho.com/branding/images/monocrome-white.png" },
+  { name: "Cred", logo: "https://res.cloudinary.com/dew98my68/image/upload/v1772194232/credclub_exxuui.avif" },
+
 ];
 
 export const PlacementNetwork = () => {
@@ -143,50 +124,72 @@ export const PlacementNetwork = () => {
         </div>
 
         {/* Partners Marquees */}
-        <div className="space-y-12">
-          <motion.h2
+        <div className="space-y-16">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-4xl md:text-5xl font-bold font-heading text-center mx-auto"
+            transition={{ duration: 0.6 }}
+            className="text-center"
           >
-            Our <span className="text-gradient">Partners</span>
-          </motion.h2>
-          <div>
-            <h3 className="text-center text-sm font-bold uppercase tracking-[0.3em] text-white/30 mb-8">
-              🎨 Design Industry Partners
-            </h3>
-            <Marquee gradient={false} speed={40} pauseOnHover={true}>
-              {designPartners.map((partner, i) => (
-                <div
-                  key={i}
-                  className="mx-8 text-xl md:text-2xl font-semibold text-white/40 hover:text-white transition-colors cursor-default"
-                >
-                  {partner}
-                </div>
-              ))}
-            </Marquee>
-          </div>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 font-heading">
+              Our <span className="text-gradient">Hiring Network</span>
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Collaborating with 200+ top industry leaders to provide exceptional placement and internship opportunities.
+            </p>
+          </motion.div>
 
-          <div>
-            <h3 className="text-center text-sm font-bold uppercase tracking-[0.3em] text-white/30 mb-8">
-              💻 Technology & Digital Partners
-            </h3>
-            <Marquee
-              gradient={false}
-              speed={35}
-              direction="right"
-              pauseOnHover={true}
-            >
-              {techPartners.map((partner, i) => (
-                <div
-                  key={i}
-                  className="mx-8 text-xl md:text-2xl font-semibold text-white/40 hover:text-white transition-colors cursor-default"
+          <div className="relative group">
+            {/* Edge Fades */}
+            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-center text-[10px] font-bold uppercase tracking-[0.5em] text-blue-500/50 mb-8">
+                  Design & Creative Partners
+                </h3>
+                <Marquee gradient={false} speed={50} pauseOnHover={true}>
+                  {designPartners.map((partner, i) => (
+                    <div
+                      key={i}
+                      className="mx-12 px-4 flex items-center justify-center grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                    >
+                      <img
+                        src={partner.logo}
+                        alt={partner.name}
+                        className="h-10 md:h-12 w-auto object-contain brightness-0 invert"
+                      />
+                    </div>
+                  ))}
+                </Marquee>
+              </div>
+
+              <div>
+                <h3 className="text-center text-[10px] font-bold uppercase tracking-[0.5em] text-purple-500/50 mb-8">
+                  Technology & Digital Corporate Network
+                </h3>
+                <Marquee
+                  gradient={false}
+                  speed={45}
+                  direction="right"
+                  pauseOnHover={true}
                 >
-                  {partner}
-                </div>
-              ))}
-            </Marquee>
+                  {techPartners.map((partner, i) => (
+                    <div
+                      key={i}
+                      className="mx-12 px-4 flex items-center justify-center grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                    >
+                      <img
+                        src={partner.logo}
+                        alt={partner.name}
+                        className="h-10 md:h-12 w-auto object-contain brightness-0 invert"
+                      />
+                    </div>
+                  ))}
+                </Marquee>
+              </div>
+            </div>
           </div>
         </div>
       </div>
