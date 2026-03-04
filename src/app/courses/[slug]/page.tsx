@@ -69,10 +69,24 @@ export default function CourseDetailPage({ params }: { params: Promise<{ slug: s
                 </p>
 
                 <div className="flex flex-wrap gap-4">
-                  <Button size="lg" className="h-14 px-8 rounded-full btn-gradient text-white text-lg">
+                  <Button
+                    size="lg"
+                    className="h-14 px-8 rounded-full btn-gradient text-white text-lg"
+                    onClick={() => window.dispatchEvent(new CustomEvent("toggle-brochure-popup", {
+                      detail: {
+                        course: course.title,
+                        brochureLink: course.brochureLink
+                      }
+                    }))}
+                  >
                     Download Brochure <Download className="ml-2 w-5 h-5" />
                   </Button>
-                  <Button size="lg" variant="outline" className="h-14 px-8 rounded-full border-white/10 hover:bg-white/5 text-lg">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="h-14 px-8 rounded-full border-white/10 hover:bg-white/5 text-lg"
+                    onClick={() => document.getElementById('curriculum')?.scrollIntoView({ behavior: 'smooth' })}
+                  >
                     View Syllabus
                   </Button>
                 </div>
@@ -134,7 +148,10 @@ export default function CourseDetailPage({ params }: { params: Promise<{ slug: s
                     </div>
                   </div>
 
-                  <Button className="w-full h-12 rounded-xl bg-white text-black hover:bg-cyan-50 font-bold text-lg">
+                  <Button
+                    onClick={() => window.dispatchEvent(new CustomEvent("toggle-enquiry-popup", { detail: { course: course.title } }))}
+                    className="w-full h-12 rounded-xl bg-white text-black hover:bg-cyan-50 font-bold text-lg"
+                  >
                     Enroll Now
                   </Button>
                   <p className="text-xs text-center text-muted-foreground">
@@ -187,8 +204,7 @@ export default function CourseDetailPage({ params }: { params: Promise<{ slug: s
                 </div>
               </section>
 
-              {/* Curriculum Accordion */}
-              <section>
+              <section id="curriculum">
                 <h2 className="text-3xl font-bold font-heading mb-8 flex items-center gap-3">
                   <BookOpen className="w-8 h-8 text-purple-500" /> Detailed Curriculum
                 </h2>

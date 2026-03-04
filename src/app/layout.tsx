@@ -4,6 +4,7 @@ import VisualEditsMessenger from "../visual-edits/VisualEditsMessenger";
 import ErrorReporter from "@/components/ErrorReporter";
 import Script from "next/script";
 import { EnquiryPopup } from "@/components/EnquiryPopup";
+import { BrochurePopup } from "@/components/BrochurePopup";
 
 export const metadata: Metadata = {
   title: "Indore Institute of Advance Studies | Master AI, Gen AI & Full-Stack",
@@ -24,6 +25,19 @@ export default function RootLayout({
           strategy="afterInteractive"
           data-orchids-project-id="2ee4ff3e-6049-46a8-8697-cf4fa322924b"
         />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17555496573"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-tag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'AW-17555496573');
+          `}
+        </Script>
         <ErrorReporter />
         <Script
           src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/scripts//route-messenger.js"
@@ -38,6 +52,7 @@ export default function RootLayout({
         {children}
         <VisualEditsMessenger />
         <EnquiryPopup />
+        <BrochurePopup />
       </body>
     </html>
   );

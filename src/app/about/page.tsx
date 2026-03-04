@@ -7,8 +7,8 @@ import { Footer } from "@/components/Footer"
 import { Users, Award, BookOpen, Target, CheckCircle2, Heart, Rocket, Shield } from "lucide-react"
 
 const stats = [
-  { label: "Students Trained", value: "5000+", icon: <Users className="w-6 h-6" /> },
-  { label: "Courses Offered", value: "25+", icon: <BookOpen className="w-6 h-6" /> },
+  { label: "Students Trained", value: "1000+", icon: <Users className="w-6 h-6" /> },
+  { label: "Courses Offered", value: "10+", icon: <BookOpen className="w-6 h-6" /> },
   { label: "Industry Partners", value: "50+", icon: <Award className="w-6 h-6" /> },
   { label: "Placement Rate", value: "95%", icon: <Target className="w-6 h-6" /> },
 ]
@@ -124,7 +124,7 @@ export default function AboutPage() {
       </section>
 
       {/* Founder Section */}
-      <section className="py-20 px-6 relative z-10 bg-violet-500/5">
+      {/* <section className="py-20 px-6 relative z-10 bg-violet-500/5">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -177,7 +177,7 @@ export default function AboutPage() {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="py-20 px-6 relative z-10">
         <div className="max-w-7xl mx-auto">

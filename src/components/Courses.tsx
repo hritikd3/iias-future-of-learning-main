@@ -8,24 +8,24 @@ import { Button } from "@/components/ui/button"
 
 const courses = [
   {
-    slug: "ai-gen-ai-agentic-ai",
-    title: "AI • Gen AI • Agentic AI",
+    slug: "data-science-ai",
+    title: "Data Science & Artificial Intelligence",
     description: "Master the cutting edge of artificial intelligence. From Large Language Models to autonomous agents.",
     icon: <Brain className="w-8 h-8" />,
     gradient: "from-violet-500 to-purple-600",
     tags: ["LLMs", "Neural Networks", "Agents"]
   },
   {
-    slug: "full-stack-development",
-    title: "Full-Stack Development",
+    slug: "full-stack-web-development",
+    title: "Full Stack Web Development",
     description: "Build scalable modern web applications using the latest technologies and industry best practices.",
     icon: <Layers className="w-8 h-8" />,
     gradient: "from-cyan-500 to-teal-600",
     tags: ["React", "Node.js", "Next.js"]
   },
   {
-    slug: "cyber-security",
-    title: "Cyber Security",
+    slug: "cyber-security-ethical-hacking",
+    title: "Cyber Security & Ethical Hacking",
     description: "Protect digital assets and master the art of ethical hacking and secure systems design.",
     icon: <Shield className="w-8 h-8" />,
     gradient: "from-rose-500 to-pink-600",

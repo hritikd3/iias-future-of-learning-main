@@ -48,7 +48,8 @@ export const courses = [
     faqs: [
       { question: "Is this suitable for non-tech backgrounds?", answer: "Yes, we start from the basics of programming and math." },
       { question: "Do you cover Generative AI?", answer: "Yes, a significant portion is dedicated to GenAI and LLMs." }
-    ]
+    ],
+    brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
   },
   {
     slug: "full-stack-web-development",
@@ -95,7 +96,8 @@ export const courses = [
     faqs: [
       { question: "Do I need to know HTML/CSS?", answer: "We cover the basics, but prior familiarity helps." },
       { question: "Is this course project-based?", answer: "Yes, you will build 4+ major projects during the course." }
-    ]
+    ],
+    brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
   },
   {
     slug: "cyber-security-ethical-hacking",
@@ -142,7 +144,8 @@ export const courses = [
     faqs: [
       { question: "Is coding required?", answer: "Basic scripting (Python/Bash) is taught and useful." },
       { question: "What certifications can I take?", answer: "This prepares you for CEH, Security+, and customized internal certs." }
-    ]
+    ],
+    brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
   },
   {
     slug: "cloud-computing-devops",
@@ -189,7 +192,8 @@ export const courses = [
     faqs: [
       { question: "Is Linux needed?", answer: "Yes, Linux proficiency is a core part of the course." },
       { question: "Do we use real AWS accounts?", answer: "Yes, you will work on live AWS environments." }
-    ]
+    ],
+    brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
   },
   {
     slug: "data-analytics-bi",
@@ -236,7 +240,8 @@ export const courses = [
     faqs: [
       { question: "Is math required?", answer: "Basic arithmetic and statistics are sufficient." },
       { question: "What is the avg salary?", answer: "Entry-level roles start around ₹4-6 LPA." }
-    ]
+    ],
+    brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
   },
   {
     slug: "software-testing-automation",
@@ -283,7 +288,8 @@ export const courses = [
     faqs: [
       { question: "Is programming needed?", answer: "Yes, we teach Java from scratch for automation." },
       { question: "What about manual testing?", answer: "We cover manual testing thoroughly before moving to automation." }
-    ]
+    ],
+    brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
   },
   {
     slug: "ui-ux-design",
@@ -330,7 +336,8 @@ export const courses = [
     faqs: [
       { question: "Do I need to draw?", answer: "No, digital design is about logic and empathy, not sketching." },
       { question: "Is this coding related?", answer: "No coding required, though HTML/CSS knowledge helps." }
-    ]
+    ],
+    brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
   },
   {
     slug: "digital-marketing",
@@ -377,7 +384,8 @@ export const courses = [
     faqs: [
       { question: "Is budget included for ads?", answer: "We provide demo budgets for practice campaigns." },
       { question: "Is this updated for 2025?", answer: "Yes, we cover the latest algorithms and AI trends." }
-    ]
+    ],
+    brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
   },
   {
     slug: "generative-ai-advanced",
@@ -424,7 +432,8 @@ export const courses = [
     faqs: [
       { question: "Do I need coding?", answer: "Yes, Python proficiency is required for the development modules." },
       { question: "Is this different from the DS course?", answer: "Yes, this focuses exclusively on GenAI application, not general ML." }
-    ]
+    ],
+    brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
   },
   // --- Short Term Skilling Courses ---
   {
@@ -472,7 +481,8 @@ export const courses = [
     faqs: [
       { question: "I am from non-IT. Can I join?", answer: "Yes! This course is designed specially for beginners." },
       { question: "Is it live or recorded?", answer: "It is a live instructor-led program." }
-    ]
+    ],
+    brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
   },
   {
     slug: "advanced-excel-mis",
@@ -518,7 +528,8 @@ export const courses = [
     ],
     faqs: [
       { question: "Is prior Excel knowledge needed?", answer: "No, we start from the very basics." }
-    ]
+    ],
+    brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
   },
   {
     slug: "power-bi-sql-analytics",
@@ -564,7 +575,8 @@ export const courses = [
     ],
     faqs: [
       { question: "Is this enough for a job?", answer: "Yes, covering SQL and Power BI opens many entry-level analyst roles." }
-    ]
+    ],
+    brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
   },
   {
     slug: "video-editing-content-creation",
@@ -610,7 +622,8 @@ export const courses = [
     ],
     faqs: [
       { question: "Do I need a high-end PC?", answer: "A decent laptop with discrete graphics is recommended." }
-    ]
+    ],
+    brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
   },
   {
     slug: "stock-market-trading",
@@ -656,7 +669,8 @@ export const courses = [
     ],
     faqs: [
       { question: "Is capital required?", answer: "Yes, for live trading, but we practice with virtual money first." }
-    ]
+    ],
+    brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
   },
   {
     slug: "ai-marketing-mastery",
@@ -704,7 +718,8 @@ export const courses = [
     faqs: [
       { question: "What is the salary potential?", answer: "Performance marketers can earn ₹6-12 LPA." },
       { question: "Is the internship guaranteed?", answer: "Yes, included as the final month of the program." }
-    ]
+    ],
+    brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
   },
   // --- School Level Programs (11th-12th) ---
   {
@@ -751,7 +766,8 @@ export const courses = [
     ],
     faqs: [
       { question: "Does it help in Board Exams?", answer: "Yes, Python is part of 11/12th CS/IP syllabus." }
-    ]
+    ],
+    brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
   },
   {
     slug: "ai-ml-starter-high-school",
@@ -797,7 +813,8 @@ export const courses = [
     ],
     faqs: [
       { question: "Is math needed?", answer: "Basic 10th level math is sufficient." }
-    ]
+    ],
+    brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
   }
 ]
 

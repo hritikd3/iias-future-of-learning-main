@@ -32,7 +32,13 @@ export const EnquiryPopup = () => {
     }, []);
 
     useEffect(() => {
-        const handleToggle = () => setIsOpen((prev) => !prev);
+        const handleToggle = (e: Event) => {
+            const customEvent = e as CustomEvent;
+            if (customEvent.detail?.course) {
+                setFormData(prev => ({ ...prev, course: customEvent.detail.course }));
+            }
+            setIsOpen((prev) => !prev);
+        };
         window.addEventListener("toggle-enquiry-popup", handleToggle);
         return () => window.removeEventListener("toggle-enquiry-popup", handleToggle);
     }, []);
