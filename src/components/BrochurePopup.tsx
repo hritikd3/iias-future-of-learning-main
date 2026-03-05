@@ -48,10 +48,9 @@ export const BrochurePopup = () => {
                 setStatus("success");
                 toast.success("Details captured! Opening brochure...");
 
-                // Redirect to brochure link
-                if (brochureLink) {
-                    window.open(brochureLink, "_blank");
-                }
+                // Redirect to WhatsApp as requested
+                const whatsappMsg = encodeURIComponent(`hello i was checking this course ${formData.course} and i want the brochure of it`);
+                window.open(`https://wa.me/919136084736?text=${whatsappMsg}`, "_blank");
 
                 // Auto close after success
                 setTimeout(() => {
@@ -103,9 +102,9 @@ export const BrochurePopup = () => {
                                     <div className="w-24 h-24 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-8">
                                         <CheckCircle2 className="text-green-500 w-12 h-12" />
                                     </div>
-                                    <h3 className="text-3xl font-bold mb-4">Brochure Ready!</h3>
+                                    <h3 className="text-3xl font-bold mb-4">Request Received!</h3>
                                     <p className="text-gray-400 text-lg">
-                                        Your download has been triggered in a new tab.
+                                        Redirecting you to WhatsApp to receive your brochure...
                                     </p>
                                 </motion.div>
                             ) : (
@@ -181,7 +180,7 @@ export const BrochurePopup = () => {
                                             )}
                                         </button>
                                         <p className="text-[11px] text-center text-gray-500 mt-6 uppercase tracking-[0.25em]">
-                                            Curriculum will open instantly
+                                            You will be redirected to WhatsApp
                                         </p>
                                     </form>
                                 </>
