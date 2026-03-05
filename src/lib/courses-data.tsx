@@ -12,6 +12,7 @@ export const courses = [
     color: "from-blue-500/20 to-purple-500/20",
     borderColor: "border-blue-500/30",
     tags: ["Python", "SQL", "Machine Learning", "GenAI", "AWS"],
+    enrollLink: "https://forms.gle/kHCorJ79BidEsLk48",
     duration: "6 Months",
     mode: "Hybrid",
     level: "Advanced",

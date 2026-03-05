@@ -149,7 +149,13 @@ export default function CourseDetailPage({ params }: { params: Promise<{ slug: s
                   </div>
 
                   <Button
-                    onClick={() => window.dispatchEvent(new CustomEvent("toggle-enquiry-popup", { detail: { course: course.title } }))}
+                    onClick={() => {
+                      if (course.enrollLink) {
+                        window.open(course.enrollLink, "_blank");
+                      } else {
+                        window.dispatchEvent(new CustomEvent("toggle-enquiry-popup", { detail: { course: course.title } }));
+                      }
+                    }}
                     className="w-full h-12 rounded-xl bg-white text-black hover:bg-cyan-50 font-bold text-lg"
                   >
                     Enroll Now
