@@ -67,6 +67,9 @@ export async function sendEnquiryAction(formData: {
             return { success: false, error: error.message };
         }
 
+        // Sync to Google Sheets asynchronously
+        syncToGoogleSheets({ fullName, email, phone, course });
+
         return { success: true, data };
     } catch (err) {
         console.error('Server Action Error:', err);
@@ -135,9 +138,32 @@ export async function sendContactAction(formData: {
             return { success: false, error: error.message };
         }
 
+        // Sync to Google Sheets asynchronously
+        syncToGoogleSheets({ fullName, email, course, message });
+
         return { success: true, data };
     } catch (err) {
         console.error('Server Action Error:', err);
         return { success: false, error: 'Internal server error' };
+    }
+}
+
+async function syncToGoogleSheets(data: any) {
+    const webappUrl = process.env.GOOGLE_SHEET_WEBAPP_URL;
+    if (!webappUrl) {
+        console.warn('GOOGLE_SHEET_WEBAPP_URL not set. Skipping sheet sync.');
+        return;
+    }
+
+    try {
+        await fetch(webappUrl, {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+    } catch (err) {
+        console.error('Google Sheets Sync Error:', err);
     }
 }
