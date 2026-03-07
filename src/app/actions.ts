@@ -9,9 +9,10 @@ export async function sendEnquiryAction(formData: {
     email: string;
     phone: string;
     course: string;
+    age: string;
 }) {
     try {
-        const { fullName, email, phone, course } = formData;
+        const { fullName, email, phone, course, age } = formData;
         const recipientEmail = process.env.LEAD_RECIPIENT_EMAIL || 'iiasofficials77@gmail.com';
 
         const { data, error } = await resend.emails.send({
@@ -51,6 +52,10 @@ export async function sendEnquiryAction(formData: {
                 <td style="border: 1px solid #e2e8f0; padding: 12px; font-weight: bold; color: #64748b;">Course</td>
                 <td style="border: 1px solid #e2e8f0; padding: 12px; color: #1e293b;">${course}</td>
               </tr>
+              <tr>
+                <td style="border: 1px solid #e2e8f0; padding: 12px; font-weight: bold; color: #64748b;">Age</td>
+                <td style="border: 1px solid #e2e8f0; padding: 12px; color: #1e293b;">${age}</td>
+              </tr>
             </tbody>
           </table>
           
@@ -68,7 +73,7 @@ export async function sendEnquiryAction(formData: {
         }
 
         // Sync to Google Sheets asynchronously
-        syncToGoogleSheets({ fullName, email, phone, course });
+        syncToGoogleSheets({ fullName, email, phone, course, age });
 
         return { success: true, data };
     } catch (err) {
@@ -82,9 +87,10 @@ export async function sendContactAction(formData: {
     email: string;
     course: string;
     message: string;
+    age: string;
 }) {
     try {
-        const { fullName, email, course, message } = formData;
+        const { fullName, email, course, message, age } = formData;
         const recipientEmail = process.env.LEAD_RECIPIENT_EMAIL || 'iiasofficials77@gmail.com';
 
         const { data, error } = await resend.emails.send({
@@ -122,6 +128,10 @@ export async function sendContactAction(formData: {
                 <td style="border: 1px solid #ddd6fe; padding: 12px; font-weight: bold; color: #6d28d9;">Message</td>
                 <td style="border: 1px solid #ddd6fe; padding: 12px; color: #1e1b4b; white-space: pre-wrap;">${message}</td>
               </tr>
+              <tr>
+                <td style="border: 1px solid #ddd6fe; padding: 12px; font-weight: bold; color: #6d28d9;">Age</td>
+                <td style="border: 1px solid #ddd6fe; padding: 12px; color: #1e1b4b;">${age}</td>
+              </tr>
             </tbody>
           </table>
           
@@ -139,7 +149,7 @@ export async function sendContactAction(formData: {
         }
 
         // Sync to Google Sheets asynchronously
-        syncToGoogleSheets({ fullName, email, course, message });
+        syncToGoogleSheets({ fullName, email, course, message, age });
 
         return { success: true, data };
     } catch (err) {

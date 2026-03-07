@@ -5,6 +5,7 @@ import ErrorReporter from "@/components/ErrorReporter";
 import Script from "next/script";
 import { EnquiryPopup } from "@/components/EnquiryPopup";
 import { BrochurePopup } from "@/components/BrochurePopup";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "Indore Institute of Advance Studies | Master AI, Gen AI & Full-Stack",
@@ -50,6 +51,7 @@ export default function RootLayout({
           data-custom-data='{"appName": "YourApp", "version": "1.0.0", "greeting": "hi"}'
         />
         {children}
+        <Toaster position="top-center" richColors />
         <VisualEditsMessenger />
         <EnquiryPopup />
         <BrochurePopup />

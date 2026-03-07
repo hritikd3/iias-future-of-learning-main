@@ -22,14 +22,15 @@ function doPost(e) {
         var timestamp = new Date();
 
         // Append the data row by row
-        // Format: Timestamp | Full Name | Email Address | Phone Number | Course | Message (if any)
+        // Format: Timestamp | Full Name | Email Address | Phone Number | Course | Message (if any) | Age
         sheet.appendRow([
             timestamp,
             data.fullName || "N/A",
             data.email || "N/A",
             data.phone || "N/A",
             data.course || "N/A",
-            data.message || ""
+            data.message || "",
+            data.age || "N/A"
         ]);
 
         return ContentService.createTextOutput(JSON.stringify({ "status": "success" }))

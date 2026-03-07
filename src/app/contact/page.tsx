@@ -70,10 +70,42 @@ export default function ContactPage() {
     phone: "",
     course: "",
     message: "",
+    age: "",
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Validations
+    const nameRegex = /^[a-zA-Z\s.]+$/;
+    if (!formData.fullName.trim() || formData.fullName.length < 3) {
+      toast.error("Please enter a valid full name");
+      return;
+    }
+
+    if (!nameRegex.test(formData.fullName)) {
+      toast.error("Name should only contain letters and spaces");
+      return;
+    }
+
+    // Sanitize phone
+    const sanitizedPhone = formData.phone.replace(/[\s\-\+\(\)]/g, "").replace(/^91/, "");
+
+    if (sanitizedPhone.length !== 10 || !/^\d+$/.test(sanitizedPhone)) {
+      toast.error("Please enter a valid 10-digit mobile number");
+      return;
+    }
+
+    if (/^(.)\1+$/.test(sanitizedPhone) || sanitizedPhone === "1234567890") {
+      toast.error("Please enter a valid indian mobile number");
+      return;
+    }
+
+    if (!/^[6-9]/.test(sanitizedPhone)) {
+      toast.error("Please enter a valid Indian mobile number starting with 6-9");
+      return;
+    }
+
     setStatus("submitting");
 
     try {
@@ -82,12 +114,13 @@ export default function ContactPage() {
         email: formData.email,
         course: formData.course,
         message: `Phone: ${formData.phone}\n\n${formData.message}`,
+        age: formData.age,
       });
 
       if (result.success) {
         setStatus("success");
         toast.success("Message sent successfully!");
-        setFormData({ fullName: "", email: "", phone: "", course: "", message: "" });
+        setFormData({ fullName: "", email: "", phone: "", course: "", message: "", age: "" });
         setTimeout(() => setStatus("idle"), 3000);
       } else {
         setStatus("idle");
@@ -198,23 +231,38 @@ export default function ContactPage() {
                         <Input
                           name="phone"
                           required
+                          maxLength={10}
                           value={formData.phone}
                           onChange={handleChange}
-                          placeholder="+91 98765 43210"
+                          placeholder="Phone Number (10 digits)"
                           className="bg-white/5 border-white/10 h-12 rounded-xl focus:border-cyan-400/50"
                         />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-muted-foreground">Course of Interest</label>
+                        <label className="text-sm font-medium text-muted-foreground">Your Age</label>
                         <Input
-                          name="course"
+                          type="number"
+                          name="age"
                           required
-                          value={formData.course}
+                          min="1"
+                          max="100"
+                          value={formData.age}
                           onChange={handleChange}
-                          placeholder="e.g. AI & Gen AI"
+                          placeholder="21"
                           className="bg-white/5 border-white/10 h-12 rounded-xl focus:border-cyan-400/50"
                         />
                       </div>
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium text-muted-foreground">Course of Interest</label>
+                      <Input
+                        name="course"
+                        required
+                        value={formData.course}
+                        onChange={handleChange}
+                        placeholder="e.g. AI & Gen AI"
+                        className="bg-white/5 border-white/10 h-12 rounded-xl focus:border-cyan-400/50"
+                      />
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-muted-foreground">Your Message</label>
@@ -321,6 +369,6 @@ export default function ContactPage() {
       </section>
 
       <Footer />
-    </main>
+    </main >
   )
 }

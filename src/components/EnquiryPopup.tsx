@@ -15,6 +15,7 @@ export const EnquiryPopup = () => {
         email: "",
         phone: "",
         course: courses[0]?.title || "Digital Product Design",
+        age: "",
     });
 
     useEffect(() => {
@@ -45,6 +46,37 @@ export const EnquiryPopup = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        // Validations
+        const nameRegex = /^[a-zA-Z\s.]+$/;
+        if (!formData.fullName.trim() || formData.fullName.length < 3) {
+            toast.error("Please enter a valid full name");
+            return;
+        }
+
+        if (!nameRegex.test(formData.fullName)) {
+            toast.error("Name should only contain letters and spaces");
+            return;
+        }
+
+        // Sanitize phone
+        const sanitizedPhone = formData.phone.replace(/[\s\-\+\(\)]/g, "").replace(/^91/, "");
+
+        if (sanitizedPhone.length !== 10 || !/^\d+$/.test(sanitizedPhone)) {
+            toast.error("Please enter a valid 10-digit mobile number");
+            return;
+        }
+
+        if (/^(.)\1+$/.test(sanitizedPhone) || sanitizedPhone === "1234567890") {
+            toast.error("Please enter a valid indian mobile number");
+            return;
+        }
+
+        if (!/^[6-9]/.test(sanitizedPhone)) {
+            toast.error("Please enter a valid Indian mobile number starting with 6-9");
+            return;
+        }
+
         setStatus("submitting");
 
         try {
@@ -153,11 +185,26 @@ export const EnquiryPopup = () => {
                                                 type="tel"
                                                 name="phone"
                                                 required
+                                                maxLength={10}
                                                 value={formData.phone}
                                                 onChange={handleChange}
                                                 className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 outline-none focus:border-blue-500/50 transition-colors text-white"
-                                                placeholder="Phone Number"
+                                                placeholder="Phone Number (10 digits)"
                                             />
+                                        </div>
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <input
+                                                type="number"
+                                                name="age"
+                                                required
+                                                min="1"
+                                                max="100"
+                                                value={formData.age}
+                                                onChange={handleChange}
+                                                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 outline-none focus:border-blue-500/50 transition-colors text-white"
+                                                placeholder="Your Age"
+                                            />
+                                            <div className="hidden md:block"></div>
                                         </div>
                                         <div>
                                             <select

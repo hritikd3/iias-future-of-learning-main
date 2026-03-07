@@ -15,12 +15,45 @@ export function Contact() {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
+    phone: "",
     course: "",
     message: "",
+    age: "",
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Validations
+    const nameRegex = /^[a-zA-Z\s.]+$/;
+    if (!formData.fullName.trim() || formData.fullName.length < 3) {
+      toast.error("Please enter a valid full name");
+      return;
+    }
+
+    if (!nameRegex.test(formData.fullName)) {
+      toast.error("Name should only contain letters and spaces");
+      return;
+    }
+
+    // Sanitize phone
+    const sanitizedPhone = formData.phone.replace(/[\s\-\+\(\)]/g, "").replace(/^91/, "");
+
+    if (sanitizedPhone.length !== 10 || !/^\d+$/.test(sanitizedPhone)) {
+      toast.error("Please enter a valid 10-digit mobile number");
+      return;
+    }
+
+    if (/^(.)\1+$/.test(sanitizedPhone) || sanitizedPhone === "1234567890") {
+      toast.error("Please enter a valid indian mobile number");
+      return;
+    }
+
+    if (!/^[6-9]/.test(sanitizedPhone)) {
+      toast.error("Please enter a valid Indian mobile number starting with 6-9");
+      return;
+    }
+
     setStatus("submitting");
 
     try {
@@ -28,7 +61,7 @@ export function Contact() {
       if (result.success) {
         setStatus("success");
         toast.success("Message sent successfully!");
-        setFormData({ fullName: "", email: "", course: "", message: "" });
+        setFormData({ fullName: "", email: "", phone: "", course: "", message: "", age: "" });
         setTimeout(() => setStatus("idle"), 3000);
       } else {
         setStatus("idle");
@@ -174,6 +207,34 @@ export function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="john@example.com"
+                      className="bg-white/5 border-violet-500/20 h-12 rounded-xl focus:border-cyan-500/50 focus:ring-cyan-500/20"
+                    />
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-white/80">Phone Number</label>
+                    <Input
+                      name="phone"
+                      required
+                      maxLength={10}
+                      value={formData.phone}
+                      onChange={handleChange}
+                      placeholder="9876543210"
+                      className="bg-white/5 border-violet-500/20 h-12 rounded-xl focus:border-cyan-500/50 focus:ring-cyan-500/20"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-white/80">Your Age</label>
+                    <Input
+                      type="number"
+                      name="age"
+                      required
+                      min="1"
+                      max="100"
+                      value={formData.age}
+                      onChange={handleChange}
+                      placeholder="21"
                       className="bg-white/5 border-violet-500/20 h-12 rounded-xl focus:border-cyan-500/50 focus:ring-cyan-500/20"
                     />
                   </div>

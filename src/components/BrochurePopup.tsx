@@ -15,6 +15,7 @@ export const BrochurePopup = () => {
         email: "",
         phone: "",
         course: courses[0]?.title || "Digital Product Design",
+        age: "",
     });
     const [brochureLink, setBrochureLink] = useState("");
 
@@ -35,6 +36,37 @@ export const BrochurePopup = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        // Validations
+        const nameRegex = /^[a-zA-Z\s.]+$/;
+        if (!formData.fullName.trim() || formData.fullName.length < 3) {
+            toast.error("Please enter a valid full name");
+            return;
+        }
+
+        if (!nameRegex.test(formData.fullName)) {
+            toast.error("Name should only contain letters and spaces");
+            return;
+        }
+
+        // Sanitize phone
+        const sanitizedPhone = formData.phone.replace(/[\s\-\+\(\)]/g, "").replace(/^91/, "");
+
+        if (sanitizedPhone.length !== 10 || !/^\d+$/.test(sanitizedPhone)) {
+            toast.error("Please enter a valid 10-digit mobile number");
+            return;
+        }
+
+        if (/^(.)\1+$/.test(sanitizedPhone) || sanitizedPhone === "1234567890") {
+            toast.error("Please enter a valid indian mobile number");
+            return;
+        }
+
+        if (!/^[6-9]/.test(sanitizedPhone)) {
+            toast.error("Please enter a valid Indian mobile number starting with 6-9");
+            return;
+        }
+
         setStatus("submitting");
 
         try {
@@ -145,10 +177,22 @@ export const BrochurePopup = () => {
                                                 type="tel"
                                                 name="phone"
                                                 required
+                                                maxLength={10}
                                                 value={formData.phone}
                                                 onChange={handleChange}
                                                 className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 outline-none focus:border-blue-500/50 transition-colors text-white text-lg placeholder:text-gray-600"
-                                                placeholder="Phone Number"
+                                                placeholder="Phone Number (10 digits)"
+                                            />
+                                            <input
+                                                type="number"
+                                                name="age"
+                                                required
+                                                min="1"
+                                                max="100"
+                                                value={formData.age}
+                                                onChange={handleChange}
+                                                className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 outline-none focus:border-blue-500/50 transition-colors text-white text-lg placeholder:text-gray-600"
+                                                placeholder="Your Age"
                                             />
                                             {/* Hidden course select to maintain logic but show consistency */}
                                             <div className="hidden">
@@ -179,9 +223,9 @@ export const BrochurePopup = () => {
                                                 </>
                                             )}
                                         </button>
-                                        <p className="text-[11px] text-center text-gray-500 mt-6 uppercase tracking-[0.25em]">
+                                        {/* <p className="text-[11px] text-center text-gray-500 mt-6 uppercase tracking-[0.25em]">
                                             You will be redirected to WhatsApp
-                                        </p>
+                                        </p> */}
                                     </form>
                                 </>
                             )}
