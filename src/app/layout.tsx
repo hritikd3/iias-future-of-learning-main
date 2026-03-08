@@ -5,6 +5,7 @@ import ErrorReporter from "@/components/ErrorReporter";
 import Script from "next/script";
 import { EnquiryPopup } from "@/components/EnquiryPopup";
 import { BrochurePopup } from "@/components/BrochurePopup";
+import { ChatBot } from "@/components/ChatBot";
 import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
@@ -55,6 +56,7 @@ export default function RootLayout({
         <VisualEditsMessenger />
         <EnquiryPopup />
         <BrochurePopup />
+        <ChatBot />
       </body>
     </html>
   );
