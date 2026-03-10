@@ -28,15 +28,16 @@ export default function RootLayout({
           data-orchids-project-id="2ee4ff3e-6049-46a8-8697-cf4fa322924b"
         />
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-17555496573"
+          src="https://www.googletagmanager.com/gtag/js?id=G-MSLDR85ZK1"
           strategy="afterInteractive"
         />
-        <Script id="google-ads-tag" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
+            gtag('config', 'G-MSLDR85ZK1');
             gtag('config', 'AW-17555496573');
           `}
         </Script>
