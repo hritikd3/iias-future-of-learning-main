@@ -27,14 +27,15 @@ export const courses = [
       "100% Placement Assistance"
     ],
     curriculum: [
-      { module: "Core Python & SQL", topics: ["Python Syntax", "Data Structures", "SQL Queries", "Database Design"] },
-      { module: "Data Analysis & Viz", topics: ["Pandas", "NumPy", "Matplotlib", "Seaborn"] },
-      { module: "Machine Learning", topics: ["Regression", "Classification", "Clustering", "Scikit-Learn"] },
-      { module: "Deep Learning & AI", topics: ["Neural Networks", "TensorFlow/PyTorch", "CNNs", "RNNs"] },
-      { module: "Generative AI", topics: ["LLMs", "RAG", "Prompt Engineering", "AI Agents"] },
+      { module: "Core Python & SQL", topics: ["Python Syntax", "SQL Queries"] },
+      { module: "Data Manupulation & Analysis", topics: ["Pandas", "NumPy"] },
+      { module: "Machine Learning & Model", topics: ["NLP", "Regression","Classification", "Scikit-Learn"] },
+      { module: "Data Visualization", topics: ["Matplotlib", "Seaborn", "Tableau"] },
+      { module: "Generative AI Ai Assistants", topics: ["ChatGPT", "Gemini","AI Agents"] },
+      { module: "Workflow Automation", topics: ["Jupyter Notebook", "Google Colab", "NotebookLM"] },
     ],
     instructor: { name: "Dr. Ananya Rao", role: "AI Research Lead", image: "https://i.pravatar.cc/300?u=ananya" },
-    tools: ["Python", "SQL", "TensorFlow", "PyTorch", "AWS", "GitHub", "Jupyter", "Docker"],
+    tools: ["Python", "SQL", "TensorFlow", "PyTorch", "NumPy", "Pandas", "Matplotlib", "Seaborn", "Tableau", "Jupyter", "Google Colab", "NotebookLM"],
     projects: [
       { title: "Predictive Analytics Model", description: "Build a model to predict housing prices or customer churn." },
       { title: "GenAI Chatbot", description: "Create a custom chatbot using RAG and open-source LLMs." },
@@ -556,9 +557,8 @@ export const courses = [
       "Capstone Project"
     ],
     curriculum: [
-      { module: "SQL Mastery", topics: ["SELECT", "Joins", "Aggregations", "Subqueries"] },
-      { module: "Power BI Basics", topics: ["Interface", "Data Loading", "Transformations"] },
-      { module: "DAX & Modeling", topics: ["Calculated Columns", "Measures", "Relationships"] },
+      { module: "SQL Mastery", topics: ["SELECT", "Joins", "Windows", "DDL", "DML", "DCL", "DQL","Delimiters","Case"] },
+      { module: "Power BI", topics: ["Graph","Pattern","Power Query","Data Modeling"] },
       { module: "Business Analytics", topics: ["Sales Analysis", "Customer Insights", "Storytelling"] },
     ],
     instructor: { name: "Rajiv Menon", role: "BI Developer", image: "https://i.pravatar.cc/300?u=rajiv" },
