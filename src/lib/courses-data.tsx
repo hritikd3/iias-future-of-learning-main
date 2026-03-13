@@ -66,7 +66,7 @@ export const courses = [
     duration: "6 Months",
     mode: "Hybrid",
     level: "Intermediate",
-    price: "₹32,999",
+    price: "₹27,999",
     originalPrice: "₹42,999",
     highlights: [
       "Complete MERN Stack mastery",
@@ -114,7 +114,7 @@ export const courses = [
     duration: "6 Months",
     mode: "Hybrid",
     level: "Intermediate",
-    price: "₹36,000",
+    price: "₹35,999",
     originalPrice: "₹45,000",
     highlights: [
       "Hands-on with Kali Linux & Metasploit",
@@ -162,7 +162,7 @@ export const courses = [
     duration: "6 Months",
     mode: "Hybrid",
     level: "Advanced",
-    price: "₹38,000",
+    price: "₹35,999",
     originalPrice: "₹48,000",
     highlights: [
       "AWS Solutions Architect curriculum",
@@ -210,7 +210,7 @@ export const courses = [
     duration: "5 Months",
     mode: "Hybrid",
     level: "Beginner",
-    price: "₹32,000",
+    price: "₹32,999",
     originalPrice: "₹40,000",
     highlights: [
       "Advanced Excel for Business Analytics",
@@ -222,9 +222,11 @@ export const courses = [
     ],
     curriculum: [
       { module: "Excel Mastery", topics: ["Advanced Formulas", "Pivot Tables", "VBA Basics", "Data Cleaning"] },
-      { module: "SQL for Analytics", topics: ["Joins", "Subqueries", "Window Functions", "Normalization"] },
-      { module: "Business Intelligence", topics: ["Power BI DAX", "Tableau Viz", "Data Modeling", "Reporting"] },
-      { module: "Python for Analysts", topics: ["Pandas Basics", "Data Wrangling", "Matplotlib Viz"] },
+      { module: "SQL for Analytics", topics: ["Joins", "Subqueries", "Window Functions", "Normalization", "DML", "DCL", "DQL","Delimiters","Case"] },
+      { module: "Business Intelligence", topics: ["Power BI DAX", "Tableau Viz", "Data Modeling", "Reporting", "Interactive Dashboards","Insights Generation", "Story Telling"] },
+      { module: "Python for Analysts", topics: ["Pandas Basics", "Data Preprocessing", "Matplotlib Viz", "NumPy","Pandas","Seaborn"] },
+      { module: "Basic Statistics", topics: ["Probability","Basic Statistics","Mean","Median","Mode","Standard Deviation","Variance","Correlation","Regression", "Regression Analysis"] },
+      { module: "Capsule Projects", topics: ["EDA","Dashboarding","Reporting","SQL Project"] },
     ],
     instructor: { name: "Priya Malik", role: "Senior Data Analyst", image: "https://i.pravatar.cc/300?u=priya" },
     tools: ["Excel", "SQL", "Power BI", "Tableau", "Python", "Jupyter"],
@@ -306,8 +308,8 @@ export const courses = [
     duration: "4 Months",
     mode: "Hybrid",
     level: "Beginner",
-    price: "₹28,000",
-    originalPrice: "₹35,000",
+    price: "₹27,999",
+    originalPrice: "₹34,999",
     highlights: [
       "Mastery of Figma & Adobe XD",
       "Design Thinking & User Research",
@@ -354,7 +356,7 @@ export const courses = [
     duration: "4 Months",
     mode: "Hybrid",
     level: "Beginner",
-    price: "₹26,000",
+    price: "₹25,999",
     originalPrice: "₹32,999",
     highlights: [
       "SEO & Content Marketing",
@@ -558,7 +560,7 @@ export const courses = [
     ],
     curriculum: [
       { module: "SQL Mastery", topics: ["SELECT", "Joins", "Windows", "DDL", "DML", "DCL", "DQL","Delimiters","Case"] },
-      { module: "Power BI", topics: ["Graph","Pattern","Power Query","Data Modeling"] },
+      { module: "Power BI", topics: ["Graph","Pattern","Power Query","Data Modeling", "DAX", "Interactive Dashboards","Insights Generation"] },
       { module: "Business Analytics", topics: ["Sales Analysis", "Customer Insights", "Storytelling"] },
     ],
     instructor: { name: "Rajiv Menon", role: "BI Developer", image: "https://i.pravatar.cc/300?u=rajiv" },
@@ -737,7 +739,7 @@ export const courses = [
     mode: "Offline/Hybrid",
     level: "School Level",
     price: "₹19,999",
-    originalPrice: "₹28,000",
+    originalPrice: "₹27,999",
     highlights: [
       "Python Programming from Basic to Advanced",
       "Excel & Data Analysis Skills",
