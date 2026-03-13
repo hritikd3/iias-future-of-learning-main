@@ -39,28 +39,12 @@ const contactInfo = [
   },
 ]
 
-const faqs = [
-  {
-    question: "What are the eligibility criteria for courses?",
-    answer: "Most of our courses are open to graduates and working professionals. Some advanced courses may require basic programming knowledge."
-  },
-  {
-    question: "Do you provide placement assistance?",
-    answer: "Yes! We have a dedicated placement cell with 95%+ placement rate. We partner with 50+ companies across India."
-  },
-  {
-    question: "Are there any EMI options available?",
-    answer: "Yes, we offer flexible EMI options with 0% interest for most courses. Contact us for detailed payment plans."
-  },
-  {
-    question: "What is the batch size?",
-    answer: "We maintain small batch sizes of 15-20 students to ensure personalized attention and better learning outcomes."
-  },
-]
+const faqs = globalFAQs;
 
 import { useState } from "react";
 import { sendContactAction } from "@/app/actions";
 import { toast } from "sonner";
+import { globalFAQs } from "@/lib/faq-data";
 
 export default function ContactPage() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success">("idle");

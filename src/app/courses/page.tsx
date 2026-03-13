@@ -14,6 +14,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { globalFAQs } from "@/lib/faq-data"
 
 const mentors = [
   {
@@ -338,16 +339,11 @@ export default function CoursesPage() {
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-10 text-center">Frequently Asked Questions</h2>
             <div className="max-w-3xl mx-auto">
               <Accordion type="single" collapsible className="w-full space-y-4">
-                {[
-                  { q: "Who can join these courses?", a: "Our courses are designed for everyone - from beginners with zero coding knowledge to experienced professionals looking to upskill." },
-                  { q: "Do you provide placement assistance?", a: "Yes, we provide 100% placement support including resume building, mock interviews, and direct referrals to our hiring partners." },
-                  { q: "Are the classes live or recorded?", a: "We follow a hybrid model with live instructor-led sessions for doubts and interactive learning, supported by high-quality recorded content." },
-                  { q: "What if I miss a class?", a: "All live sessions are recorded and available in your dashboard for lifetime access." }
-                ].map((faq, i) => (
+                {globalFAQs.map((faq, i) => (
                   <AccordionItem key={i} value={`item-${i}`} className="glass-card border-white/5 px-6 rounded-xl data-[state=open]:border-cyan-500/30">
-                    <AccordionTrigger className="text-lg font-medium hover:text-cyan-400 text-left">{faq.q}</AccordionTrigger>
+                    <AccordionTrigger className="text-lg font-medium hover:text-cyan-400 text-left">{faq.question}</AccordionTrigger>
                     <AccordionContent className="text-muted-foreground text-base">
-                      {faq.a}
+                      {faq.answer}
                     </AccordionContent>
                   </AccordionItem>
                 ))}

@@ -510,10 +510,10 @@ export const courses = [
       "Corporate Case Studies"
     ],
     curriculum: [
-      { module: "Excel Foundations", topics: ["Formatting", "Formulas", "VLOOKUP/HLOOKUP", "Conditional Formatting"] },
-      { module: "Data Management", topics: ["Power Query Basics", "Data Cleaning", "Validation"] },
-      { module: "Reporting & Dashboards", topics: ["Pivot Charts", "KPI Dashboards", "Interactive Reports"] },
-      { module: "MIS Automation", topics: ["Macros Basics", "Monthly Reports", "Budgeting"] },
+      { module: "Excel Foundations", topics: ["Formatting", "Formulas", "VLOOKUP/HLOOKUP/XLOOKUP", "Conditional Formatting", "Date & Time Functions"] },
+      { module: "Data Management", topics: ["Power Query Advanced", "Data Cleaning", "Validation" , "ETL Process", "Power Pivot"] },
+      { module: "Reporting & Dashboards", topics: ["Pivot Charts", "KPI Dashboards", "Interactive Reports" ,"Data Connection"] },
+      { module: "MIS Automation", topics: ["Macros", "Monthly Reports", "Budgeting"] },
     ],
     instructor: { name: "Sneha Gupta", role: "MIS Expert", image: "https://i.pravatar.cc/300?u=sneha" },
     tools: ["Microsoft Excel", "Google Sheets"],

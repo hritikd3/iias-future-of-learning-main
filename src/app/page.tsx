@@ -8,6 +8,7 @@ import { Certifications } from "@/components/Certifications";
 import { PlacementNetwork } from "@/components/PlacementNetwork";
 import { Testimonials } from "@/components/Testimonials";
 import { Contact } from "@/components/Contact";
+import { FAQ } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
 
 const ThreeBackground = dynamic(
@@ -31,6 +32,7 @@ export default function Home() {
       <Certifications />
       <PlacementNetwork />
       <Testimonials />
+      <FAQ />
       <Contact />
       <Footer />
     </main>
