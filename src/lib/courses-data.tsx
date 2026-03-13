@@ -245,54 +245,54 @@ export const courses = [
     ],
     brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
   },
-  {
-    slug: "software-testing-automation",
-    title: "Software Testing & Automation",
-    shortTitle: "Software Testing",
-    description: "Master Manual and Automation Testing with Selenium, Java, and API Testing.",
-    longDescription: "ensure software quality and reliability. Learn manual testing methodologies and master automation using Selenium WebDriver, Java, and API testing frameworks.",
-    icon: "Bug",
-    color: "from-pink-500/20 to-rose-500/20",
-    borderColor: "border-pink-500/30",
-    tags: ["Selenium", "Java", "Manual Testing", "JIRA", "API Testing"],
-    duration: "4 Months",
-    mode: "Hybrid",
-    level: "Beginner",
-    price: "₹28,000",
-    originalPrice: "₹35,000",
-    highlights: [
-      "Manual Testing Concepts & Agile/Scrum",
-      "Automation with Selenium WebDriver & Java",
-      "API Testing with Postman & RestAssured",
-      "Defect Tracking with JIRA",
-      "TestNG & Cucumber Frameworks",
-      "Live Project Testing"
-    ],
-    curriculum: [
-      { module: "Manual Testing", topics: ["SDLC/STLC", "Test Cases", "Defect Lifecycle", "Agile Methodology"] },
-      { module: "Core Java for Testers", topics: ["OOPs", "Collections", "Exception Handling", "File I/O"] },
-      { module: "Automation Testing", topics: ["Selenium WebDriver", "Locators", "Waits", "Page Object Model"] },
-      { module: "API & Frameworks", topics: ["RestAssured", "Postman", "TestNG", "Maven", "Jenkins Basics"] },
-    ],
-    instructor: { name: "Amit Sharma", role: "QA Lead", image: "https://i.pravatar.cc/300?u=amit" },
-    tools: ["Selenium", "Java", "JIRA", "Postman", "Eclipse", "TestNG", "Git"],
-    projects: [
-      { title: "E-commerce Website Testing", description: "End-to-end automation of a shopping cart flow." },
-      { title: "API Test Suite", description: "Automated verification of REST endpoints using RestAssured." },
-      { title: "Bug Reporting Workflow", description: "Simulated defect lifecycle management in JIRA." }
-    ],
-    outcomes: [
-      "Become a QA Engineer or Automation Tester",
-      "Design robust test automation frameworks",
-      "Expertise in API and Web Testing",
-      "Understanding of CI/CD integration"
-    ],
-    faqs: [
-      { question: "Is programming needed?", answer: "Yes, we teach Java from scratch for automation." },
-      { question: "What about manual testing?", answer: "We cover manual testing thoroughly before moving to automation." }
-    ],
-    brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
-  },
+  // {
+  //   slug: "software-testing-automation",
+  //   title: "Software Testing & Automation",
+  //   shortTitle: "Software Testing",
+  //   description: "Master Manual and Automation Testing with Selenium, Java, and API Testing.",
+  //   longDescription: "ensure software quality and reliability. Learn manual testing methodologies and master automation using Selenium WebDriver, Java, and API testing frameworks.",
+  //   icon: "Bug",
+  //   color: "from-pink-500/20 to-rose-500/20",
+  //   borderColor: "border-pink-500/30",
+  //   tags: ["Selenium", "Java", "Manual Testing", "JIRA", "API Testing"],
+  //   duration: "4 Months",
+  //   mode: "Hybrid",
+  //   level: "Beginner",
+  //   price: "₹28,000",
+  //   originalPrice: "₹35,000",
+  //   highlights: [
+  //     "Manual Testing Concepts & Agile/Scrum",
+  //     "Automation with Selenium WebDriver & Java",
+  //     "API Testing with Postman & RestAssured",
+  //     "Defect Tracking with JIRA",
+  //     "TestNG & Cucumber Frameworks",
+  //     "Live Project Testing"
+  //   ],
+  //   curriculum: [
+  //     { module: "Manual Testing", topics: ["SDLC/STLC", "Test Cases", "Defect Lifecycle", "Agile Methodology"] },
+  //     { module: "Core Java for Testers", topics: ["OOPs", "Collections", "Exception Handling", "File I/O"] },
+  //     { module: "Automation Testing", topics: ["Selenium WebDriver", "Locators", "Waits", "Page Object Model"] },
+  //     { module: "API & Frameworks", topics: ["RestAssured", "Postman", "TestNG", "Maven", "Jenkins Basics"] },
+  //   ],
+  //   instructor: { name: "Amit Sharma", role: "QA Lead", image: "https://i.pravatar.cc/300?u=amit" },
+  //   tools: ["Selenium", "Java", "JIRA", "Postman", "Eclipse", "TestNG", "Git"],
+  //   projects: [
+  //     { title: "E-commerce Website Testing", description: "End-to-end automation of a shopping cart flow." },
+  //     { title: "API Test Suite", description: "Automated verification of REST endpoints using RestAssured." },
+  //     { title: "Bug Reporting Workflow", description: "Simulated defect lifecycle management in JIRA." }
+  //   ],
+  //   outcomes: [
+  //     "Become a QA Engineer or Automation Tester",
+  //     "Design robust test automation frameworks",
+  //     "Expertise in API and Web Testing",
+  //     "Understanding of CI/CD integration"
+  //   ],
+  //   faqs: [
+  //     { question: "Is programming needed?", answer: "Yes, we teach Java from scratch for automation." },
+  //     { question: "What about manual testing?", answer: "We cover manual testing thoroughly before moving to automation." }
+  //   ],
+  //   brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
+  // },
   {
     slug: "ui-ux-design",
     title: "UI/UX & Product Design",
@@ -626,53 +626,53 @@ export const courses = [
     ],
     brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
   },
-  {
-    slug: "stock-market-trading",
-    title: "Stock Market & Algorithmic Trading",
-    shortTitle: "Stock Trading",
-    description: "Learn Trading with Risk Management. Technical Analysis & Algo Trading.",
-    longDescription: "Understand the financial markets. Learn technical analysis, chart patterns, risk management, and getting started with algorithmic trading strategies.",
-    icon: "TrendingUp",
-    color: "from-emerald-400/20 to-teal-400/20",
-    borderColor: "border-emerald-400/30",
-    tags: ["Trading", "Technical Analysis", "Algo Trading", "Finance"],
-    duration: "3 Months",
-    mode: "Offline/Hybrid",
-    level: "Beginner",
-    price: "₹21,999",
-    originalPrice: "₹27,999",
-    highlights: [
-      "Market Structure & Basics",
-      "Technical Analysis (RSI, MACD)",
-      "Candlestick Patterns & Price Action",
-      "Risk Management Psychology",
-      "Intro to Algorithmic Trading",
-      "Live Market Sessions"
-    ],
-    curriculum: [
-      { module: "Market Foundations", topics: ["Equity", "Derivatives", "Indices", "Brokers"] },
-      { module: "Technical Analysis", topics: ["Support/Resistance", "Indicators", "Trendlines"] },
-      { module: "Trading Strategy", topics: ["Intraday vs Swing", "Breakouts", "Position Sizing"] },
-      { module: "Algo Introduction", topics: ["Backtesting", "Automation Basics", "Trading Bots"] },
-    ],
-    instructor: { name: "Harsh Dalal", role: "Technical Analyst", image: "https://i.pravatar.cc/300?u=harsh" },
-    tools: ["TradingView", "Excel", "Sensibull", "Streak"],
-    projects: [
-      { title: "Strategy Backtesting Report", description: "Analyze performance of a strategy over 6 months." },
-      { title: "Trading Journal", description: "Document and analyze 20 live trades." },
-      { title: "Algo Blueprint", description: "Design a logic flow for an automated trade setup." }
-    ],
-    outcomes: [
-      "Trade confidently in stock markets",
-      "Manage financial risk effectively",
-      "Understand algorithmic trading potential",
-      "Build a secondary income stream"
-    ],
-    faqs: [
-      { question: "Is capital required?", answer: "Yes, for live trading, but we practice with virtual money first." }
-    ],
-    brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
-  },
+  // {
+  //   slug: "stock-market-trading",
+  //   title: "Stock Market & Algorithmic Trading",
+  //   shortTitle: "Stock Trading",
+  //   description: "Learn Trading with Risk Management. Technical Analysis & Algo Trading.",
+  //   longDescription: "Understand the financial markets. Learn technical analysis, chart patterns, risk management, and getting started with algorithmic trading strategies.",
+  //   icon: "TrendingUp",
+  //   color: "from-emerald-400/20 to-teal-400/20",
+  //   borderColor: "border-emerald-400/30",
+  //   tags: ["Trading", "Technical Analysis", "Algo Trading", "Finance"],
+  //   duration: "3 Months",
+  //   mode: "Offline/Hybrid",
+  //   level: "Beginner",
+  //   price: "₹21,999",
+  //   originalPrice: "₹27,999",
+  //   highlights: [
+  //     "Market Structure & Basics",
+  //     "Technical Analysis (RSI, MACD)",
+  //     "Candlestick Patterns & Price Action",
+  //     "Risk Management Psychology",
+  //     "Intro to Algorithmic Trading",
+  //     "Live Market Sessions"
+  //   ],
+  //   curriculum: [
+  //     { module: "Market Foundations", topics: ["Equity", "Derivatives", "Indices", "Brokers"] },
+  //     { module: "Technical Analysis", topics: ["Support/Resistance", "Indicators", "Trendlines"] },
+  //     { module: "Trading Strategy", topics: ["Intraday vs Swing", "Breakouts", "Position Sizing"] },
+  //     { module: "Algo Introduction", topics: ["Backtesting", "Automation Basics", "Trading Bots"] },
+  //   ],
+  //   instructor: { name: "Harsh Dalal", role: "Technical Analyst", image: "https://i.pravatar.cc/300?u=harsh" },
+  //   tools: ["TradingView", "Excel", "Sensibull", "Streak"],
+  //   projects: [
+  //     { title: "Strategy Backtesting Report", description: "Analyze performance of a strategy over 6 months." },
+  //     { title: "Trading Journal", description: "Document and analyze 20 live trades." },
+  //     { title: "Algo Blueprint", description: "Design a logic flow for an automated trade setup." }
+  //   ],
+  //   outcomes: [
+  //     "Trade confidently in stock markets",
+  //     "Manage financial risk effectively",
+  //     "Understand algorithmic trading potential",
+  //     "Build a secondary income stream"
+  //   ],
+  //   faqs: [
+  //     { question: "Is capital required?", answer: "Yes, for live trading, but we practice with virtual money first." }
+  //   ],
+  //   brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
+  // },
   {
     slug: "ai-marketing-mastery",
     title: "AI Marketing & GenAI Mastery",
