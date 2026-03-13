@@ -404,7 +404,7 @@ export const courses = [
     duration: "4 Months",
     mode: "Hybrid",
     level: "Advanced",
-    price: "₹35,000",
+    price: "₹34,999",
     originalPrice: "₹45,000",
     highlights: [
       "Advanced Prompt Engineering techniques",
