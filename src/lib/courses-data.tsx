@@ -29,9 +29,9 @@ export const courses = [
     curriculum: [
       { module: "Core Python & SQL", topics: ["Python Syntax", "SQL Queries"] },
       { module: "Data Manupulation & Analysis", topics: ["Pandas", "NumPy"] },
-      { module: "Machine Learning & Model", topics: ["NLP", "Regression","Classification", "Scikit-Learn"] },
+      { module: "Machine Learning & Model", topics: ["NLP", "Regression", "Classification", "Scikit-Learn"] },
       { module: "Data Visualization", topics: ["Matplotlib", "Seaborn", "Tableau"] },
-      { module: "Generative AI Ai Assistants", topics: ["ChatGPT", "Gemini","AI Agents"] },
+      { module: "Generative AI Ai Assistants", topics: ["ChatGPT", "Gemini", "AI Agents"] },
       { module: "Workflow Automation", topics: ["Jupyter Notebook", "Google Colab", "NotebookLM"] },
     ],
     instructor: { name: "Dr. Ananya Rao", role: "AI Research Lead", image: "https://i.pravatar.cc/300?u=ananya" },
@@ -48,8 +48,10 @@ export const courses = [
       "Secure high-paying roles in tech"
     ],
     faqs: [
-      { question: "Is this suitable for non-tech backgrounds?", answer: "Yes, we start from the basics of programming and math." },
-      { question: "Do you cover Generative AI?", answer: "Yes, a significant portion is dedicated to GenAI and LLMs." }
+      { question: "Is this suitable for non-tech backgrounds?", answer: "Absolutely! We start from the absolute basics of programming and math. Nearly 40% of our successful alumni come from non-technical backgrounds like commerce and arts." },
+      { question: "Do you cover Generative AI and LLMs?", answer: "Yes, a significant part of the curriculum is dedicated to Generative AI, Prompt Engineering, and building AI agents using RAG architecture." },
+      { question: "What computer configuration do I need?", answer: "A laptop with at least 8GB RAM and an i5 processor (or equivalent) is recommended. Most of our heavy computing will be done on cloud platforms like Google Colab." },
+      { question: "Can I get a job as a Fresher?", answer: "Yes, our 'Python for Data Science' module and intensive project work are designed precisely to help freshers build a portfolio that attracts recruiters." }
     ],
     brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
   },
@@ -96,8 +98,10 @@ export const courses = [
       "Crack development interviews"
     ],
     faqs: [
-      { question: "Do I need to know HTML/CSS?", answer: "We cover the basics, but prior familiarity helps." },
-      { question: "Is this course project-based?", answer: "Yes, you will build 4+ major projects during the course." }
+      { question: "Do I need to know HTML/CSS before starting?", answer: "No, we start from the very basics of web structure. However, being familiar with the internet and basic logic is helpful." },
+      { question: "Will I learn both Frontend and Backend?", answer: "Yes, you will master the MERN stack (MongoDB, Express, React, Node.js), enabling you to build complete, production-ready applications independently." },
+      { question: "Do you teach deployment?", answer: "Yes, we cover deploying apps to AWS and Vercel, and we even introduce Docker for containerization, which is a highly sought-after skill." },
+      { question: "How many projects will I build?", answer: "You will build 4+ major projects, including a full-scale E-commerce platform and a real-time social application, which will form your professional portfolio." }
     ],
     brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
   },
@@ -145,7 +149,10 @@ export const courses = [
     ],
     faqs: [
       { question: "Is coding required?", answer: "Basic scripting (Python/Bash) is taught and useful." },
-      { question: "What certifications can I take?", answer: "This prepares you for CEH, Security+, and customized internal certs." }
+      { question: "What certifications can I take?", answer: "This prepares you for CEH, Security+, and customized internal certs." },
+      { question: "What certifications can I pursue after this course?", answer: "This program aligns with certifications like CompTIA Security+, CEH (Certified Ethical Hacker), and industry-specific vendor certifications." },
+      { question: "Is prior coding experience necessary?", answer: "Basic scripting knowledge (Python/Bash) is beneficial, but we cover the essentials needed for security tasks." },
+      { question: "What kind of jobs can I get?", answer: "You can pursue roles like Security Analyst, Penetration Tester, SOC Analyst, or Cyber Security Consultant." }
     ],
     brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
   },
@@ -193,7 +200,10 @@ export const courses = [
     ],
     faqs: [
       { question: "Is Linux needed?", answer: "Yes, Linux proficiency is a core part of the course." },
-      { question: "Do we use real AWS accounts?", answer: "Yes, you will work on live AWS environments." }
+      { question: "Do we use real AWS accounts?", answer: "Yes, you will work on live AWS environments." },
+      { question: "Is prior coding experience required?", answer: "Basic scripting (Bash/Python) is helpful, but the focus is on infrastructure and automation, not application development." },
+      { question: "What cloud platforms are covered?", answer: "We primarily focus on AWS, which is the industry leader, but the concepts are transferable to Azure and GCP." },
+      { question: "Will I learn about serverless computing?", answer: "Yes, we cover serverless architectures using AWS Lambda and API Gateway as part of modern cloud deployment strategies." }
     ],
     brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
   },
@@ -222,11 +232,11 @@ export const courses = [
     ],
     curriculum: [
       { module: "Excel Mastery", topics: ["Advanced Formulas", "Pivot Tables", "VBA Basics", "Data Cleaning"] },
-      { module: "SQL for Analytics", topics: ["Joins", "Subqueries", "Window Functions", "Normalization", "DML", "DCL", "DQL","Delimiters","Case"] },
-      { module: "Business Intelligence", topics: ["Power BI DAX", "Tableau Viz", "Data Modeling", "Reporting", "Interactive Dashboards","Insights Generation", "Story Telling"] },
-      { module: "Python for Analysts", topics: ["Pandas Basics", "Data Preprocessing", "Matplotlib Viz", "NumPy","Pandas","Seaborn"] },
-      { module: "Basic Statistics", topics: ["Probability","Basic Statistics","Mean","Median","Mode","Standard Deviation","Variance","Correlation","Regression", "Regression Analysis"] },
-      { module: "Capsule Projects", topics: ["EDA","Dashboarding","Reporting","SQL Project"] },
+      { module: "SQL for Analytics", topics: ["Joins", "Subqueries", "Window Functions", "Normalization", "DML", "DCL", "DQL", "Delimiters", "Case"] },
+      { module: "Business Intelligence", topics: ["Power BI DAX", "Tableau Viz", "Data Modeling", "Reporting", "Interactive Dashboards", "Insights Generation", "Story Telling"] },
+      { module: "Python for Analysts", topics: ["Pandas Basics", "Data Preprocessing", "Matplotlib Viz", "NumPy", "Pandas", "Seaborn"] },
+      { module: "Basic Statistics", topics: ["Probability", "Basic Statistics", "Mean", "Median", "Mode", "Standard Deviation", "Variance", "Correlation", "Regression", "Regression Analysis"] },
+      { module: "Capsule Projects", topics: ["EDA", "Dashboarding", "Reporting", "SQL Project"] },
     ],
     instructor: { name: "Priya Malik", role: "Senior Data Analyst", image: "https://i.pravatar.cc/300?u=priya" },
     tools: ["Excel", "SQL", "Power BI", "Tableau", "Python", "Jupyter"],
@@ -242,8 +252,11 @@ export const courses = [
       "Strong command over SQL & Excel"
     ],
     faqs: [
-      { question: "Is math required?", answer: "Basic arithmetic and statistics are sufficient." },
-      { question: "What is the avg salary?", answer: "Entry-level roles start around ₹4-6 LPA." }
+      { question: "Is this better than a standard Data Science course?", answer: "This course is specifically focused on business application. It's ideal for those who want to use data to drive business decisions without necessarily becoming a research scientist." },
+      { question: "What tools are most important in this course?", answer: "Advanced Excel and SQL are the workhorses of business analytics. We master these first before moving to visualization tools like Tableau and Power BI." },
+      { question: "Do I need SQL for Power BI?", answer: "While not strictly required for small datasets, SQL is essential for connected enterprise data. We teach you enough SQL to be a powerful BI developer." },
+      { question: "What is DAX?", answer: "DAX (Data Analysis Expressions) is the formula language of Power BI. Mastering it allows you to create complex calculations and insightful reports." },
+      { question: "Will I work on live data?", answer: "Yes, you will work on simulated real-world datasets from retail, finance, and healthcare to build your dashboards." }
     ],
     brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
   },
@@ -339,7 +352,10 @@ export const courses = [
     ],
     faqs: [
       { question: "Do I need to draw?", answer: "No, digital design is about logic and empathy, not sketching." },
-      { question: "Is this coding related?", answer: "No coding required, though HTML/CSS knowledge helps." }
+      { question: "Is this coding related?", answer: "No coding required, though HTML/CSS knowledge helps." },
+      { question: "What software will I learn?", answer: "The primary tool is Figma, an industry-standard for UI/UX design, along with concepts applicable to other tools like Adobe XD." },
+      { question: "How important is a portfolio?", answer: "Extremely important! We guide you to build a strong portfolio with real-world projects to showcase your skills to potential employers." },
+      { question: "Can I work as a freelancer after this course?", answer: "Yes, the skills learned are highly in demand for freelance UI/UX and product design projects." }
     ],
     brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
   },
@@ -387,7 +403,10 @@ export const courses = [
     ],
     faqs: [
       { question: "Is budget included for ads?", answer: "We provide demo budgets for practice campaigns." },
-      { question: "Is this updated for 2025?", answer: "Yes, we cover the latest algorithms and AI trends." }
+      { question: "Is this updated for 2025?", answer: "Yes, we cover the latest algorithms and AI trends." },
+      { question: "What is the focus of this course?", answer: "We focus on how to use AI tools like ChatGPT, Midjourney, and specialized marketing AI to automate content creation, SEO, and ad campaigns." },
+      { question: "Is this for technical people only?", answer: "Not at all. This course is designed for marketing professionals, business owners, and creators who want to leverage AI without necessarily learning how to code." },
+      { question: "Will I learn about AI Ethics?", answer: "Yes, we cover the ethical use of AI in marketing, including copyright issues, transparency, and data privacy." }
     ],
     brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
   },
@@ -513,8 +532,8 @@ export const courses = [
     ],
     curriculum: [
       { module: "Excel Foundations", topics: ["Formatting", "Formulas", "VLOOKUP/HLOOKUP/XLOOKUP", "Conditional Formatting", "Date & Time Functions"] },
-      { module: "Data Management", topics: ["Power Query Advanced", "Data Cleaning", "Validation" , "ETL Process", "Power Pivot"] },
-      { module: "Reporting & Dashboards", topics: ["Pivot Charts", "KPI Dashboards", "Interactive Reports" ,"Data Connection"] },
+      { module: "Data Management", topics: ["Power Query Advanced", "Data Cleaning", "Validation", "ETL Process", "Power Pivot"] },
+      { module: "Reporting & Dashboards", topics: ["Pivot Charts", "KPI Dashboards", "Interactive Reports", "Data Connection"] },
       { module: "MIS Automation", topics: ["Macros", "Monthly Reports", "Budgeting"] },
     ],
     instructor: { name: "Sneha Gupta", role: "MIS Expert", image: "https://i.pravatar.cc/300?u=sneha" },
@@ -559,8 +578,8 @@ export const courses = [
       "Capstone Project"
     ],
     curriculum: [
-      { module: "SQL Mastery", topics: ["SELECT", "Joins", "Windows", "DDL", "DML", "DCL", "DQL","Delimiters","Case"] },
-      { module: "Power BI", topics: ["Graph","Pattern","Power Query","Data Modeling", "DAX", "Interactive Dashboards","Insights Generation"] },
+      { module: "SQL Mastery", topics: ["SELECT", "Joins", "Windows", "DDL", "DML", "DCL", "DQL", "Delimiters", "Case"] },
+      { module: "Power BI", topics: ["Graph", "Pattern", "Power Query", "Data Modeling", "DAX", "Interactive Dashboards", "Insights Generation"] },
       { module: "Business Analytics", topics: ["Sales Analysis", "Customer Insights", "Storytelling"] },
     ],
     instructor: { name: "Rajiv Menon", role: "BI Developer", image: "https://i.pravatar.cc/300?u=rajiv" },
@@ -624,7 +643,10 @@ export const courses = [
       "Create viral social media content"
     ],
     faqs: [
-      { question: "Do I need a high-end PC?", answer: "A decent laptop with discrete graphics is recommended." }
+      { question: "Do I need a high-end PC for video editing?", answer: "A laptop with at least 8GB RAM and a dedicated graphics card is recommended for a smooth experience with Premiere Pro and After Effects. We can guide you on the best configuration for your budget." },
+      { question: "Will I learn mobile video editing too?", answer: "While our core focus is on professional tools like Premiere Pro, we also cover mobile editing techniques using CapCut and VN Editor, which are essential for quick social media content." },
+      { question: "Is this course suitable for aspiring YouTubers?", answer: "Perfectly! We cover everything from storytelling and editing to YouTube SEO and channel growth strategies." },
+      { question: "Can I earn while learning?", answer: "Yes, many of our students start taking small freelance editing projects (like reels or short clips) after just one month of the program." }
     ],
     brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
   },
@@ -719,8 +741,10 @@ export const courses = [
       "Master modern growth strategies"
     ],
     faqs: [
-      { question: "What is the salary potential?", answer: "Performance marketers can earn ₹6-12 LPA." },
-      { question: "Is the internship guaranteed?", answer: "Yes, included as the final month of the program." }
+      { question: "What is the career growth in AI Marketing?", answer: "AI is revolutionizing marketing. Professionals who know how to use AI tools for performance marketing and content strategy are seeing significantly higher salaries and faster promotions." },
+      { question: "Is the internship project-based?", answer: "Yes, you will work on live client projects under the supervision of our marketing experts, giving you real-world agency experience." },
+      { question: "Do I need to be good at math for performance marketing?", answer: "You need comfortable basic math for calculating ROI, ROAS, and budget distributions, but most of the complex analysis is handled by the tools we teach you." },
+      { question: "Will I learn how to build my own agency?", answer: "Yes, we have a specific module dedicated to client acquisition, pricing strategies, and setting up your own marketing consultancy." }
     ],
     brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
   },
@@ -768,7 +792,9 @@ export const courses = [
       "Logical thinking enhancement"
     ],
     faqs: [
-      { question: "Does it help in Board Exams?", answer: "Yes, Python is part of 11/12th CS/IP syllabus." }
+      { question: "How does this course help with school exams?", answer: "Python and basic data concepts are part of the 11th and 12th grade CS/IP syllabus. This course strengthens those foundations, helping you score better in your boards." },
+      { question: "Is it too much pressure along with school?", answer: "We understand student schedules. Our batches are typically on weekends or late afternoons, and the focus is on fun, project-based learning rather than rote memorization." },
+      { question: "Can I join if I don't have Computer Science in school?", answer: "Yes! This is a perfect way to learn technical skills that your school might not be offering, giving you a competitive edge for future college applications." }
     ],
     brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
   },
@@ -815,7 +841,9 @@ export const courses = [
       "Critical problem solving skills"
     ],
     faqs: [
-      { question: "Is math needed?", answer: "Basic 10th level math is sufficient." }
+      { question: "What is the difference between Foundation and Starter?", answer: "The Starter course is more advanced, focusing on Object Oriented Programming, building AI chatbots, and using specialized ML libraries for real-world projects." },
+      { question: "Will I build real AI models?", answer: "Yes, you will build and test your own prediction models and a conversational AI chatbot during the capstone project phase." },
+      { question: "Do I get a certificate of completion?", answer: "Yes, you receive a certificate from IIAS which is a great addition to your portfolio for college admissions and internships." }
     ],
     brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
   }

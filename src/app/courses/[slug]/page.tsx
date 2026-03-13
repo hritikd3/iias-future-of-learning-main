@@ -9,8 +9,14 @@ import { use } from "react"
 import { Navbar } from "@/components/Navbar"
 import { Footer } from "@/components/Footer"
 import { Button } from "@/components/ui/button"
-import { courses, iconMap } from "@/lib/courses-data"
-import { Clock, Users, BarChart3, ArrowLeft, CheckCircle2, Calendar, MapPin, GraduationCap, BookOpen, Briefcase, Trophy, Laptop, CheckCircle, ChevronDown, Download, Rocket } from "lucide-react"
+import { courses, iconMap } from "@/lib/courses-data";
+import { globalFAQs } from "@/lib/faq-data";
+import {
+  Clock, Users, BarChart3, ArrowLeft, CheckCircle2, Calendar,
+  MapPin, GraduationCap, BookOpen, Briefcase, Trophy, Laptop,
+  CheckCircle, ChevronDown, Download, Rocket, ArrowRight, Send,
+  PlayCircle, Sparkles, Star
+} from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -287,7 +293,7 @@ export default function CourseDetailPage({ params }: { params: Promise<{ slug: s
                   </h2>
                   <div className="space-y-4">
                     <Accordion type="single" collapsible className="w-full space-y-4">
-                      {course.faqs.map((faq, index) => (
+                      {[...(course.faqs || []), ...globalFAQs].map((faq, index) => (
                         <AccordionItem key={index} value={`faq-${index}`} className="glass-card border-white/5 px-6 rounded-xl data-[state=open]:border-cyan-500/30">
                           <AccordionTrigger className="text-lg font-medium hover:text-cyan-400 text-left hover:no-underline">{faq.question}</AccordionTrigger>
                           <AccordionContent className="text-muted-foreground text-base pb-4">
