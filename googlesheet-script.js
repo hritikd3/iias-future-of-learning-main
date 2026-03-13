@@ -22,7 +22,7 @@ function doPost(e) {
         var timestamp = new Date();
 
         // Append the data row by row
-        // Format: Timestamp | Full Name | Email Address | Phone Number | Course | Message (if any) | Age
+        // Format: Timestamp | Full Name | Email Address | Phone Number | Course | Message (if any) | Age | Experience
         sheet.appendRow([
             timestamp,
             data.fullName || "N/A",
@@ -30,7 +30,8 @@ function doPost(e) {
             data.phone || "N/A",
             data.course || "N/A",
             data.message || "",
-            data.age || "N/A"
+            data.age || "N/A",
+            data.experience || "N/A"
         ]);
 
         return ContentService.createTextOutput(JSON.stringify({ "status": "success" }))

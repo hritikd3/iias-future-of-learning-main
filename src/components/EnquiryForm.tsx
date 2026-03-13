@@ -24,6 +24,7 @@ export const EnquiryForm = () => {
     phone: "",
     course: courses[0]?.title || "Digital Product Design",
     age: "",
+    experience: "",
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -169,6 +170,25 @@ export const EnquiryForm = () => {
                 className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-blue-500 transition-colors"
                 placeholder="21"
               />
+            </div>
+            <div>
+              <label className="text-sm font-medium text-gray-400 mb-1 block">
+                Your Experience
+              </label>
+              <select
+                name="experience"
+                required
+                value={formData.experience}
+                onChange={handleChange}
+                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-blue-500 transition-colors appearance-none scrollbar-hide text-white cursor-pointer"
+              >
+                <option value="" disabled className="bg-gray-900">Select Your Experience</option>
+                <option value="working professional - Technical role" className="bg-gray-900">Working professional - Technical role</option>
+                <option value="Working professional - Non technical role" className="bg-gray-900">Working professional - Non technical role</option>
+                <option value="College student - Final year" className="bg-gray-900">College student - Final year</option>
+                <option value="College student - 1st to final year" className="bg-gray-900">College student - 1st to final year</option>
+                <option value="Not doing anything looking for career opportunity" className="bg-gray-900">Not doing anything & looking for career opportunity</option>
+              </select>
             </div>
             <div>
               <label className="text-sm font-medium text-gray-400 mb-1 block">

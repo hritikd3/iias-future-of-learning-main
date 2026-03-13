@@ -16,6 +16,7 @@ export const EnquiryPopup = () => {
         phone: "",
         course: courses[0]?.title || "Digital Product Design",
         age: "",
+        experience: "",
     });
 
     useEffect(() => {
@@ -204,7 +205,20 @@ export const EnquiryPopup = () => {
                                                 className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 outline-none focus:border-blue-500/50 transition-colors text-white"
                                                 placeholder="Your Age"
                                             />
-                                            <div className="hidden md:block"></div>
+                                            <select
+                                                name="experience"
+                                                required
+                                                value={formData.experience}
+                                                onChange={handleChange}
+                                                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 outline-none focus:border-blue-500/50 transition-colors text-white appearance-none cursor-pointer"
+                                            >
+                                                <option value="" disabled className="bg-gray-900">Experience</option>
+                                                <option value="working professional - Technical role" className="bg-gray-900">Working professional - Technical role</option>
+                                                <option value="working professional - non technical role" className="bg-gray-900">Working professional - non technical role</option>
+                                                <option value="college student - Final year" className="bg-gray-900">College student - Final year</option>
+                                                <option value="college student - 1st to final year" className="bg-gray-900">College student - 1st to final year</option>
+                                                <option value="not doing anything & looking for career opportunity" className="bg-gray-900">Not doing anything & looking for career opportunity</option>
+                                            </select>
                                         </div>
                                         <div>
                                             <select

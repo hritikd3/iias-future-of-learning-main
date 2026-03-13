@@ -5,21 +5,22 @@ import { Resend } from 'resend';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function sendEnquiryAction(formData: {
-    fullName: string;
-    email: string;
-    phone: string;
-    course: string;
-    age: string;
+  fullName: string;
+  email: string;
+  phone: string;
+  course: string;
+  age: string;
+  experience: string;
 }) {
-    try {
-        const { fullName, email, phone, course, age } = formData;
-        const recipientEmail = process.env.LEAD_RECIPIENT_EMAIL || 'iiasofficials77@gmail.com';
+  try {
+    const { fullName, email, phone, course, age, experience } = formData;
+    const recipientEmail = process.env.LEAD_RECIPIENT_EMAIL || 'iiasofficials77@gmail.com';
 
-        const { data, error } = await resend.emails.send({
-            from: 'IIAS Leads <onboarding@resend.dev>',
-            to: recipientEmail,
-            subject: `New Lead: ${fullName} - ${course}`,
-            html: `
+    const { data, error } = await resend.emails.send({
+      from: 'IIAS Leads <onboarding@resend.dev>',
+      to: recipientEmail,
+      subject: `New Lead: ${fullName} - ${course}`,
+      html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #eee; padding: 20px; border-radius: 10px;">
           <h2 style="color: #2563eb; border-bottom: 2px solid #2563eb; padding-bottom: 10px;">New Course Enquiry</h2>
           <p>You have received a new lead from the IIAS Admission 2026 page.</p>
@@ -56,6 +57,10 @@ export async function sendEnquiryAction(formData: {
                 <td style="border: 1px solid #e2e8f0; padding: 12px; font-weight: bold; color: #64748b;">Age</td>
                 <td style="border: 1px solid #e2e8f0; padding: 12px; color: #1e293b;">${age}</td>
               </tr>
+              <tr style="background-color: #f8fafc;">
+                <td style="border: 1px solid #e2e8f0; padding: 12px; font-weight: bold; color: #64748b;">Experience</td>
+                <td style="border: 1px solid #e2e8f0; padding: 12px; color: #1e293b;">${experience}</td>
+              </tr>
             </tbody>
           </table>
           
@@ -65,39 +70,40 @@ export async function sendEnquiryAction(formData: {
           </div>
         </div>
       `,
-        });
+    });
 
-        if (error) {
-            console.error('Resend Error:', error);
-            return { success: false, error: error.message };
-        }
-
-        // Sync to Google Sheets asynchronously
-        syncToGoogleSheets({ fullName, email, phone, course, age });
-
-        return { success: true, data };
-    } catch (err) {
-        console.error('Server Action Error:', err);
-        return { success: false, error: 'Internal server error' };
+    if (error) {
+      console.error('Resend Error:', error);
+      return { success: false, error: error.message };
     }
+
+    // Sync to Google Sheets asynchronously
+    syncToGoogleSheets({ fullName, email, phone, course, age, experience });
+
+    return { success: true, data };
+  } catch (err) {
+    console.error('Server Action Error:', err);
+    return { success: false, error: 'Internal server error' };
+  }
 }
 
 export async function sendContactAction(formData: {
-    fullName: string;
-    email: string;
-    course: string;
-    message: string;
-    age: string;
+  fullName: string;
+  email: string;
+  course: string;
+  message: string;
+  age: string;
+  experience: string;
 }) {
-    try {
-        const { fullName, email, course, message, age } = formData;
-        const recipientEmail = process.env.LEAD_RECIPIENT_EMAIL || 'iiasofficials77@gmail.com';
+  try {
+    const { fullName, email, course, message, age, experience } = formData;
+    const recipientEmail = process.env.LEAD_RECIPIENT_EMAIL || 'iiasofficials77@gmail.com';
 
-        const { data, error } = await resend.emails.send({
-            from: 'IIAS Contact <onboarding@resend.dev>',
-            to: recipientEmail,
-            subject: `New Message: ${fullName} - ${course}`,
-            html: `
+    const { data, error } = await resend.emails.send({
+      from: 'IIAS Contact <onboarding@resend.dev>',
+      to: recipientEmail,
+      subject: `New Message: ${fullName} - ${course}`,
+      html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #eee; padding: 20px; border-radius: 10px;">
           <h2 style="color: #8b5cf6; border-bottom: 2px solid #8b5cf6; padding-bottom: 10px;">New Contact Message</h2>
           <p>You have received a new message from the IIAS Contact Form.</p>
@@ -132,6 +138,10 @@ export async function sendContactAction(formData: {
                 <td style="border: 1px solid #ddd6fe; padding: 12px; font-weight: bold; color: #6d28d9;">Age</td>
                 <td style="border: 1px solid #ddd6fe; padding: 12px; color: #1e1b4b;">${age}</td>
               </tr>
+              <tr style="background-color: #f5f3ff;">
+                <td style="border: 1px solid #ddd6fe; padding: 12px; font-weight: bold; color: #6d28d9;">Experience</td>
+                <td style="border: 1px solid #ddd6fe; padding: 12px; color: #1e1b4b;">${experience}</td>
+              </tr>
             </tbody>
           </table>
           
@@ -141,39 +151,39 @@ export async function sendContactAction(formData: {
           </div>
         </div>
       `,
-        });
+    });
 
-        if (error) {
-            console.error('Resend Error:', error);
-            return { success: false, error: error.message };
-        }
-
-        // Sync to Google Sheets asynchronously
-        syncToGoogleSheets({ fullName, email, course, message, age });
-
-        return { success: true, data };
-    } catch (err) {
-        console.error('Server Action Error:', err);
-        return { success: false, error: 'Internal server error' };
+    if (error) {
+      console.error('Resend Error:', error);
+      return { success: false, error: error.message };
     }
+
+    // Sync to Google Sheets asynchronously
+    syncToGoogleSheets({ fullName, email, course, message, age, experience });
+
+    return { success: true, data };
+  } catch (err) {
+    console.error('Server Action Error:', err);
+    return { success: false, error: 'Internal server error' };
+  }
 }
 
 async function syncToGoogleSheets(data: any) {
-    const webappUrl = process.env.GOOGLE_SHEET_WEBAPP_URL;
-    if (!webappUrl) {
-        console.warn('GOOGLE_SHEET_WEBAPP_URL not set. Skipping sheet sync.');
-        return;
-    }
+  const webappUrl = process.env.GOOGLE_SHEET_WEBAPP_URL;
+  if (!webappUrl) {
+    console.warn('GOOGLE_SHEET_WEBAPP_URL not set. Skipping sheet sync.');
+    return;
+  }
 
-    try {
-        await fetch(webappUrl, {
-            method: 'POST',
-            body: JSON.stringify(data),
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
-    } catch (err) {
-        console.error('Google Sheets Sync Error:', err);
-    }
+  try {
+    await fetch(webappUrl, {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+  } catch (err) {
+    console.error('Google Sheets Sync Error:', err);
+  }
 }
