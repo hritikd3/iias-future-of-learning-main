@@ -100,7 +100,7 @@ export function ChatBot() {
                                     <img src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTEyL3Jhd3BpeGVsX29mZmljZV8yN19yZWFsaXN0aWNfcGhvdG9fb2Zfc21pbGluZ19oYW5kc29tZV95b3VuZ19pbl8xNWExMTE1ZC0xZTBiLTQ4YjAtOGEyNi01ZDE1ZmE3Njg2MzYucG5n.png" alt="IIAS Logo" className="w-10 h-10 rounded-full" />
                                 </div>
                                 <div>
-                                    <h3 className="font-bold text-white text-sm">Sujal from IIAS</h3>
+                                    <h3 className="font-bold text-white text-sm">Krishna from IIAS</h3>
                                     <div className="flex items-center gap-1.5">
                                         <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                                         <span className="text-[10px] text-gray-400 font-medium uppercase tracking-wider">Online</span>

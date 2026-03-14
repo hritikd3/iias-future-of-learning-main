@@ -14,7 +14,7 @@ export async function sendEnquiryAction(formData: {
 }) {
   try {
     const { fullName, email, phone, course, age, experience } = formData;
-    const recipientEmail = process.env.LEAD_RECIPIENT_EMAIL || 'iiasofficials77@gmail.com';
+    const recipientEmail = process.env.LEAD_RECIPIENT_EMAIL || 'contact@indoreinstitute.in';
 
     const { data, error } = await resend.emails.send({
       from: 'IIAS Leads <onboarding@resend.dev>',

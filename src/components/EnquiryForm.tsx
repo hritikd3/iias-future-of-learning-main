@@ -108,9 +108,17 @@ export const EnquiryForm = () => {
         </motion.div>
       ) : (
         <>
-          <h3 className="text-2xl font-bold mb-6 text-center">
-            Enquire Now for 2026
-          </h3>
+          <div className="text-center mb-6">
+            <span className="inline-block px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-3">
+              🎯 100% Free — No Commitment
+            </span>
+            <h3 className="text-2xl font-extrabold font-heading text-white leading-tight">
+              Join <span className="text-gradient">Free Counselling</span>
+            </h3>
+            <p className="text-sm text-gray-400 mt-2">
+              Get a personalized career roadmap and find the course that can <strong className="text-white">3x your salary</strong>.
+            </p>
+          </div>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label className="text-sm font-medium text-gray-400 mb-1 block">

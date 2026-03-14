@@ -109,7 +109,7 @@ export const chatbotData: Record<string, ChatNode> = {
         ],
     },
     contact_iias: {
-        message: "You can reach us at iiasofficials77@gmail.com or call us at +91 9174171579.",
+        message: "You can reach us at contact@indoreinstitute.in or call us at +91 9174171579.",
         options: [
             { label: "Visit Contact Page", link: "/contact" },
             { label: "Chat on WhatsApp", link: "https://wa.me/919136084736", external: true },

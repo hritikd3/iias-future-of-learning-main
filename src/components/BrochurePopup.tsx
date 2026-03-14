@@ -142,15 +142,18 @@ export const BrochurePopup = () => {
                                 </motion.div>
                             ) : (
                                 <>
-                                    <div className="text-center mb-10">
-                                        <div className="w-16 h-16 bg-blue-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-blue-500/30">
-                                            <FileText className="text-blue-400 w-8 h-8" />
+                                    <div className="text-center mb-8">
+                                        <div className="w-16 h-16 bg-cyan-500/20 rounded-2xl flex items-center justify-center mx-auto mb-5 border border-cyan-500/30">
+                                            <FileText className="text-cyan-400 w-8 h-8" />
                                         </div>
-                                        <h3 className="text-3xl font-bold font-heading text-white">
-                                            Download <span className="text-gradient">Brochure</span>
+                                        <span className="inline-block px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-3">
+                                            📄 Get Full Curriculum Details
+                                        </span>
+                                        <h3 className="text-3xl font-extrabold font-heading text-white leading-tight">
+                                            Join <span className="text-gradient">Free Counselling</span>
                                         </h3>
-                                        <p className="text-gray-400 mt-4 text-lg">
-                                            Please provide your details to receive the {formData.course} curriculum.
+                                        <p className="text-gray-400 mt-3 text-sm leading-relaxed">
+                                            Get the complete brochure for <strong className="text-white">{formData.course}</strong> — syllabus, fees, placement data, and more.
                                         </p>
                                     </div>
 
