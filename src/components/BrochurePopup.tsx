@@ -79,11 +79,17 @@ export const BrochurePopup = () => {
 
             if (result.success) {
                 setStatus("success");
-                toast.success("Details captured! Opening brochure...");
 
-                // Redirect to WhatsApp as requested
-                const whatsappMsg = encodeURIComponent(`hello i was checking this course ${formData.course} and i want the brochure of it`);
-                window.open(`https://wa.me/919136084736?text=${whatsappMsg}`, "_blank");
+                if (brochureLink) {
+                    // Open the specific course brochure directly
+                    toast.success("Opening your brochure now...");
+                    window.open(brochureLink, "_blank");
+                } else {
+                    // Fallback: redirect to WhatsApp to request brochure
+                    toast.success("Redirecting you to WhatsApp to receive your brochure...");
+                    const whatsappMsg = encodeURIComponent(`hello i was checking this course ${formData.course} and i want the brochure of it`);
+                    window.open(`https://wa.me/919136084736?text=${whatsappMsg}`, "_blank");
+                }
 
                 // Auto close after success
                 setTimeout(() => {

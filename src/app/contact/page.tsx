@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { Navbar } from "@/components/Navbar"
 import { Footer } from "@/components/Footer"
-import { Phone, Mail, Instagram, MapPin, Send, Clock, MessageCircle, CheckCircle2 } from "lucide-react"
+import { Phone, Mail, Instagram, MapPin, Send, Clock, MessageCircle,  CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -14,6 +14,13 @@ const contactInfo = [
     title: "Call Us",
     value: "+91 91 74171 579",
     href: "tel:+919174171579",
+    description: "Mon-Sat, 9AM-7PM"
+  },
+  {
+    icon: <Mail className="w-6 h-6" />,
+    title: "Email Us",
+    value: "contact@indoreinstitute.in",
+    href: "mailto:contact@indoreinstitute.in",
     description: "Mon-Sat, 9AM-7PM"
   },
   {

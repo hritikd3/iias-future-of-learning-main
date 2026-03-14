@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { Instagram, Phone, MapPin } from "lucide-react"
+import { Instagram, Phone, MapPin, Mail } from "lucide-react"
 
 export function Footer() {
   return (
@@ -53,6 +53,10 @@ export function Footer() {
               <a href="https://www.instagram.com/iias_officials/" target="_blank" className="flex items-center gap-3 hover:text-cyan-400 transition-colors">
                 <Instagram size={16} className="text-violet-400" />
                 @iias_officials
+              </a>
+              <a href="mailto:[EMAIL_ADDRESS]" className="flex items-center gap-3 hover:text-cyan-400 transition-colors">
+                <Mail size={16} className="text-violet-400" />
+                Contact@indoreinstitute.in
               </a>
               <div className="flex items-center gap-3">
                 <MapPin size={16} className="text-violet-400" />

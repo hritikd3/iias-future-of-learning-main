@@ -53,7 +53,7 @@ export const courses = [
       { question: "What computer configuration do I need?", answer: "A laptop with at least 8GB RAM and an i5 processor (or equivalent) is recommended. Most of our heavy computing will be done on cloud platforms like Google Colab." },
       { question: "Can I get a job as a Fresher?", answer: "Yes, our 'Python for Data Science' module and intensive project work are designed precisely to help freshers build a portfolio that attracts recruiters." }
     ],
-    brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
+    brochureLink: "https://drive.google.com/file/d/1sRr_Yj72-cyo-1acMvZ9I8wjf_hVIuaU/view?usp=drive_link",
   },
   {
     slug: "full-stack-web-development",
@@ -103,7 +103,7 @@ export const courses = [
       { question: "Do you teach deployment?", answer: "Yes, we cover deploying apps to AWS and Vercel, and we even introduce Docker for containerization, which is a highly sought-after skill." },
       { question: "How many projects will I build?", answer: "You will build 4+ major projects, including a full-scale E-commerce platform and a real-time social application, which will form your professional portfolio." }
     ],
-    brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
+    brochureLink: ""
   },
   {
     slug: "cyber-security-ethical-hacking",
@@ -154,7 +154,7 @@ export const courses = [
       { question: "Is prior coding experience necessary?", answer: "Basic scripting knowledge (Python/Bash) is beneficial, but we cover the essentials needed for security tasks." },
       { question: "What kind of jobs can I get?", answer: "You can pursue roles like Security Analyst, Penetration Tester, SOC Analyst, or Cyber Security Consultant." }
     ],
-    brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
+    brochureLink: ""
   },
   {
     slug: "cloud-computing-devops",
@@ -205,7 +205,7 @@ export const courses = [
       { question: "What cloud platforms are covered?", answer: "We primarily focus on AWS, which is the industry leader, but the concepts are transferable to Azure and GCP." },
       { question: "Will I learn about serverless computing?", answer: "Yes, we cover serverless architectures using AWS Lambda and API Gateway as part of modern cloud deployment strategies." }
     ],
-    brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
+    brochureLink: ""
   },
   {
     slug: "data-analytics-bi",
@@ -258,7 +258,7 @@ export const courses = [
       { question: "What is DAX?", answer: "DAX (Data Analysis Expressions) is the formula language of Power BI. Mastering it allows you to create complex calculations and insightful reports." },
       { question: "Will I work on live data?", answer: "Yes, you will work on simulated real-world datasets from retail, finance, and healthcare to build your dashboards." }
     ],
-    brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
+    brochureLink: ""
   },
   // {
   //   slug: "software-testing-automation",
@@ -306,7 +306,7 @@ export const courses = [
   //     { question: "Is programming needed?", answer: "Yes, we teach Java from scratch for automation." },
   //     { question: "What about manual testing?", answer: "We cover manual testing thoroughly before moving to automation." }
   //   ],
-  //   brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
+  //   brochureLink: ""
   // },
   {
     slug: "ui-ux-design",
@@ -357,7 +357,7 @@ export const courses = [
       { question: "How important is a portfolio?", answer: "Extremely important! We guide you to build a strong portfolio with real-world projects to showcase your skills to potential employers." },
       { question: "Can I work as a freelancer after this course?", answer: "Yes, the skills learned are highly in demand for freelance UI/UX and product design projects." }
     ],
-    brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
+    brochureLink: ""
   },
   {
     slug: "digital-marketing",
@@ -408,7 +408,7 @@ export const courses = [
       { question: "Is this for technical people only?", answer: "Not at all. This course is designed for marketing professionals, business owners, and creators who want to leverage AI without necessarily learning how to code." },
       { question: "Will I learn about AI Ethics?", answer: "Yes, we cover the ethical use of AI in marketing, including copyright issues, transparency, and data privacy." }
     ],
-    brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
+    brochureLink: ""
   },
   {
     slug: "generative-ai-advanced",
@@ -456,7 +456,7 @@ export const courses = [
       { question: "Do I need coding?", answer: "Yes, Python proficiency is required for the development modules." },
       { question: "Is this different from the DS course?", answer: "Yes, this focuses exclusively on GenAI application, not general ML." }
     ],
-    brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
+    brochureLink: ""
   },
   // --- Short Term Skilling Courses ---
   {
@@ -505,7 +505,7 @@ export const courses = [
       { question: "I am from non-IT. Can I join?", answer: "Yes! This course is designed specially for beginners." },
       { question: "Is it live or recorded?", answer: "It is a live instructor-led program." }
     ],
-    brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
+    brochureLink: ""
   },
   {
     slug: "advanced-excel-mis",
@@ -552,7 +552,7 @@ export const courses = [
     faqs: [
       { question: "Is prior Excel knowledge needed?", answer: "No, we start from the very basics." }
     ],
-    brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
+    brochureLink: ""
   },
   {
     slug: "power-bi-sql-analytics",
@@ -598,7 +598,7 @@ export const courses = [
     faqs: [
       { question: "Is this enough for a job?", answer: "Yes, covering SQL and Power BI opens many entry-level analyst roles." }
     ],
-    brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
+    brochureLink: ""
   },
   {
     slug: "video-editing-content-creation",
@@ -648,7 +648,7 @@ export const courses = [
       { question: "Is this course suitable for aspiring YouTubers?", answer: "Perfectly! We cover everything from storytelling and editing to YouTube SEO and channel growth strategies." },
       { question: "Can I earn while learning?", answer: "Yes, many of our students start taking small freelance editing projects (like reels or short clips) after just one month of the program." }
     ],
-    brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
+    brochureLink: ""
   },
   // {
   //   slug: "stock-market-trading",
@@ -695,7 +695,7 @@ export const courses = [
   //   faqs: [
   //     { question: "Is capital required?", answer: "Yes, for live trading, but we practice with virtual money first." }
   //   ],
-  //   brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
+  //   brochureLink: "7nVkDhQkA4LPDqJ3KichQfe0f5RB?u"
   // },
   {
     slug: "ai-marketing-mastery",
@@ -746,7 +746,7 @@ export const courses = [
       { question: "Do I need to be good at math for performance marketing?", answer: "You need comfortable basic math for calculating ROI, ROAS, and budget distributions, but most of the complex analysis is handled by the tools we teach you." },
       { question: "Will I learn how to build my own agency?", answer: "Yes, we have a specific module dedicated to client acquisition, pricing strategies, and setting up your own marketing consultancy." }
     ],
-    brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
+    brochureLink: ""
   },
   // --- School Level Programs (11th-12th) ---
   {
@@ -796,7 +796,7 @@ export const courses = [
       { question: "Is it too much pressure along with school?", answer: "We understand student schedules. Our batches are typically on weekends or late afternoons, and the focus is on fun, project-based learning rather than rote memorization." },
       { question: "Can I join if I don't have Computer Science in school?", answer: "Yes! This is a perfect way to learn technical skills that your school might not be offering, giving you a competitive edge for future college applications." }
     ],
-    brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
+    brochureLink: ""
   },
   {
     slug: "ai-ml-starter-high-school",
@@ -845,7 +845,7 @@ export const courses = [
       { question: "Will I build real AI models?", answer: "Yes, you will build and test your own prediction models and a conversational AI chatbot during the capstone project phase." },
       { question: "Do I get a certificate of completion?", answer: "Yes, you receive a certificate from IIAS which is a great addition to your portfolio for college admissions and internships." }
     ],
-    brochureLink: "https://drive.google.com/drive/folders/1Mbtq7nVkDhQkA4LPDqJ3KichQfe0f5RB?usp=drive_link"
+    brochureLink: ""
   }
 ]
 
