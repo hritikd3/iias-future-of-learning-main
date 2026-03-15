@@ -7,7 +7,7 @@ import { Footer } from "@/components/Footer"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { courses, iconMap } from "@/lib/courses-data"
-import { Clock, Users, BarChart3, ArrowRight, Linkedin, CheckCircle, Trophy, Briefcase, GraduationCap, ChevronRight } from "lucide-react"
+import { Clock, Users, BarChart3, ArrowRight, Linkedin, CheckCircle, Trophy, Briefcase, GraduationCap, ChevronRight, Award, Star, ShieldCheck, BadgeCheck } from "lucide-react"
 import {
   Accordion,
   AccordionContent,
@@ -19,31 +19,43 @@ import { globalFAQs } from "@/lib/faq-data"
 const mentors = [
   {
     name: "Mahendra Singh Chouhan",
-    role: "Trainer",
+    role: "Lead Data Scientist & Solution Architect",
     image: "https://i.ibb.co/rKgfJGJY/Whats-App-Image-2026-02-02-at-13-04-33.jpg",
     linkedin: "https://www.linkedin.com/in/mahendrachouhan/",
-    description: "Experienced Lead Data Scientist/Solution Architect with 15+ years in IT and 10+ years in data science and AI/ML domains. Proven expertise in designing scalable, reliable technical architectures."
+    experience: "15+ Years",
+    expertise: ["Machine Learning", "System Architecture", "Cloud AI", "GenAI"],
+    company: "IIT Indore Alumni",
+    description: "With over 15 years of industry experience spanning enterprise IT and advanced data science, Mahendra heads the technical curriculum at IIAS. He has architected AI solutions for Fortune 500 clients and led cross-functional engineering teams at scale. His expertise spans the full ML lifecycle — from data engineering and model development to production deployment on AWS. At IIAS, he brings a practitioner's mindset to the classroom, ensuring every student graduates with job-ready, real-world skills."
   },
   {
     name: "Raunak Patni",
-    role: "Data Analyst",
+    role: "Senior Data Analyst",
     image: "https://i.ibb.co/rGmVH1cm/Whats-App-Image-2026-02-02-at-13-04-33-2.jpg",
     linkedin: "https://www.linkedin.com/in/alankar-kharbadikar/",
-    description: "Skilled in data analysis, machine learning, and statistical modeling to drive insights from complex datasets. Leveraging data to develop analytical insights for business decision making."
+    experience: "6+ Years",
+    expertise: ["Power BI", "Python", "Statistical Modeling", "SQL"],
+    company: "Data Analytics Specialist",
+    description: "Raunak is a seasoned data professional with deep expertise in business analytics, statistical inference, and BI tooling. He specializes in transforming raw, unstructured datasets into actionable executive insights using Python, SQL, and Power BI. With 6+ years of experience across fintech and e-commerce sectors, he mentors students on the art of asking the right business questions — and then answering them with data. His sessions are known for their clarity, practical case studies, and interview-focused approach."
   },
   {
     name: "Alankar Kharbadikar",
-    role: "Mentor",
+    role: "AI/ML Engineer",
     image: "https://i.ibb.co/hFQhKvXM/Whats-App-Image-2026-02-02-at-13-04-33-1.jpg",
     linkedin: "https://www.linkedin.com/in/alankar-kharbadikar/",
-    description: "AI/ML Engineer at Magnifi by Videoverse"
+    experience: "4+ Years",
+    expertise: ["Deep Learning", "Computer Vision", "NLP", "TensorFlow"],
+    company: "Magnifi by Videoverse",
+    description: "Alankar is an AI/ML Engineer at Magnifi by Videoverse, where he builds cutting-edge computer vision and natural language processing solutions powering AI-driven video intelligence at scale. With a strong foundation in deep learning frameworks including TensorFlow and PyTorch, he brings an engineering-first approach to AI education. At IIAS, he guides students through project-based learning on neural networks, model optimization, and real-world AI deployment — bridging the gap between textbook theory and production-grade implementation."
   },
   {
     name: "Hrshit Gandhi",
     role: "Senior Data Scientist",
     image: "https://i.ibb.co/7xQdW52r/Whats-App-Image-2026-02-02-at-13-10-05-1.jpg",
     linkedin: "https://www.linkedin.com/in/harsheetgandhi/",
-    description: "Senior Data Scientist"
+    experience: "7+ Years",
+    expertise: ["Generative AI", "LLMs", "Data Engineering", "MLOps"],
+    company: "Industry Expert",
+    description: "Hrshit is a Senior Data Scientist with over 7 years of cross-industry experience in building intelligent systems and scalable data pipelines. He is a recognized practitioner in Generative AI, having built and deployed large language model applications in production environments. His mentorship at IIAS covers the end-to-end data science lifecycle — including feature engineering, model selection, hyperparameter tuning, and MLOps best practices. He is particularly passionate about helping students transition into high-paying Data Science and AI roles through structured portfolio building."
   }
 ]
 
@@ -278,11 +290,25 @@ export default function CoursesPage() {
                 Meet Your <span className="text-gradient">Mentors</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Learn from industry veterans who have shaped the future of technology.
+                Our mentors are active industry professionals — not just educators. Every concept they teach comes from real projects, real companies, and real challenges.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Mentor stats strip */}
+            <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto mb-14">
+              {[
+                { value: "30+", label: "Combined Years of Experience" },
+                { value: "4+", label: "Industry Experts & Practitioners" },
+                { value: "100+", label: "Students Mentored" },
+              ].map((stat, i) => (
+                <div key={i} className="glass-card rounded-2xl py-5 px-3 text-center">
+                  <p className="text-2xl md:text-3xl font-extrabold text-gradient mb-1">{stat.value}</p>
+                  <p className="text-xs text-muted-foreground leading-tight">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {mentors.map((mentor, index) => (
                 <motion.div
                   key={index}
@@ -292,41 +318,157 @@ export default function CoursesPage() {
                   viewport={{ once: true }}
                 >
                   <Card className="glass-card h-full border-white/5 hover:border-cyan-400/30 transition-all duration-300 group overflow-hidden">
-                    <CardContent className="p-0 flex flex-col h-full">
-                      <div className="relative w-full h-80 overflow-hidden">
-                        <img
-                          src={mentor.image}
-                          alt={mentor.name}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                          referrerPolicy="no-referrer"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
-                          <a
-                            href={mentor.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-3 bg-cyan-500 text-white rounded-full hover:bg-cyan-400 transition-colors transform translate-y-4 group-hover:translate-y-0 duration-300"
-                          >
-                            <Linkedin size={20} />
-                          </a>
+                    <CardContent className="p-0">
+                      <div className="flex flex-col sm:flex-row">
+                        {/* Photo */}
+                        <div className="relative w-full sm:w-48 shrink-0 h-52 sm:h-auto overflow-hidden">
+                          <img
+                            src={mentor.image}
+                            alt={mentor.name}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            referrerPolicy="no-referrer"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-black/60 to-transparent" />
+                          {/* Experience badge */}
+                          <div className="absolute bottom-3 left-3 sm:bottom-auto sm:top-3">
+                            <span className="px-2 py-1 rounded-lg bg-cyan-500/20 border border-cyan-500/40 text-cyan-300 text-[10px] font-bold">
+                              {mentor.experience}
+                            </span>
+                          </div>
                         </div>
-                      </div>
 
-                      <div className="p-6 flex flex-col flex-grow bg-white/5 backdrop-blur-sm">
-                        <h3 className="text-lg font-bold font-heading mb-1">{mentor.name}</h3>
-                        {mentor.role && (
-                          <p className="text-cyan-400 text-sm font-medium mb-3">{mentor.role}</p>
-                        )}
-                        {mentor.description && (
-                          <p className="text-muted-foreground text-sm line-clamp-4">
+                        {/* Info */}
+                        <div className="p-6 flex flex-col flex-grow">
+                          <div className="flex items-start justify-between gap-3 mb-3">
+                            <div>
+                              <h3 className="text-xl font-bold font-heading leading-tight">{mentor.name}</h3>
+                              <p className="text-cyan-400 text-sm font-semibold mt-0.5">{mentor.role}</p>
+                              <p className="text-gray-500 text-xs mt-0.5">{mentor.company}</p>
+                            </div>
+                            <a
+                              href={mentor.linkedin}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="p-2 bg-blue-600/20 border border-blue-500/30 text-blue-400 rounded-lg hover:bg-blue-600/40 transition-colors shrink-0"
+                            >
+                              <Linkedin size={16} />
+                            </a>
+                          </div>
+
+                          {/* Expertise chips */}
+                          <div className="flex flex-wrap gap-1.5 mb-4">
+                            {mentor.expertise.map((tag, ti) => (
+                              <span key={ti} className="px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-[11px] text-gray-300">
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+
+                          <p className="text-muted-foreground text-sm leading-relaxed line-clamp-5">
                             {mentor.description}
                           </p>
-                        )}
+                        </div>
                       </div>
                     </CardContent>
                   </Card>
                 </motion.div>
               ))}
+            </div>
+          </motion.div>
+
+          {/* === CERTIFICATION SECTION === */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="mb-24 relative"
+          >
+            {/* Background glow */}
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-violet-500/5 to-yellow-500/5 rounded-3xl blur-3xl -z-10" />
+
+            <div className="glass-card rounded-3xl overflow-hidden border border-white/10">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+
+                {/* Left — Text Content */}
+                <div className="p-10 md:p-14 flex flex-col justify-center">
+                  {/* Badge */}
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-yellow-400/20 to-amber-500/20 border border-yellow-500/30 flex items-center justify-center">
+                      <Award className="w-5 h-5 text-yellow-400" />
+                    </div>
+                    <span className="text-yellow-400 text-sm font-bold uppercase tracking-widest">Industry Recognized</span>
+                  </div>
+
+                  {/* Heading */}
+                  <h2 className="text-4xl md:text-5xl font-extrabold font-heading leading-tight mb-5">
+                    Earn a Certificate & <br />
+                    <span className="text-gradient">Employers Trust</span>
+                  </h2>
+                  <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+                    On successful completion of your program, you receive a <strong className="text-white">joint certification</strong> from Indore Institute of Advance Studies — recognized by our 5+ hiring partners across India.
+                  </p>
+
+                  {/* Key points */}
+                  <ul className="space-y-4 mb-10">
+                    {[
+                      { icon: <BadgeCheck className="w-5 h-5 text-cyan-400 shrink-0" />, text: "Recognized by 5+ top companies & startups" },
+                      { icon: <ShieldCheck className="w-5 h-5 text-emerald-400 shrink-0" />, text: "Shareable on LinkedIn with verifiable credential ID" },
+                      { icon: <Star className="w-5 h-5 text-yellow-400 shrink-0" />, text: "Co-certified with our industry partner network" },
+                      { icon: <Trophy className="w-5 h-5 text-violet-400 shrink-0" />, text: "Awarded on passing assessment & capstone project" },
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-3 text-sm text-white/80">
+                        {item.icon}
+                        <span>{item.text}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <button
+                    onClick={() => window.dispatchEvent(new CustomEvent("toggle-enquiry-popup"))}
+                    className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-300 hover:to-amber-400 text-black font-bold px-7 py-4 rounded-full transition-all transform hover:scale-[1.03] shadow-xl shadow-yellow-500/20 text-sm w-fit"
+                  >
+                    <GraduationCap className="w-5 h-5" />
+                    Enroll & Get Certified
+                  </button>
+                </div>
+
+                {/* Right — Certificate Image */}
+                <div className="relative flex items-center justify-center bg-gradient-to-br from-white/3 to-transparent p-8 md:p-12 lg:min-h-[480px]">
+                  {/* Decorative rotating ring */}
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <div className="w-[420px] h-[420px] rounded-full border border-white/5 animate-spin" style={{ animationDuration: "30s" }} />
+                    <div className="absolute w-[320px] h-[320px] rounded-full border border-cyan-500/10 animate-spin" style={{ animationDuration: "20s", animationDirection: "reverse" }} />
+                  </div>
+
+                  {/* Certificate mockup */}
+                  <motion.div
+                    animate={{ y: [0, -8, 0] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                    className="relative z-10 w-full max-w-md"
+                  >
+                    {/* Glow behind certificate */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 via-violet-500/10 to-yellow-500/20 blur-3xl rounded-2xl" />
+                    <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/60 border border-white/10 ring-2 ring-yellow-400/20">
+                      <img
+                        src="https://i.ibb.co/pDKh2LR/Modern-Vintage-Certificate-of-Achievement.png"
+                        alt="IIAS Certificate of Completion"
+                        className="w-full h-auto object-cover"
+                      />
+                      {/* Shine overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent pointer-events-none" />
+                    </div>
+                    {/* Floating badge */}
+                    <motion.div
+                      animate={{ scale: [1, 1.05, 1] }}
+                      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                      className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-full flex flex-col items-center justify-center shadow-lg shadow-yellow-500/40 z-20"
+                    >
+                      <Star className="w-6 h-6 text-black fill-black" />
+                      <span className="text-[8px] font-black text-black uppercase leading-none mt-0.5">Certified</span>
+                    </motion.div>
+                  </motion.div>
+                </div>
+              </div>
             </div>
           </motion.div>
 

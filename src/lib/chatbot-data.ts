@@ -117,7 +117,7 @@ export const chatbotData: Record<string, ChatNode> = {
         ],
     },
     contact_admin: {
-        message: "I'm sorry, I don't have that specific information yet. But our admin team is ready to help you directly on WhatsApp!",
+        message: "I don't have that specific information yet. But our admin team is ready to help you directly on WhatsApp!",
         options: [
             { label: "Connect on WhatsApp", link: "https://wa.me/919136084736", external: true },
             { label: "Back to Home", next: "start" },
