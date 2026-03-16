@@ -190,12 +190,12 @@ export const EnquiryForm = () => {
                 onChange={handleChange}
                 className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-blue-500 transition-colors appearance-none scrollbar-hide text-white cursor-pointer"
               >
-                <option value="" disabled className="bg-gray-900">Select Your Experience</option>
+                <option value="" disabled className="bg-gray-900">Select Your Current Status</option>
                 <option value="working professional - Technical role" className="bg-gray-900">Working professional - Technical role</option>
                 <option value="Working professional - Non technical role" className="bg-gray-900">Working professional - Non technical role</option>
                 <option value="College student - Final year" className="bg-gray-900">College student - Final year</option>
                 <option value="College student - 1st to final year" className="bg-gray-900">College student - 1st to final year</option>
-                <option value="Not doing anything looking for career opportunity" className="bg-gray-900">Not doing anything & looking for career opportunity</option>
+                <option value="Seeking for Career Opportunities" className="bg-gray-900">Seeking for Career Opportunities</option>
               </select>
             </div>
             <div>

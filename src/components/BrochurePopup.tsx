@@ -16,7 +16,7 @@ export const BrochurePopup = () => {
         phone: "",
         course: courses[0]?.title || "Digital Product Design",
         age: "",
-        experience: "Not doing anything looking for career opportunity",
+        experience: "Seeking for Career Opportunities",
     });
     const [brochureLink, setBrochureLink] = useState("");
 
@@ -211,12 +211,12 @@ export const BrochurePopup = () => {
                                                 onChange={handleChange}
                                                 className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 outline-none focus:border-blue-500/50 transition-colors text-white text-lg appearance-none cursor-pointer"
                                             >
-                                                <option value="" disabled className="bg-[#0a0a0a]">Select Your Experience</option>
+                                                <option value="" disabled className="bg-[#0a0a0a]">Select Your Current Status</option>
                                                 <option value="working professional - Technical role" className="bg-[#0a0a0a]">Working professional - Technical role</option>
-                                                <option value="Working professional - non technical role" className="bg-[#0a0a0a]">Working professional - non technical role</option>
+                                                <option value="Working professional - Non technical role" className="bg-[#0a0a0a]">Working professional - Non technical role</option>
                                                 <option value="College student - Final year" className="bg-[#0a0a0a]">College student - Final year</option>
                                                 <option value="College student - 1st to final year" className="bg-[#0a0a0a]">College student - 1st to final year</option>
-                                                <option value="Not doing anything looking for career opportunity" className="bg-[#0a0a0a]">Not doing anything & looking for career opportunity</option>
+                                                <option value="Seeking for Career Opportunities" className="bg-[#0a0a0a]">Seeking for Career Opportunities</option>
                                             </select>
                                             {/* Hidden course select to maintain logic but show consistency */}
                                             <div className="hidden">

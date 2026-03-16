@@ -281,12 +281,12 @@ export const EnquiryPopup = () => {
                                                 onChange={handleChange}
                                                 className="w-full bg-[#111] border border-white/10 rounded-xl px-4 py-3.5 outline-none focus:border-cyan-500/50 transition-colors text-white appearance-none cursor-pointer"
                                             >
-                                                <option value="" disabled className="bg-gray-900">Your Background</option>
-                                                <option value="working professional - Technical role" className="bg-gray-900">Working Pro - Tech Role</option>
-                                                <option value="working professional - non technical role" className="bg-gray-900">Working Pro - Non-Tech</option>
-                                                <option value="college student - Final year" className="bg-gray-900">College - Final Year</option>
-                                                <option value="college student - 1st to final year" className="bg-gray-900">College - 1st to Final Year</option>
-                                                <option value="not doing anything & looking for career opportunity" className="bg-gray-900">Looking for Opportunities</option>
+                                                <option value="" disabled className="bg-gray-900">Your Current Status</option>
+                                                <option value="working professional - Technical role" className="bg-gray-900">Working professional - Technical role</option>
+                                                <option value="working professional - Non technical role" className="bg-gray-900">Working professional - Non technical role</option>
+                                                <option value="college student - Final year" className="bg-gray-900">College student - Final year</option>
+                                                <option value="college student - 1st to final year" className="bg-gray-900">College student - 1st to final year</option>
+                                                <option value="Seeking for Career Opportunities" className="bg-gray-900">Seeking for Career Opportunities</option>
                                             </select>
                                         </div>
                                         <select

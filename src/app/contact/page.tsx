@@ -62,7 +62,7 @@ export default function ContactPage() {
     course: "",
     message: "",
     age: "",
-    experience: "Not doing anything looking for career opportunity",
+    experience: "Seeking Career Opportunities",
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -113,7 +113,7 @@ export default function ContactPage() {
       if (result.success) {
         setStatus("success");
         toast.success("Message sent successfully!");
-        setFormData({ fullName: "", email: "", phone: "", course: "", message: "", age: "", experience: "Not doing anything looking for career opportunity" });
+        setFormData({ fullName: "", email: "", phone: "", course: "", message: "", age: "", experience: "Seeking Career Opportunities" });
         setTimeout(() => setStatus("idle"), 3000);
       } else {
         setStatus("idle");
@@ -255,13 +255,13 @@ export default function ContactPage() {
                         onChange={handleChange}
                         className="w-full bg-white/5 border border-white/10 h-12 rounded-xl px-4 outline-none focus:border-cyan-400/50 transition-colors text-muted-foreground appearance-none cursor-pointer"
                       >
-                        <option value="" disabled className="bg-gray-900">Select Your Experience</option>
-                        <option value="working professional - Technical role" className="bg-gray-900">Working professional - Technical role</option>
-                        <option value="Working professional - non technical role" className="bg-gray-900">Working professional - non technical role</option>
+                        <option value="" disabled className="bg-gray-900">Select Your Current Status</option>
+                        <option value="Working professional - Technical role" className="bg-gray-900">Working professional - Technical role</option>
+                        <option value="Working Professional - Non-Technical Role" className="bg-gray-900">Working professional - Non technical role</option>
                         <option value="College student - Final year" className="bg-gray-900">College student - Final year</option>
                         <option value="College student - 1st to final year" className="bg-gray-900">College student - 1st to final year</option>
-                        <option value="Not doing anything looking for career opportunity" className="bg-gray-900">Not doing anything & looking for career opportunity</option>
-                      </select>
+                        <option value="Seeking Career Opportunities" className="bg-gray-900">Not doing anything & looking for career opportunity</option>
+                       </select>
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-muted-foreground">Course of Interest</label>
