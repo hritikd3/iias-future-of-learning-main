@@ -6,6 +6,7 @@ import Script from "next/script";
 import { EnquiryPopup } from "@/components/EnquiryPopup";
 import { BrochurePopup } from "@/components/BrochurePopup";
 import { ChatBot } from "@/components/ChatBot";
+import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
@@ -58,6 +59,7 @@ export default function RootLayout({
         <EnquiryPopup />
         <BrochurePopup />
         <ChatBot />
+        <FloatingWhatsApp />
       </body>
     </html>
   );
