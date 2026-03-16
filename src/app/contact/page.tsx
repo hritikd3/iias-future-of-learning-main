@@ -260,7 +260,7 @@ export default function ContactPage() {
                         <option value="Working Professional - Non-Technical Role" className="bg-gray-900">Working professional - Non technical role</option>
                         <option value="College student - Final year" className="bg-gray-900">College student - Final year</option>
                         <option value="College student - 1st to final year" className="bg-gray-900">College student - 1st to final year</option>
-                        <option value="Seeking Career Opportunities" className="bg-gray-900">Not doing anything & looking for career opportunity</option>
+                        <option value="Seeking Career Opportunities" className="bg-gray-900">Seeking Career Opportunities</option>
                        </select>
                     </div>
                     <div className="space-y-2">
