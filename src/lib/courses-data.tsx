@@ -796,7 +796,7 @@ export const courses = [
       { question: "Is it too much pressure along with school?", answer: "We understand student schedules. Our batches are typically on weekends or late afternoons, and the focus is on fun, project-based learning rather than rote memorization." },
       { question: "Can I join if I don't have Computer Science in school?", answer: "Yes! This is a perfect way to learn technical skills that your school might not be offering, giving you a competitive edge for future college applications." }
     ],
-    brochureLink: ""
+    brochureLink: "https://drive.google.com/file/d/1AKKr4jycccdSWRryBG_Qm5VjCmMQatPe/view?usp=sharing"
   },
   {
     slug: "ai-ml-starter-high-school",
@@ -845,7 +845,7 @@ export const courses = [
       { question: "Will I build real AI models?", answer: "Yes, you will build and test your own prediction models and a conversational AI chatbot during the capstone project phase." },
       { question: "Do I get a certificate of completion?", answer: "Yes, you receive a certificate from IIAS which is a great addition to your portfolio for college admissions and internships." }
     ],
-    brochureLink: ""
+    brochureLink: "https://drive.google.com/file/d/1VF4zfe8lwLcNofPrhYF2jIj0uil9DwmZ/view?usp=sharing"
   }
 ]
 
