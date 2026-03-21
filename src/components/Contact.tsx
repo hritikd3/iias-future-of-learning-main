@@ -7,10 +7,12 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { sendContactAction } from "@/app/actions";
 import { toast } from "sonner";
 
 export function Contact() {
+  const router = useRouter();
   const [status, setStatus] = useState<"idle" | "submitting" | "success">("idle");
   const [formData, setFormData] = useState({
     fullName: "",
@@ -63,7 +65,7 @@ export function Contact() {
         setStatus("success");
         toast.success("Message sent successfully!");
         setFormData({ fullName: "", email: "", phone: "", course: "", message: "", age: "", experience: "Seeking for Career Opportunities" });
-        setTimeout(() => setStatus("idle"), 3000);
+        router.push("/thank-you");
       } else {
         setStatus("idle");
         toast.error(result.error || "Failed to send message");

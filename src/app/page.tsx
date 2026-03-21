@@ -10,6 +10,7 @@ import { Testimonials } from "@/components/Testimonials";
 import { Contact } from "@/components/Contact";
 import { FAQ } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
+import { SummerCampBanner } from "@/components/SummerCampBanner";
 
 const ThreeBackground = dynamic(
   () =>
@@ -26,6 +27,7 @@ export default function Home() {
       <div className="gradient-blur-2" />
       <div className="gradient-blur-3" />
       <ThreeBackground />
+      <SummerCampBanner />
       <Navbar />
       <Hero />
       <Courses />

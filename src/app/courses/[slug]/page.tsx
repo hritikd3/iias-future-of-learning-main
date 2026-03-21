@@ -23,6 +23,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { SummerCampBanner } from "@/components/SummerCampBanner"
+import { EnquiryForm } from "@/components/EnquiryForm"
 
 export default function CourseDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params)
@@ -32,12 +34,18 @@ export default function CourseDetailPage({ params }: { params: Promise<{ slug: s
     notFound()
   }
 
+  const isHighSchoolCourse = [
+    "data-science-foundation-high-school",
+    "ai-ml-starter-high-school",
+  ].includes(slug)
+
   return (
     <main className="min-h-screen text-white relative">
       <div className="gradient-blur-1" />
       <div className="gradient-blur-2" />
       <div className="gradient-blur-3" />
 
+      {isHighSchoolCourse && <SummerCampBanner />}
       <Navbar />
 
       <section className="pt-24 pb-20 px-6 relative z-10">
@@ -337,27 +345,8 @@ export default function CourseDetailPage({ params }: { params: Promise<{ slug: s
                     </div>
                   </div>
 
-                  <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
-                    <form className="space-y-4">
-                      <div>
-                        <label className="text-sm font-medium text-muted-foreground mb-1 block">Name</label>
-                        <input type="text" className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition-colors" placeholder="Enter your name" />
-                      </div>
-                      <div>
-                        <label className="text-sm font-medium text-muted-foreground mb-1 block">Email</label>
-                        <input type="email" className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition-colors" placeholder="Enter your email" />
-                      </div>
-                      <div>
-                        <label className="text-sm font-medium text-muted-foreground mb-1 block">Phone</label>
-                        <input type="tel" className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition-colors" placeholder="Enter your number" />
-                      </div>
-                      <Button className="w-full h-12 rounded-xl btn-gradient text-white font-bold text-lg mt-2">
-                        Request Callback
-                      </Button>
-                    </form>
-                    <p className="text-xs text-center text-muted-foreground mt-4">
-                      By submitting, you agree to our privacy policy.
-                    </p>
+                  <div className="bg-transparent">
+                    <EnquiryForm redirect={false} />
                   </div>
                 </div>
               </section>

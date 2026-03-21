@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Send, CheckCircle2, Zap, ShieldCheck, Users } from "lucide-react";
 import { sendEnquiryAction } from "@/app/actions";
@@ -11,6 +12,7 @@ const MAX_SHOW_COUNT = 3;
 const STORAGE_KEY = "enquiryPopupCount";
 
 export const EnquiryPopup = () => {
+    const router = useRouter();
     const [isOpen, setIsOpen] = useState(false);
     const [status, setStatus] = useState<"idle" | "submitting" | "success">("idle");
     const [formData, setFormData] = useState({
@@ -139,7 +141,7 @@ export const EnquiryPopup = () => {
                 toast.success("Enquiry sent! Our counselor will call you shortly.");
                 // After success, prevent further auto-shows
                 try { localStorage.setItem(STORAGE_KEY, String(MAX_SHOW_COUNT)); } catch { }
-                setTimeout(() => setIsOpen(false), 3000);
+                router.push("/thank-you");
             } else {
                 setStatus("idle");
                 toast.error(result.error || "Failed to send enquiry");

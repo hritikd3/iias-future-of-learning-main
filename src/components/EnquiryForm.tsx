@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 import {
   CheckCircle2,
   Send,
@@ -14,7 +15,12 @@ import { sendEnquiryAction } from "@/app/actions";
 import { courses } from "@/lib/courses-data";
 import { toast } from "sonner";
 
-export const EnquiryForm = () => {
+interface EnquiryFormProps {
+  redirect?: boolean;
+}
+
+export const EnquiryForm = ({ redirect = true }: EnquiryFormProps) => {
+  const router = useRouter();
   const [status, setStatus] = useState<"idle" | "submitting" | "success">(
     "idle"
   );
@@ -42,7 +48,7 @@ export const EnquiryForm = () => {
       return;
     }
 
-    // Sanitize phone: remove any spaces, dashes, or +91 prefix for length check
+    // Sanitize phone
     const sanitizedPhone = formData.phone.replace(/[\s\-\+\(\)]/g, "").replace(/^91/, "");
 
     if (sanitizedPhone.length !== 10 || !/^\d+$/.test(sanitizedPhone)) {
@@ -55,7 +61,6 @@ export const EnquiryForm = () => {
       return;
     }
 
-    // Check if it starts with valid Indian mobile digits (6, 7, 8, 9)
     if (!/^[6-9]/.test(sanitizedPhone)) {
       toast.error("Please enter a valid Indian mobile number starting with 6-9");
       return;
@@ -68,6 +73,9 @@ export const EnquiryForm = () => {
       if (result.success) {
         setStatus("success");
         toast.success("Enquiry sent successfully!");
+        if (redirect) {
+          router.push("/thank-you");
+        }
       } else {
         setStatus("idle");
         toast.error(result.error || "Failed to send enquiry");
