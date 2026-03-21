@@ -5,10 +5,37 @@ import { CheckCircle2, ArrowRight, Home, MessageCircle } from "lucide-react";
 import Link from "next/link";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { useEffect } from "react";
+import Script from "next/script";
 
 export default function ThankYouPage() {
+    useEffect(() => {
+        // Fire the conversion event when the page loads
+        if (typeof window !== "undefined" && (window as any).gtag) {
+            (window as any).gtag("event", "conversion", {
+                send_to: "AW-17555496573/it4VCKiH_YwcEP28jrNB",
+            });
+        }
+    }, []);
+
     return (
         <main className="min-h-screen text-white relative">
+            <Script id="google-ads-conversion" strategy="afterInteractive">
+                {`
+          function gtag_report_conversion(url) {
+            var callback = function () {
+              if (typeof(url) != 'undefined') {
+                window.location = url;
+              }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-17555496573/it4VCKiH_YwcEP28jrNB',
+                'event_callback': callback
+            });
+            return false;
+          }
+        `}
+            </Script>
             <div className="gradient-blur-1" />
             <div className="gradient-blur-2" />
             <div className="gradient-blur-3" />
