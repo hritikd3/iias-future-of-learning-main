@@ -7,6 +7,7 @@ import { EnquiryPopup } from "@/components/EnquiryPopup";
 import { BrochurePopup } from "@/components/BrochurePopup";
 import { ChatBot } from "@/components/ChatBot";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
+import { SummerCampBanner } from "@/components/SummerCampBanner";
 import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
@@ -21,7 +22,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">
+      <body className="antialiased font-sans">
+        <SummerCampBanner />
         <Script
           id="orchids-browser-logs"
           src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/scripts/orchids-browser-logs.js"

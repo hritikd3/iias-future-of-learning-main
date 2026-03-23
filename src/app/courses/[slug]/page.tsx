@@ -23,7 +23,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { SummerCampBanner } from "@/components/SummerCampBanner"
 import { EnquiryForm } from "@/components/EnquiryForm"
 
 export default function CourseDetailPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -33,19 +32,12 @@ export default function CourseDetailPage({ params }: { params: Promise<{ slug: s
   if (!course) {
     notFound()
   }
-
-  const isHighSchoolCourse = [
-    "data-science-foundation-high-school",
-    "ai-ml-starter-high-school",
-  ].includes(slug)
-
   return (
     <main className="min-h-screen text-white relative">
       <div className="gradient-blur-1" />
       <div className="gradient-blur-2" />
       <div className="gradient-blur-3" />
 
-      {isHighSchoolCourse && <SummerCampBanner />}
       <Navbar />
 
       <section className="pt-24 pb-20 px-6 relative z-10">

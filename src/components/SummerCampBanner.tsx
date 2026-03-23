@@ -1,11 +1,27 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Sparkles, CalendarDays } from "lucide-react";
 
 export function SummerCampBanner() {
-    const [dismissed, setDismissed] = useState(false);
+    const [dismissed, setDismissed] = useState(true); // Default to true to avoid flash
+    const [isClient, setIsClient] = useState(false);
+
+    useEffect(() => {
+        setIsClient(true);
+        const isDismissed = localStorage.getItem("summerCampBannerDismissed");
+        if (!isDismissed) {
+            setDismissed(false);
+        }
+    }, []);
+
+    const handleDismiss = () => {
+        setDismissed(true);
+        localStorage.setItem("summerCampBannerDismissed", "true");
+    };
+
+    if (!isClient) return null;
 
     return (
         <AnimatePresence>
@@ -52,7 +68,7 @@ export function SummerCampBanner() {
 
                             {/* Close */}
                             <button
-                                onClick={() => setDismissed(true)}
+                                onClick={handleDismiss}
                                 className="shrink-0 text-white/60 hover:text-white transition-colors p-1 rounded-lg hover:bg-white/10"
                                 aria-label="Dismiss banner"
                             >
