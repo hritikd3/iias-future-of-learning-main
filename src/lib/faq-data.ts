@@ -8,7 +8,7 @@ export const globalFAQs: FAQ[] = [
     {
         category: "General",
         question: "Who can join the Indore Institute of Advance Studies (IIAS) courses?",
-        answer: "Our courses are designed for a wide range of individuals: from fresh graduates looking to start their careers, to working professionals wanting to upskill or switch fields. We even have foundational batches for 11th and 12th-grade students interested in tech."
+        answer: "Our courses are designed for a wide range of individuals: from fresh graduates looking to start their careers, to working professionals wanting to upskill or switch fields. We even have foundational batches for 8th and 12th-grade students interested in tech."
     },
     {
         category: "General",

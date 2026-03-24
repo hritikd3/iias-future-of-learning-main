@@ -751,9 +751,9 @@ export const courses = [
   // --- School Level Programs (11th-12th) ---
   {
     slug: "data-science-foundation-high-school",
-    title: "Data Science Foundation For 11th - 12th Class",
+    title: "Data Science Foundation For 8th - 12th Class",
     shortTitle: "DS Foundation",
-    description: "For 11th-12th Students. Build a strong base in Python, Analytics, and AI.",
+    description: "For 8th-12th Students. Build a strong base in Python, Analytics, and AI.",
     longDescription: "Start your tech journey early. Learn Python, Data Analysis, and the basics of Machine Learning. Perfect for students targeting engineering or tech careers.",
     icon: "Activity",
     color: "from-blue-600/20 to-indigo-600/20",
@@ -792,7 +792,7 @@ export const courses = [
       "Logical thinking enhancement"
     ],
     faqs: [
-      { question: "How does this course help with school exams?", answer: "Python and basic data concepts are part of the 11th and 12th grade CS/IP syllabus. This course strengthens those foundations, helping you score better in your boards." },
+      { question: "How does this course help with school exams?", answer: "Python and basic data concepts are part of the 8th and 12th grade CS/IP syllabus. This course strengthens those foundations, helping you score better in your boards." },
       { question: "Is it too much pressure along with school?", answer: "We understand student schedules. Our batches are typically on weekends or late afternoons, and the focus is on fun, project-based learning rather than rote memorization." },
       { question: "Can I join if I don't have Computer Science in school?", answer: "Yes! This is a perfect way to learn technical skills that your school might not be offering, giving you a competitive edge for future college applications." }
     ],
@@ -800,9 +800,9 @@ export const courses = [
   },
   {
     slug: "ai-ml-starter-high-school",
-    title: "AI & Machine Learning For 11th - 12th Class",
+    title: "AI & Machine Learning For 8th - 12th Class",
     shortTitle: "AI Starter",
-    description: "Advanced Python & AI/ML project-based learning for 11th-12th graders.",
+    description: "Advanced Python & AI/ML project-based learning for 8th-12th graders.",
     longDescription: "Go beyond the high school syllabus. Learn Object Oriented Programming, deep dive into Python libraries, and build your first AI Chatbot and ML models.",
     icon: "Brain",
     color: "from-purple-600/20 to-pink-600/20",
