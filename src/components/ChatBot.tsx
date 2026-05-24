@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from 'framer-motion';
 import { MessageSquare, X, Send, User, Bot, ExternalLink, ChevronRight, MessageCircle } from "lucide-react";
 import { chatbotData, ChatNode, ChatOption } from "@/lib/chatbot-data";
 import Link from "next/link";

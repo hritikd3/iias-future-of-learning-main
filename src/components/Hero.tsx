@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react"
 import Link from "next/link"
-import { motion } from "framer-motion"
+import { motion } from 'framer-motion'
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Phone } from "lucide-react"
 import gsap from "gsap"

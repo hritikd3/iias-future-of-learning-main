@@ -2,7 +2,7 @@
 import { getInitials } from "@/lib/getInitials";
 
 import { notFound } from "next/navigation"
-import { motion } from "framer-motion"
+import { motion } from 'framer-motion'
 import Link from "next/link"
 import Image from "next/image"
 import { use } from "react"

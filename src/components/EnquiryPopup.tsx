@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from 'framer-motion';
 import { X, Send, CheckCircle2, Zap, ShieldCheck, Users } from "lucide-react";
 import { sendEnquiryAction } from "@/app/actions";
 import { courses } from "@/lib/courses-data";

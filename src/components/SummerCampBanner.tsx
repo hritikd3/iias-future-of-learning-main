@@ -1,12 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from 'framer-motion';
 import { X, Sparkles, CalendarDays } from "lucide-react";
 
 export function SummerCampBanner() {
     const [dismissed, setDismissed] = useState(true); // Default to true to avoid flash
     const [isClient, setIsClient] = useState(false);
+    const bannerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         setIsClient(true);
@@ -15,6 +16,15 @@ export function SummerCampBanner() {
             setDismissed(false);
         }
     }, []);
+
+    useEffect(() => {
+        if (!dismissed && bannerRef.current) {
+            const height = bannerRef.current.offsetHeight;
+            document.documentElement.style.setProperty('--banner-height', `${height}px`);
+        } else {
+            document.documentElement.style.setProperty('--banner-height', '0px');
+        }
+    }, [dismissed]);
 
     const handleDismiss = () => {
         setDismissed(true);
@@ -27,11 +37,12 @@ export function SummerCampBanner() {
         <AnimatePresence>
             {!dismissed && (
                 <motion.div
+                    ref={bannerRef}
                     initial={{ y: -60, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: -60, opacity: 0 }}
                     transition={{ duration: 0.4, ease: "easeOut" }}
-                    className="w-full z-[80] relative"
+                    className="w-full z-[100] fixed top-0 left-0"
                 >
                     <div className="relative bg-gradient-to-r from-violet-600 via-blue-600 to-cyan-500 overflow-hidden">
                         {/* Animated shimmer */}
@@ -53,7 +64,7 @@ export function SummerCampBanner() {
 
                                 <span className="hidden sm:flex items-center gap-1 text-white/80 text-xs shrink-0">
                                     <CalendarDays size={13} />
-                                    Starts April 1st
+                                    Starts June 1st
                                 </span>
 
                                 <button

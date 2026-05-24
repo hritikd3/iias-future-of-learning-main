@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from 'framer-motion';
 import { Send, CheckCircle2, FileText } from "lucide-react";
 import { sendEnquiryAction } from "@/app/actions";
 import { courses } from "@/lib/courses-data";

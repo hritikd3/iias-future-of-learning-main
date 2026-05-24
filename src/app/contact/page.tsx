@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion } from 'framer-motion'
 import { Navbar } from "@/components/Navbar"
 import { Footer } from "@/components/Footer"
 import { Phone, Mail, Instagram, MapPin, Send, Clock, MessageCircle,  CheckCircle2 } from "lucide-react"

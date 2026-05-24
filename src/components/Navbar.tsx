@@ -4,12 +4,13 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Home" },
+  { href: "/mbaprogram", label: "MBA Program", hot: true },
   { href: "/admission-2026", label: "Admission 2026" },
   { href: "/courses", label: "Courses" },
   { href: "/about", label: "About" },
@@ -26,7 +27,8 @@ export function Navbar() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 glass m-8 rounded-2xl"
+        style={{ top: 'calc(var(--banner-height, 0px))' }}
+        className="fixed left-0 right-0 z-50 flex items-center justify-between px-6 py-4 glass m-4 sm:m-8 rounded-2xl"
       >
         <Link href="/" className="flex items-center gap-3">
           <Image
@@ -46,12 +48,17 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium transition-colors ${pathname === link.href
+              className={`text-sm font-medium transition-colors flex items-center gap-1.5 ${pathname === link.href
                 ? "text-cyan-400"
                 : "text-white/70 hover:text-white"
                 }`}
             >
               {link.label}
+              {link.hot && (
+                <span className="bg-red-600 text-white text-[8px] font-bold px-1.5 py-0.5 rounded-full animate-pulse">
+                  HOT
+                </span>
+              )}
             </Link>
           ))}
         </div>
@@ -94,12 +101,17 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`text-lg font-medium py-2 transition-colors ${pathname === link.href
+                  className={`text-lg font-medium py-2 transition-colors flex items-center gap-2 ${pathname === link.href
                     ? "text-cyan-400"
                     : "text-white/70 hover:text-white"
                     }`}
                 >
                   {link.label}
+                  {link.hot && (
+                    <span className="bg-red-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">
+                      HOT
+                    </span>
+                  )}
                 </Link>
               ))}
             </div>

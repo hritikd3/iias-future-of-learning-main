@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 import Marquee from "react-fast-marquee";
 import { CheckCircle2 } from "lucide-react";
 import Image from "next/image";

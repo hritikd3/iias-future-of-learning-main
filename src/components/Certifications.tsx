@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 import { Award, Briefcase, ShieldCheck, Rocket } from "lucide-react";
 
 const points = [
