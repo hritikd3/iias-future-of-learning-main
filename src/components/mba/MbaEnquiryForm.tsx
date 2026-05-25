@@ -15,7 +15,7 @@ export function MbaEnquiryForm() {
         fullName: "",
         email: "",
         phone: "",
-        course: "NMIMS Online MBA",
+        course: "Online MBA (Multi-University)",
         age: "",
         experience: "Working Professional",
     });
@@ -67,7 +67,7 @@ export function MbaEnquiryForm() {
                             Start Your <span className="text-blue-600">Global Journey</span> Today
                         </h2>
                         <p className="text-lg text-slate-600 mb-10 leading-relaxed">
-                            Fill out the form to get a <span className="font-bold text-blue-600">FREE counseling session</span> with our experts and learn how NMIMS can transform your career trajectory.
+                            Fill out the form to get a <span className="font-bold text-blue-600">FREE counseling session</span> with our experts and learn how our partner universities can transform your career trajectory.
                         </p>
 
                         <div className="space-y-6">

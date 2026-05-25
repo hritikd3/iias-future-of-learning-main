@@ -22,13 +22,13 @@ export function MbaHero() {
                     >
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider mb-6">
                             <Star size={14} className="fill-blue-700" />
-                            India's Premier Online MBA
+                            Courses from Top Global Universities
                         </div>
                         <h1 className="text-4xl lg:text-6xl font-montserrat font-extrabold text-blue-950 leading-tight mb-6">
                             Upskill. Upgrade. <span className="text-blue-600">Uninterrupted.</span>
                         </h1>
                         <p className="text-lg text-slate-600 mb-8 leading-relaxed max-w-xl">
-                            Partnered with <span className="font-bold text-slate-800">NMIMS University</span>, we bring you a world-class Online MBA program designed for working professionals to future-proof their careers without quitting their jobs.
+                            Partnered with <span className="font-bold text-slate-800">Leading UGC-Recognized Universities</span>, we bring you world-class Online MBA programs designed for working professionals to future-proof their careers.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 mb-10">
@@ -79,16 +79,15 @@ export function MbaHero() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="relative"
                     >
-                        <div className="relative rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
+                        <div className="relative">
                             <Image
-                            // src="https://i.ibb.co/qLhWK68X/1711965325.webp"
-                                src="https://i.ibb.co/XrF65ZQg/nmims-1.webp"
-                                alt="NMIMS Students"
+                                src="https://i.ibb.co/YTFdK092/banner-image-BKYu8-QH-1.png"
+                                alt="Online MBA Excellence"
                                 width={800}
                                 height={600}
                                 className="w-full h-auto object-cover"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 to-transparent" />
+                            <div className="absolute inset-0 from-blue-900/40 to-transparent" />
                         </div>
 
                         {/* Stats Card */}

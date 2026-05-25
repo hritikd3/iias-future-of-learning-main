@@ -10,7 +10,7 @@ const alumni = [
         role: "Marketing Manager",
         company: "Tech Mahindra",
         image: "https://i.ibb.co/G4rG9hT/alumni1.webp",
-        quote: "The Online MBA from NMIMS gave me the flexibility to learn while I worked. The curriculum is extremely relevant to industry needs.",
+        quote: "The Online MBA program through IIAS gave me the flexibility to learn while I worked. The curriculum is extremely relevant to industry needs.",
         logo: "https://i.ibb.co/hRS5fZ3p/3-r283rw1jqsbe9fl2qep288eu3wv4n5ysaxx4ha7boo.webp"
     },
     {
@@ -26,7 +26,7 @@ const alumni = [
         role: "Product Manager",
         company: "Amazon",
         image: "https://i.ibb.co/9G0pD7v/alumni3.webp",
-        quote: "NMIMS' reputation and the quality of the online platform exceed expectations. It's a true career accelerator for tech professionals.",
+        quote: "The program reputation and the quality of the online platform exceed expectations. It's a true career accelerator for tech professionals.",
         logo: "https://i.ibb.co/NMZDzT4/5-r283s1okvsj473cvth4tn6zlo83bxcl6bpu1cxyync.webp"
     }
 ];

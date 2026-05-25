@@ -9,6 +9,7 @@ import { MbaEnquiryForm } from "@/components/mba/MbaEnquiryForm";
 import { MbaStats } from "@/components/mba/MbaStats";
 import { Footer } from "@/components/Footer";
 import { MbaAlumni } from "@/components/mba/MbaAlumni";
+import { MbaPartners } from "@/components/mba/MbaPartners";
 
 export default function MbaProgramPage() {
     return (
@@ -17,6 +18,8 @@ export default function MbaProgramPage() {
 
             <article>
                 <MbaHero />
+
+                <MbaPartners />
 
                 <MbaTrustSignals />
 

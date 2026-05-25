@@ -41,10 +41,10 @@ export function MbaBenefits() {
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl lg:text-5xl font-extrabold text-slate-900 mb-4">
-                        The <span className="text-blue-600">NMIMS Edge</span>
+                        The <span className="text-blue-600">IIAS Advantage</span>
                     </h2>
                     <p className="text-slate-500 max-w-2xl mx-auto text-lg leading-relaxed">
-                        Why thousands of professionals choose IIAS & NMIMS for their management education.
+                        Why thousands of professionals choose IIAS and our partner universities for their management education.
                     </p>
                 </div>
 
