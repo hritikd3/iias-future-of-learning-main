@@ -32,7 +32,7 @@ export function Navbar() {
       >
         <Link href="/" className="flex items-center gap-3">
           <Image
-            src="https://i.ibb.co/JjjQzzzB/Screenshot-2025-12-17-at-10-45-26-PM.png"
+            src="https://i.ibb.co/39GM7MKM/Whats-App-Image-2026-05-27-at-16-02-19.jpg"
             alt="IIAS Logo"
             width={40}
             height={40}
