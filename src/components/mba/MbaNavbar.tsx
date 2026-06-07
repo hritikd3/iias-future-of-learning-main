@@ -37,10 +37,10 @@ export function MbaNavbar() {
                         />
                         <div className="flex flex-col leading-none">
                             <span className="font-montserrat font-extrabold text-xl tracking-tighter text-blue-900">
-                                IIAS
+                                IIAS | NMIMS
                             </span>
                             <span className="text-[10px] font-poppins font-medium text-blue-600 uppercase tracking-widest">
-                                Future of Learning
+                                Online MBA Portal
                             </span>
                         </div>
                     </Link>

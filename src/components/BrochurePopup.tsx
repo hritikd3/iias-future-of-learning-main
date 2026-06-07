@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from 'framer-motion';
-import { Send, CheckCircle2, FileText } from "lucide-react";
+import { Send, CheckCircle2, FileText, X } from "lucide-react";
 import { sendEnquiryAction } from "@/app/actions";
 import { courses } from "@/lib/courses-data";
 import { toast } from "sonner";
@@ -116,12 +116,13 @@ export const BrochurePopup = () => {
         <AnimatePresence>
             {isOpen && (
                 <div className="fixed inset-0 z-[110] flex items-center justify-center p-4">
-                    {/* Overlay - No click to close */}
+                    {/* Overlay - Click to close */}
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="absolute inset-0 bg-black/90 backdrop-blur-md"
+                        onClick={() => setIsOpen(false)}
+                        className="absolute inset-0 bg-black/80 backdrop-blur-sm cursor-pointer"
                     />
 
                     {/* Modal Content */}
@@ -129,49 +130,58 @@ export const BrochurePopup = () => {
                         initial={{ opacity: 0, scale: 0.9, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                        className="relative w-full max-w-lg bg-[#0a0a0a] border border-blue-500/30 rounded-[2.5rem] shadow-2xl overflow-hidden"
+                        className="relative w-full max-w-md bg-[#0a0a0a] border border-blue-500/30 rounded-2xl shadow-2xl overflow-hidden"
                     >
-                        <div className="p-8 md:p-12">
+                        {/* Close Button */}
+                        <button
+                            onClick={() => setIsOpen(false)}
+                            className="absolute top-4 right-4 p-2 rounded-full bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 transition-all z-10"
+                            aria-label="Close modal"
+                        >
+                            <X size={16} />
+                        </button>
+
+                        <div className="p-6 md:p-8">
                             {status === "success" ? (
                                 <motion.div
                                     initial={{ opacity: 0, scale: 0.9 }}
                                     animate={{ opacity: 1, scale: 1 }}
-                                    className="text-center py-12"
+                                    className="text-center py-8"
                                 >
-                                    <div className="w-24 h-24 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-8">
-                                        <CheckCircle2 className="text-green-500 w-12 h-12" />
+                                    <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                                        <CheckCircle2 className="text-green-500 w-10 h-10" />
                                     </div>
-                                    <h3 className="text-3xl font-bold mb-4">Request Received!</h3>
-                                    <p className="text-gray-400 text-lg">
+                                    <h3 className="text-2xl font-bold mb-3 text-white">Request Received!</h3>
+                                    <p className="text-gray-400 text-base">
                                         Redirecting you to WhatsApp to receive your brochure...
                                     </p>
                                 </motion.div>
                             ) : (
                                 <>
-                                    <div className="text-center mb-8">
-                                        <div className="w-16 h-16 bg-cyan-500/20 rounded-2xl flex items-center justify-center mx-auto mb-5 border border-cyan-500/30">
-                                            <FileText className="text-cyan-400 w-8 h-8" />
+                                    <div className="text-center mb-6">
+                                        <div className="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mx-auto mb-4 border border-cyan-500/30">
+                                            <FileText className="text-cyan-400 w-6 h-6" />
                                         </div>
-                                        <span className="inline-block px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-3">
+                                        <span className="inline-block px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-[9px] font-bold uppercase tracking-[0.2em] mb-2">
                                             📄 Get Full Curriculum Details
                                         </span>
-                                        <h3 className="text-3xl font-extrabold font-heading text-white leading-tight">
+                                        <h3 className="text-2xl font-extrabold font-heading text-white leading-tight">
                                             Join <span className="text-gradient">Free Counselling</span>
                                         </h3>
-                                        <p className="text-gray-400 mt-3 text-sm leading-relaxed">
+                                        <p className="text-gray-400 mt-2 text-xs leading-relaxed">
                                             Get the complete brochure for <strong className="text-white">{formData.course}</strong> — syllabus, fees, placement data, and more.
                                         </p>
                                     </div>
 
-                                    <form onSubmit={handleSubmit} className="space-y-6">
-                                        <div className="space-y-4">
+                                    <form onSubmit={handleSubmit} className="space-y-4">
+                                        <div className="space-y-3">
                                             <input
                                                 type="text"
                                                 name="fullName"
                                                 required
                                                 value={formData.fullName}
                                                 onChange={handleChange}
-                                                className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 outline-none focus:border-blue-500/50 transition-colors text-white text-lg placeholder:text-gray-600"
+                                                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-blue-500/50 transition-colors text-white text-base placeholder:text-gray-600"
                                                 placeholder="Your Full Name"
                                             />
                                             <input
@@ -180,7 +190,7 @@ export const BrochurePopup = () => {
                                                 required
                                                 value={formData.email}
                                                 onChange={handleChange}
-                                                className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 outline-none focus:border-blue-500/50 transition-colors text-white text-lg placeholder:text-gray-600"
+                                                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-blue-500/50 transition-colors text-white text-base placeholder:text-gray-600"
                                                 placeholder="Email Address"
                                             />
                                             <input
@@ -190,7 +200,7 @@ export const BrochurePopup = () => {
                                                 maxLength={10}
                                                 value={formData.phone}
                                                 onChange={handleChange}
-                                                className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 outline-none focus:border-blue-500/50 transition-colors text-white text-lg placeholder:text-gray-600"
+                                                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-blue-500/50 transition-colors text-white text-base placeholder:text-gray-600"
                                                 placeholder="Phone Number (10 digits)"
                                             />
                                             <input
@@ -201,7 +211,7 @@ export const BrochurePopup = () => {
                                                 max="100"
                                                 value={formData.age}
                                                 onChange={handleChange}
-                                                className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 outline-none focus:border-blue-500/50 transition-colors text-white text-lg placeholder:text-gray-600"
+                                                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-blue-500/50 transition-colors text-white text-base placeholder:text-gray-600"
                                                 placeholder="Your Age"
                                             />
                                             <select
@@ -209,7 +219,7 @@ export const BrochurePopup = () => {
                                                 required
                                                 value={formData.experience}
                                                 onChange={handleChange}
-                                                className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 outline-none focus:border-blue-500/50 transition-colors text-white text-lg appearance-none cursor-pointer"
+                                                className="w-full bg-[#0d0d0d] border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-blue-500/50 transition-colors text-white text-base appearance-none cursor-pointer"
                                             >
                                                 <option value="" disabled className="bg-[#0a0a0a]">Select Your Current Status</option>
                                                 <option value="working professional - Technical role" className="bg-[#0a0a0a]">Working professional - Technical role</option>
@@ -237,19 +247,16 @@ export const BrochurePopup = () => {
                                         <button
                                             type="submit"
                                             disabled={status === "submitting"}
-                                            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-5 rounded-2xl flex items-center justify-center gap-3 transition-all transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed group shadow-2xl shadow-blue-600/30 text-xl"
+                                            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl flex items-center justify-center gap-2 transition-all transform hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50 disabled:cursor-not-allowed group shadow-2xl shadow-blue-600/30 text-lg mt-2"
                                         >
                                             {status === "submitting" ? (
                                                 "Preparing..."
                                             ) : (
                                                 <>
-                                                    Get Brochure <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                                    Get Brochure <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                                 </>
                                             )}
                                         </button>
-                                        {/* <p className="text-[11px] text-center text-gray-500 mt-6 uppercase tracking-[0.25em]">
-                                            You will be redirected to WhatsApp
-                                        </p> */}
                                     </form>
                                 </>
                             )}

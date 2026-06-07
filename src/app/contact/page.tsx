@@ -19,8 +19,8 @@ const contactInfo = [
   {
     icon: <Mail className="w-6 h-6" />,
     title: "Email Us",
-    value: "contact@indoreinstitute.in",
-    href: "mailto:contact@indoreinstitute.in",
+    value: "iiasofficials77@gmail.com",
+    href: "mailto:iiasofficials77@gmail.com",
     description: "Mon-Sat, 9AM-7PM"
   },
   {

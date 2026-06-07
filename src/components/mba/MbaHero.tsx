@@ -25,10 +25,10 @@ export function MbaHero() {
                             Courses from Top Global Universities
                         </div>
                         <h1 className="text-4xl lg:text-6xl font-montserrat font-extrabold text-blue-950 leading-tight mb-6">
-                            Upskill. Upgrade. <span className="text-blue-600">Uninterrupted.</span>
+                            SVKM's <span className="text-blue-600">NMIMS</span> Online MBA Admission
                         </h1>
                         <p className="text-lg text-slate-600 mb-8 leading-relaxed max-w-xl">
-                            Partnered with <span className="font-bold text-slate-800">Leading UGC-Recognized Universities</span>, we bring you world-class Online MBA programs designed for working professionals to future-proof their careers.
+                            Get admitted to India's top-ranked management institute — <span className="font-bold text-slate-800">Narsee Monjee Institute of Management Studies (NMIMS)</span>. Pursue a UGC-DEB recognized, NAAC A++ accredited Online MBA designed to future-proof your career.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 mb-10">

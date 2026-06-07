@@ -9,15 +9,15 @@ const alumni = [
         name: "Neha Sharma",
         role: "Marketing Manager",
         company: "Tech Mahindra",
-        image: "https://i.ibb.co/G4rG9hT/alumni1.webp",
-        quote: "The Online MBA program through IIAS gave me the flexibility to learn while I worked. The curriculum is extremely relevant to industry needs.",
+        image: "https://i.ibb.co/GQvfcYd3/360-F-570574724-HWfki1q3-XZt9-Wz-Vl-Cc-Quj-OV5-Jxe8-UBG1.jpg",
+        quote: "The Online MBA program from NMIMS gave me the flexibility to learn while I worked. The curriculum is extremely relevant to industry needs.",
         logo: "https://i.ibb.co/hRS5fZ3p/3-r283rw1jqsbe9fl2qep288eu3wv4n5ysaxx4ha7boo.webp"
     },
     {
         name: "Rahul Varma",
         role: "Analytics Lead",
         company: "Deloitte",
-        image: "https://i.ibb.co/v4m0s9L/alumni2.webp",
+        image: "https://i.ibb.co/F4Cy0PS9/portrait-young-indian-businessman-student-sitting-with-pen-1262-17490.avif",
         quote: "Transitioning to a leadership role was possible because of the strategic insights I gained. The network here is phenomenal.",
         logo: "https://i.ibb.co/dJ2pNbBf/2-r283rt816a7jalp66vh6ir4gbr9102nlajyo1gbi7c.webp"
     },
@@ -25,7 +25,7 @@ const alumni = [
         name: "Priya Singh",
         role: "Product Manager",
         company: "Amazon",
-        image: "https://i.ibb.co/9G0pD7v/alumni3.webp",
+        image: "https://i.ibb.co/B2rNYLs4/closeup-smiling-young-beautiful-indian-woman-1262-2261.avif",
         quote: "The program reputation and the quality of the online platform exceed expectations. It's a true career accelerator for tech professionals.",
         logo: "https://i.ibb.co/NMZDzT4/5-r283s1okvsj473cvth4tn6zlo83bxcl6bpu1cxyync.webp"
     }

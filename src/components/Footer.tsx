@@ -54,9 +54,9 @@ export function Footer() {
                 <Instagram size={16} className="text-violet-400" />
                 @iias_officials
               </a>
-              <a href="mailto:[EMAIL_ADDRESS]" className="flex items-center gap-3 hover:text-cyan-400 transition-colors">
+              <a href="mailto:iiasofficials77@gmail.com" className="flex items-center gap-3 hover:text-cyan-400 transition-colors">
                 <Mail size={16} className="text-violet-400" />
-                Contact@indoreinstitute.in
+                iiasofficials77@gmail.com
               </a>
               <div className="flex items-center gap-3">
                 <MapPin size={16} className="text-violet-400" />
