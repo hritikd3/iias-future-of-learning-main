@@ -27,12 +27,12 @@ export function Navbar() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        style={{ top: 'calc(var(--banner-height, 0px))' }}
+        style={{ top: "calc(var(--banner-height, 0px))" }}
         className="fixed left-0 right-0 z-50 flex items-center justify-between px-6 py-4 glass m-4 sm:m-8 rounded-2xl"
       >
         <Link href="/" className="flex items-center gap-3">
           <Image
-            src="https://i.ibb.co/39GM7MKM/Whats-App-Image-2026-05-27-at-16-02-19.jpg"
+            src="https://i.ibb.co/G3t70w8C/iias-logo.webp"
             alt="IIAS Logo"
             width={40}
             height={40}
@@ -48,10 +48,11 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium transition-colors flex items-center gap-1.5 ${pathname === link.href
-                ? "text-cyan-400"
-                : "text-white/70 hover:text-white"
-                }`}
+              className={`text-sm font-medium transition-colors flex items-center gap-1.5 ${
+                pathname === link.href
+                  ? "text-cyan-400"
+                  : "text-white/70 hover:text-white"
+              }`}
             >
               {link.label}
               {link.hot && (
@@ -73,7 +74,9 @@ export function Navbar() {
             </Button>
           </Link>
           <Button
-            onClick={() => window.dispatchEvent(new CustomEvent("toggle-enquiry-popup"))}
+            onClick={() =>
+              window.dispatchEvent(new CustomEvent("toggle-enquiry-popup"))
+            }
             className="rounded-full btn-gradient text-white"
           >
             Enroll Now
@@ -101,10 +104,11 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`text-lg font-medium py-2 transition-colors flex items-center gap-2 ${pathname === link.href
-                    ? "text-cyan-400"
-                    : "text-white/70 hover:text-white"
-                    }`}
+                  className={`text-lg font-medium py-2 transition-colors flex items-center gap-2 ${
+                    pathname === link.href
+                      ? "text-cyan-400"
+                      : "text-white/70 hover:text-white"
+                  }`}
                 >
                   {link.label}
                   {link.hot && (

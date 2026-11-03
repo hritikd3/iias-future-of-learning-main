@@ -12,7 +12,24 @@ import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "Indore Institute of Advance Studies | Master AI, Gen AI & Full-Stack",
-  description: "The premier academy in Indore for AI, Generative AI, Agentic AI, Full-Stack Development, and Cyber Security. Empowering the next generation of tech leaders.",
+  description:
+    "The premier academy in Indore for AI, Generative AI, Agentic AI, Full-Stack Development, and Cyber Security. Empowering the next generation of tech leaders.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      {
+        url: "https://i.ibb.co/G3t70w8C/iias-logo.webp",
+        sizes: "512x512",
+        type: "image/png",
+      },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({

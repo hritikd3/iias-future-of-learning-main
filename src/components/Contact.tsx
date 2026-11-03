@@ -223,7 +223,7 @@ export function Contact() {
                       maxLength={10}
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="9876543210"
+                      placeholder="8109531055"
                       className="bg-white/5 border-violet-500/20 h-12 rounded-xl focus:border-cyan-500/50 focus:ring-cyan-500/20"
                     />
                   </div>

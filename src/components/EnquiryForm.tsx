@@ -168,7 +168,7 @@ export const EnquiryForm = ({ redirect = true }: EnquiryFormProps) => {
                 value={formData.phone}
                 onChange={handleChange}
                 className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-blue-500 transition-colors"
-                placeholder="9876543210"
+                placeholder="8109531055"
               />
             </div>
             <div>
