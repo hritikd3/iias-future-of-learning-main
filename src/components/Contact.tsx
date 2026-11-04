@@ -112,7 +112,7 @@ export function Contact() {
 
             <div className="space-y-6">
               <motion.a
-                href="tel:+919174171579"
+                href="tel:+918109531055"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
@@ -123,7 +123,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-xs text-muted-foreground uppercase tracking-widest">Call Us</p>
-                  <span className="text-lg font-bold">+91 91 74171 579</span>
+                  <span className="text-lg font-bold">+91 81095 31055</span>
                 </div>
               </motion.a>
 

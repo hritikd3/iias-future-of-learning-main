@@ -84,7 +84,7 @@ export default function ThankYouPage() {
                             </button>
                         </Link>
                         <a
-                            href="https://wa.me/919174171579"
+                            href="https://wa.me/918109531055"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe5a] text-white px-8 py-4 rounded-full transition-all shadow-xl shadow-green-500/20 group"

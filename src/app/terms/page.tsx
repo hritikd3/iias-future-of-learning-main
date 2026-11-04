@@ -73,7 +73,7 @@ export default function TermsAndConditions() {
                         <div className="bg-white/5 border border-white/10 rounded-2xl p-6 mt-4">
                             <p className="font-bold text-white">Indore Institute of Advance Studies</p>
                             <p>Email: iiasofficials77@gmail.com</p>
-                            <p>Phone: +91 9174171579</p>
+                            <p>Phone: +91 8109531055</p>
                         </div>
                     </section>
                 </div>

@@ -89,14 +89,14 @@ export function Hero() {
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
-            <a href="tel:+919174171579">
+            <a href="tel:+918109531055">
               <Button
                 size="lg"
                 variant="outline"
                 className="rounded-full h-14 px-6 border-violet-500/30 hover:bg-violet-500/10 text-lg"
               >
                 <Phone size={20} className="mr-2" />
-                +91 91741 71579
+                +91 81095 31055
               </Button>
             </a>
           </motion.div>

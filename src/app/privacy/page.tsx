@@ -74,7 +74,7 @@ export default function PrivacyPolicy() {
                             <p className="font-bold text-white">Indore Institute of Advance Studies</p>
                             <p>Email: iiasofficials77@gmail.com</p>
                             <p>Address: Race Course Road, Indore, Madhya Pradesh</p>
-                            <p>Phone: +91 9174171579</p>
+                            <p>Phone: +91 8109531055</p>
                         </div>
                     </section>
                 </div>

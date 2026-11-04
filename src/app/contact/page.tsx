@@ -12,8 +12,8 @@ const contactInfo = [
   {
     icon: <Phone className="w-6 h-6" />,
     title: "Call Us",
-    value: "+91 91 74171 579",
-    href: "tel:+919174171579",
+    value: "+91 8109531055",
+    href: "tel:+918109531055",
     description: "Mon-Sat, 9AM-7PM"
   },
   {
